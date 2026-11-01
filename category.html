@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Category | Rasoi Express</title>
+
+    <meta name="description" content="Explore delicious dishes at Rasoi Express.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./menu.css">
+    <link rel="stylesheet" href="./category.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-container">
+
+            <button class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <a href="./index.html" class="brand-logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </span>
+
+                <span class="logo-text">
+                    <strong>Rasoi Express</strong>
+                    <small>GOOD FOOD. GREAT MOMENTS.</small>
+                </span>
+            </a>
+
+            <nav class="desktop-navigation">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./menu.html" class="nav-link active">Menu</a>
+                <a href="./desserts.html" class="nav-link">Desserts</a>
+                <a href="./indian-rotis.html" class="nav-link">Indian Rotis</a>
+                <a href="./chinese.html" class="nav-link">Chinese</a>
+                <a href="./south-indian.html" class="nav-link">South Indian</a>
+                <a href="./north-indian.html" class="nav-link">North Indian</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-button cart-button" aria-label="Shopping cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </button>
+
+                <button class="call-waiter-button">
+                    <i class="fa-solid fa-bell-concierge"></i>
+                    <span>Call Waiter</span>
+                </button>
+            </div>
+
+        </div>
+
+        <nav class="mobile-navigation">
+            <a href="./index.html" class="mobile-nav-link">Home</a>
+            <a href="./menu.html" class="mobile-nav-link active">Menu</a>
+            <a href="./desserts.html" class="mobile-nav-link">Desserts</a>
+            <a href="./indian-rotis.html" class="mobile-nav-link">Indian Rotis</a>
+            <a href="./chinese.html" class="mobile-nav-link">Chinese</a>
+            <a href="./south-indian.html" class="mobile-nav-link">South Indian</a>
+            <a href="./north-indian.html" class="mobile-nav-link">North Indian</a>
+
+            <button class="mobile-waiter-button">
+                <i class="fa-solid fa-bell-concierge"></i>
+                Call Waiter
+            </button>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- CATEGORY HERO -->
+        <section class="category-hero">
+            <div class="section-container">
+
+                <a href="./menu.html" class="category-back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Menu
+                </a>
+
+                <span class="section-eyebrow">MADE FRESH FOR YOU</span>
+
+                <h1 id="category-title">Explore Our Menu</h1>
+
+                <p id="category-description">
+                    Discover delicious flavours from our kitchen.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- CATEGORY CONTENT -->
+        <section class="category-page-content section-container">
+
+            <div class="category-page-heading">
+                <div>
+                    <span class="section-eyebrow">OUR SELECTION</span>
+                    <h2 id="category-section-title">Available Dishes</h2>
+                </div>
+
+                <a href="./menu.html" class="view-all-menu-link">
+                    View Full Menu
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+
+            <!-- FOOD FILTERS -->
+            <div class="food-type-filters">
+
+                <button class="food-filter active" data-filter="all">
+                    All Items
+                </button>
+
+                <button class="food-filter" data-filter="veg">
+                    <span class="veg-indicator"></span>
+                    Pure Veg
+                </button>
+
+                <button class="food-filter" data-filter="non-veg">
+                    <span class="nonveg-indicator"></span>
+                    Non-Veg
+                </button>
+
+            </div>
+
+
+            <!-- DISHES -->
+            <div class="menu-dishes-grid" id="category-dishes-grid">
+                <!-- Generated through JavaScript -->
+            </div>
+
+            <div class="menu-empty-state" id="category-empty-state" hidden>
+                <i class="fa-solid fa-bowl-food"></i>
+                <h3>No dishes found</h3>
+                <p>There are currently no dishes in this category.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <a href="./index.html" class="brand-logo footer-logo">
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </span>
+
+                    <span class="logo-text">
+                        <strong>Rasoi Express</strong>
+                        <small>GOOD FOOD. GREAT MOMENTS.</small>
+                    </span>
+                </a>
+
+                <p>Bringing delicious flavours and memorable dining experiences to your table.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./menu.html">Menu</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Our Menu</h3>
+                <ul>
+                    <li><a href="./biryani.html">Biryani</a></li>
+                    <li><a href="./south-indian.html">South Indian</a></li>
+                    <li><a href="./north-indian.html">North Indian</a></li>
+                    <li><a href="./indian-rotis.html">Indian Rotis</a></li>
+                    <li><a href="./indian-rotis.html">Breads</a></li>
+                    <li><a href="./chinese.html">Chinese</a></li>
+                    <li><a href="./category.html?category=tandoor">Tandoor</a></li>
+                    <li><a href="./desserts.html">Desserts</a></li>
+                    <li><a href="./desserts.html">Sweets</a></li>
+                    <li><a href="./beverages.html">Beverages</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Get In Touch</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Visit our restaurant</p>
+                <p><i class="fa-solid fa-phone"></i> Contact our restaurant</p>
+
+                <div class="footer-social-links">
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2026</span> Rasoi Express. All rights reserved.</p>
+            <p>Designed and Developed by <span class="footer-credit-name">Webcultivate</span></p>
+        </div>
+
+    </footer>
+
+
+    <!-- MOBILE BOTTOM BAR -->
+    <div class="mobile-bottom-bar">
+
+        <button class="mobile-bottom-waiter">
+            <i class="fa-solid fa-bell-concierge"></i>
+            <span>Call Waiter</span>
+        </button>
+
+        <button class="mobile-bottom-cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>View Cart</span>
+            <span class="cart-count">0</span>
+        </button>
+
+    </div>
+
+
+    <script src="./script.js" defer></script>
+
+</body>
+</html>

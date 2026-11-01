@@ -1,0 +1,481 @@
+
+/* =========================================
+   RASOI EXPRESS - MENU PAGE
+========================================= */
+
+.menu-hero {
+    padding: 75px 20px 65px;
+    text-align: center;
+    background: linear-gradient(135deg, #f8f1ff, #fff 65%);
+}
+
+.menu-hero .section-container,
+.menu-main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #6415a5;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.menu-hero h1 {
+    margin: 0;
+    color: #10152f;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 58px);
+}
+
+.menu-hero h1 span {
+    color: #6415a5;
+}
+
+.menu-hero p {
+    margin: 14px 0 28px;
+    color: #777487;
+    font-size: 16px;
+}
+
+#menu-search-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: min(100%, 570px);
+    margin: 0 auto;
+    padding: 7px 8px 7px 18px;
+    background: #fff;
+    border: 1px solid #eee5f5;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(65, 25, 95, 0.07);
+}
+
+#menu-search-form > i {
+    color: #8e8299;
+}
+
+#menu-search-input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 0;
+    color: #252035;
+    background: transparent;
+    border: none;
+    outline: none;
+    font: inherit;
+}
+
+#menu-search-form button {
+    padding: 12px 23px;
+    color: #fff;
+    background: #6415a5;
+    border: none;
+    border-radius: 9px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#menu-search-form button:hover {
+    background: #4d087f;
+}
+
+
+/* MAIN MENU AREA */
+
+.menu-main {
+    padding: 48px 24px 80px;
+}
+
+.food-type-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 48px;
+}
+
+.food-filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 21px;
+    color: #51495b;
+    background: #fff;
+    border: 1px solid #e9e2ef;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.food-filter:hover,
+.food-filter.active {
+    color: #6415a5;
+    background: #f4eafb;
+    border-color: #d9c1ec;
+}
+
+.veg-indicator,
+.nonveg-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid #198754;
+    position: relative;
+}
+
+.veg-indicator::after,
+.nonveg-indicator::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 1.5px;
+    left: 1.5px;
+    background: #198754;
+    border-radius: 50%;
+}
+
+.nonveg-indicator {
+    border-color: #dc3545;
+}
+
+.nonveg-indicator::after {
+    background: #dc3545;
+}
+
+
+/* CATEGORY NAVIGATION */
+
+.menu-category-navigation {
+    margin-bottom: 55px;
+}
+
+.menu-category-navigation h2,
+.section-heading h2 {
+    margin: 0 0 22px;
+    color: #10152f;
+    font-family: "Playfair Display", serif;
+    font-size: 27px;
+}
+
+.menu-category-list {
+    display: flex;
+    gap: 13px;
+    overflow-x: auto;
+    padding: 3px 2px 15px;
+    scrollbar-width: thin;
+    scrollbar-color: #d8c4e9 transparent;
+}
+
+.menu-category-item {
+    flex: 0 0 auto;
+    padding: 11px 19px;
+    color: #62576d;
+    background: #fff;
+    border: 1px solid #e9e2ef;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.menu-category-item:hover,
+.menu-category-item.active {
+    color: #fff;
+    background: #6415a5;
+    border-color: #6415a5;
+}
+
+
+/* DISH LISTING */
+
+.menu-listing {
+    min-height: 300px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+#menu-result-count {
+    color: #898292;
+    font-size: 13px;
+}
+
+.menu-dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.menu-dish-group-heading {
+    grid-column: 1 / -1;
+    margin: 8px 0 -8px;
+    color: #10152f;
+    font-family: "Playfair Display", serif;
+    font-size: 23px;
+}
+
+.menu-dish-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #eee9f2;
+    border-radius: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-dish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(55, 25, 80, 0.09);
+}
+
+.menu-dish-image {
+    position: relative;
+    height: 205px;
+    overflow: hidden;
+    background: #f4eff8;
+}
+
+.menu-dish-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.menu-dish-card:hover .menu-dish-image img {
+    transform: scale(1.05);
+}
+
+.menu-dish-type {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: #fff;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.menu-dish-type.veg {
+    color: #198754;
+}
+
+.menu-dish-type.non-veg {
+    color: #dc3545;
+}
+
+.menu-dish-details {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 18px;
+}
+
+.menu-dish-details h3 {
+    margin: 0 0 8px;
+    color: #202035;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.menu-dish-details p {
+    margin: 0 0 18px;
+    color: #85808e;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.menu-dish-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+}
+
+.menu-dish-price {
+    color: #6415a5;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.menu-add-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 16px;
+    color: #6415a5;
+    background: #f4eafb;
+    border: 1px solid #e6d5f3;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.menu-add-button:hover {
+    color: #fff;
+    background: #6415a5;
+}
+
+
+/* EMPTY STATE */
+
+.menu-empty-state {
+    padding: 65px 20px;
+    text-align: center;
+    color: #898292;
+}
+
+.menu-empty-state i {
+    margin-bottom: 15px;
+    color: #b99bd0;
+    font-size: 40px;
+}
+
+.menu-empty-state h3 {
+    margin: 0 0 8px;
+    color: #252035;
+    font-size: 21px;
+}
+
+.menu-empty-state p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* FOOTER */
+
+.menu-hero ~ .site-footer {
+    margin-top: 0;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .menu-dishes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .menu-main {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-hero {
+        padding: 52px 18px 45px;
+    }
+
+    .menu-hero p {
+        font-size: 14px;
+    }
+
+    #menu-search-form {
+        gap: 8px;
+        padding-left: 13px;
+    }
+
+    #menu-search-form button {
+        padding: 11px 15px;
+    }
+
+    .menu-main {
+        padding: 32px 16px 65px;
+    }
+
+    .food-type-filters {
+        gap: 8px;
+        margin-bottom: 35px;
+    }
+
+    .food-filter {
+        padding: 10px 14px;
+        font-size: 12px;
+    }
+
+    .menu-category-navigation {
+        margin-bottom: 38px;
+    }
+
+    .menu-category-navigation h2,
+    .section-heading h2 {
+        font-size: 23px;
+    }
+
+    .menu-dishes-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .menu-dish-card {
+        flex-direction: row;
+        min-height: 145px;
+    }
+
+    .menu-dish-image {
+        flex: 0 0 38%;
+        height: auto;
+        min-height: 145px;
+    }
+
+    .menu-dish-details {
+        padding: 13px;
+    }
+
+    .menu-dish-details h3 {
+        font-size: 15px;
+    }
+
+    .menu-dish-details p {
+        margin-bottom: 12px;
+        font-size: 12px;
+    }
+
+    .menu-dish-price {
+        font-size: 15px;
+    }
+
+    .menu-add-button {
+        padding: 8px 11px;
+        font-size: 11px;
+    }
+
+    .menu-dish-type {
+        top: 8px;
+        left: 8px;
+        padding: 5px 7px;
+        font-size: 9px;
+    }
+
+    .section-heading {
+        align-items: center;
+    }
+}

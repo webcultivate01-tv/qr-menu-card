@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chinese | Rasoi Express</title>
+    <meta name="description" content="Discover wok-tossed Indo-Chinese noodles, fried rice, starters and sizzling favourites at Rasoi Express.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./chinese.css">
+</head>
+
+<body class="chinese-page">
+    <header class="site-header">
+        <div class="header-container">
+            <button class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <a href="./index.html" class="brand-logo">
+                <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+                <span class="logo-text">
+                    <strong>Rasoi Express</strong>
+                    <small>GOOD FOOD. GREAT MOMENTS.</small>
+                </span>
+            </a>
+
+            <nav class="desktop-navigation">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./menu.html" class="nav-link">Menu</a>
+                <a href="./desserts.html" class="nav-link">Desserts</a>
+                <a href="./indian-rotis.html" class="nav-link">Indian Rotis</a>
+                <a href="./chinese.html" class="nav-link active" aria-current="page">Chinese</a>
+                <a href="./south-indian.html" class="nav-link">South Indian</a>
+                <a href="./north-indian.html" class="nav-link">North Indian</a>
+                <a href="./biryani.html" class="nav-link">Biryani</a>
+                <a href="./beverages.html" class="nav-link">Beverages</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="icon-button cart-button" aria-label="Shopping cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </button>
+                <button class="call-waiter-button">
+                    <i class="fa-solid fa-bell-concierge"></i>
+                    <span>Call Waiter</span>
+                </button>
+            </div>
+        </div>
+
+        <nav class="mobile-navigation">
+            <a href="./index.html" class="mobile-nav-link">Home</a>
+            <a href="./menu.html" class="mobile-nav-link">Menu</a>
+            <a href="./desserts.html" class="mobile-nav-link">Desserts</a>
+            <a href="./indian-rotis.html" class="mobile-nav-link">Indian Rotis</a>
+            <a href="./chinese.html" class="mobile-nav-link active" aria-current="page">Chinese</a>
+            <a href="./south-indian.html" class="mobile-nav-link">South Indian</a>
+            <a href="./north-indian.html" class="mobile-nav-link">North Indian</a>
+            <a href="./biryani.html" class="mobile-nav-link">Biryani</a>
+            <a href="./beverages.html" class="mobile-nav-link">Beverages</a>
+            <button class="mobile-waiter-button">
+                <i class="fa-solid fa-bell-concierge"></i>
+                Call Waiter
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chinese-hero" data-local-image="./assets/images/chinese/chinese-hero.jpg">
+            <div class="chinese-hero-content">
+                <span class="chinese-hero-eyebrow">WOK-FIRED • BOLDLY FLAVOURED</span>
+                <h1>SIZZLING<br>INDO-CHINESE FAVOURITES</h1>
+                <p>Fresh noodles, sizzling starters and bold, saucy favourites straight from the wok.</p>
+                <a class="chinese-hero-button" href="#chinese-menu">
+                    Explore the Menu
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+            <span class="chinese-hero-note">HOT WOK • FRESH INGREDIENTS • BIG FLAVOUR</span>
+        </section>
+
+        <section class="chinese-menu-section" id="chinese-menu">
+            <div class="chinese-container">
+                <div class="chinese-menu-heading">
+                    <div>
+                        <a class="chinese-back-link" href="./menu.html">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Back to Menu
+                        </a>
+                        <span class="chinese-eyebrow">A LITTLE HEAT, A LOT OF FLAVOUR</span>
+                        <h2>Our <span>Indo-Chinese Menu</span></h2>
+                        <p>Wok-tossed favourites layered with fresh aromatics and signature sauces.</p>
+                    </div>
+
+                    <label class="chinese-search">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        <input
+                            id="chinese-search-input"
+                            type="search"
+                            placeholder="Search Chinese dishes..."
+                            aria-label="Search Chinese dishes">
+                    </label>
+                </div>
+
+                <div class="chinese-category-filters" role="group" aria-label="Filter Chinese dishes by category">
+                    <button class="chinese-filter active" type="button" data-chinese-category="all" aria-pressed="true">
+                        All Favourites
+                    </button>
+                    <button class="chinese-filter" type="button" data-chinese-category="soups-starters" aria-pressed="false">
+                        Soups &amp; Starters
+                    </button>
+                    <button class="chinese-filter" type="button" data-chinese-category="noodles-hakka" aria-pressed="false">
+                        Noodles &amp; Hakka Specialties
+                    </button>
+                    <button class="chinese-filter" type="button" data-chinese-category="fried-rice-bowls" aria-pressed="false">
+                        Fried Rice &amp; Rice Bowls
+                    </button>
+                    <button class="chinese-filter" type="button" data-chinese-category="gravy-manchurian" aria-pressed="false">
+                        Gravy &amp; Manchurian Delights
+                    </button>
+                    <button class="chinese-filter" type="button" data-chinese-category="sizzlers-specials" aria-pressed="false">
+                        Sizzlers &amp; Specials
+                    </button>
+                </div>
+
+                <div class="chinese-results-heading">
+                    <h3 id="chinese-results-title">All Indo-Chinese Favourites</h3>
+                    <span id="chinese-result-count" aria-live="polite"></span>
+                </div>
+
+                <div class="chinese-grid" id="chinese-grid"></div>
+                <p class="chinese-empty-state" id="chinese-empty-state" hidden>
+                    No dishes found. Try another search.
+                </p>
+
+                <button class="chinese-more-button" id="chinese-more-button" type="button">
+                    More Dishes
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="chinese-feature">
+            <div class="chinese-feature-inner">
+                <div class="chinese-feature-copy">
+                    <span class="chinese-feature-tag">
+                        <i class="fa-solid fa-fire"></i>
+                        THE RASOI WOK SPECIAL
+                    </span>
+                    <span class="chinese-feature-kicker">Wok-fired, saucy and made to share</span>
+                    <h2>Veg Hakka Noodles<br>&amp; Chilli Paneer</h2>
+                    <p>Garlic-kissed hakka noodles and crisp chilli paneer wok-tossed with fresh bell peppers and our signature Indo-Chinese sauces.</p>
+                    <div class="chinese-feature-bottom">
+                        <span class="chinese-feature-price">₹340</span>
+                        <button class="chinese-feature-add" type="button" data-add-cart="501">
+                            Add to Cart
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="chinese-feature-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&amp;fit=crop&amp;w=1100&amp;q=90"
+                        data-local-image="./assets/images/chinese/wok-tossed-veg-hakka-noodles-chilli-paneer-combo.jpg"
+                        alt="Wok-tossed Indo-Chinese noodles with chilli paneer"
+                        loading="lazy">
+                    <span class="chinese-feature-stamp">Hot<br>wok</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="./index.html" class="brand-logo footer-logo">
+                    <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+                    <span class="logo-text">
+                        <strong>Rasoi Express</strong>
+                        <small>GOOD FOOD. GREAT MOMENTS.</small>
+                    </span>
+                </a>
+                <p>Bringing delicious flavours and memorable dining experiences to your table.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./menu.html">Menu</a></li>
+                    <li><a href="./chinese.html">Chinese</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Our Menu</h3>
+                <ul>
+                    <li><a href="./biryani.html">Biryani</a></li>
+                    <li><a href="./north-indian.html">North Indian</a></li>
+                    <li><a href="./indian-rotis.html">Indian Rotis</a></li>
+                    <li><a href="./indian-rotis.html">Breads</a></li>
+                    <li><a href="./south-indian.html">South Indian</a></li>
+                    <li><a href="./menu.html?filter=veg">Pure Veg</a></li>
+                    <li><a href="./category.html?category=non-veg">Non-Veg</a></li>
+                    <li><a href="./desserts.html">Desserts</a></li>
+                    <li><a href="./desserts.html">Sweets</a></li>
+                    <li><a href="./beverages.html">Beverages</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column footer-contact">
+                <h3>Get In Touch</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Visit our restaurant</p>
+                <p><i class="fa-solid fa-phone"></i> Contact our restaurant</p>
+                <div class="footer-social-links">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2026</span> Rasoi Express. All rights reserved.</p>
+            <p>Designed and Developed by <span class="footer-credit-name">Webcultivate</span></p>
+        </div>
+    </footer>
+
+    <div class="mobile-bottom-bar">
+        <button class="mobile-bottom-waiter">
+            <i class="fa-solid fa-bell-concierge"></i>
+            <span>Call Waiter</span>
+        </button>
+        <button class="mobile-bottom-cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>View Cart</span>
+            <span class="cart-count">0</span>
+        </button>
+    </div>
+
+    <script src="./script.js" defer></script>
+</body>
+</html>
