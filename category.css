@@ -14,22 +14,6 @@
     margin: 0 auto;
 }
 
-.category-back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    margin-bottom: 35px;
-    color: #71647c;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.category-back-link:hover {
-    color: #6415a5;
-}
-
 .category-hero h1 {
     margin: 0;
     color: #10152f;
@@ -101,10 +85,6 @@
 @media (max-width: 600px) {
     .category-hero {
         padding: 38px 18px 45px;
-    }
-
-    .category-back-link {
-        margin-bottom: 28px;
     }
 
     .category-hero p {

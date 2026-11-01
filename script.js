@@ -34,14 +34,8 @@ const categories = [
         image: "./assets/images/categories/chinese.jpg"
     },
     {
-        id: "tandoor",
-        name: "Tandoor",
-        description: "Freshly prepared tandoor favourites.",
-        image: "./assets/images/categories/tandoor.jpg"
-    },
-    {
         id: "breads",
-        name: "Breads",
+        name: "Rotis",
         description: "Freshly prepared breads to complete your meal.",
         image: "./assets/images/categories/breads.jpg"
     },
@@ -94,7 +88,7 @@ const menuDishes = [
         rating: 4.6,
         reviews: "2.4K",
         foodType: "non-veg",
-        image: "./assets/images/dishes/chicken-biryani.jpg"
+        image: "./assets/images/categories/biryani/hyderabadi-chicken-dum-biryani.jpg"
     },
     {
         id: 2,
@@ -109,7 +103,7 @@ const menuDishes = [
     {
         id: 3,
         name: "Chicken Tandoori",
-        category: "tandoor",
+        category: "north-indian",
         price: 320,
         rating: 4.7,
         reviews: "1.2K",
@@ -133,7 +127,7 @@ const menuDishes = [
         category: "north-indian",
         price: 260,
         foodType: "veg",
-        image: "./assets/images/categories/veg-starters.png",
+        image: "./assets/images/categories/north-indian/paneer-lababdar.jpg",
         menuGroup: "paneer-specials"
     },
     {
@@ -142,7 +136,7 @@ const menuDishes = [
         category: "north-indian",
         price: 280,
         foodType: "veg",
-        image: "./assets/images/categories/north-indian.jpg",
+        image: "./assets/images/categories/north-indian/amritsari-paneer-masala.jpg",
         menuGroup: "paneer-specials"
     },
     {
@@ -151,25 +145,25 @@ const menuDishes = [
         category: "north-indian",
         price: 270,
         foodType: "veg",
-        image: "./assets/images/categories/veg-starters.png",
+        image: "./assets/images/categories/north-indian/dhaba-paneer-do-pyaza.jpg",
         menuGroup: "paneer-specials"
     },
     {
         id: 8,
         name: "Paneer Tikka",
-        category: "tandoor",
+        category: "north-indian",
         price: 240,
         foodType: "veg",
-        image: "./assets/images/categories/veg-starters.png",
+        image: "./assets/images/hero/special-food.png",
         menuGroup: "veg-starters"
     },
     {
         id: 9,
         name: "Hara Bhara Kebab",
-        category: "tandoor",
+        category: "north-indian",
         price: 190,
         foodType: "veg",
-        image: "./assets/images/categories/veg-starters.png",
+        image: "./assets/images/categories/north-indian/north-indian-deluxe-thali.jpg",
         menuGroup: "veg-starters"
     },
     {
@@ -178,7 +172,7 @@ const menuDishes = [
         category: "chinese",
         price: 200,
         foodType: "veg",
-        image: "./assets/images/categories/chinese.jpg",
+        image: "./assets/images/categories/veg-starters.png",
         menuGroup: "veg-starters"
     },
     {
@@ -187,7 +181,7 @@ const menuDishes = [
         category: "north-indian",
         price: 220,
         foodType: "veg",
-        image: "./assets/images/categories/north-indian.jpg",
+        image: "./assets/images/categories/north-indian/north-indian-hero.jpg",
         menuGroup: "veg-main-course"
     },
     {
@@ -196,7 +190,7 @@ const menuDishes = [
         category: "north-indian",
         price: 240,
         foodType: "veg",
-        image: "./assets/images/categories/north-indian.jpg",
+        image: "./assets/images/categories/north-indian/makhani-soya-chaap.jpg",
         menuGroup: "veg-main-course"
     },
     {
@@ -205,7 +199,7 @@ const menuDishes = [
         category: "north-indian",
         price: 200,
         foodType: "veg",
-        image: "./assets/images/categories/north-indian.jpg",
+        image: "./assets/images/categories/north-indian/punjabi-veg-thali.jpg",
         menuGroup: "veg-main-course"
     },
     {
@@ -214,7 +208,7 @@ const menuDishes = [
         category: "north-indian",
         price: 180,
         foodType: "veg",
-        image: "./assets/images/categories/north-indian.jpg",
+        image: "./assets/images/categories/north-indian/punjabi-rajma-masala.jpg",
         menuGroup: "dal-curries"
     },
     {
@@ -223,7 +217,7 @@ const menuDishes = [
         category: "north-indian",
         price: 220,
         foodType: "veg",
-        image: "./assets/images/categories/north-indian.jpg",
+        image: "./assets/images/categories/north-indian/punjabi-chole-masala.jpg",
         menuGroup: "dal-curries"
     },
     {
@@ -241,7 +235,7 @@ const menuDishes = [
         category: "biryani",
         price: 220,
         foodType: "veg",
-        image: "./assets/images/categories/biryani.jpg",
+        image: "./assets/images/categories/biryani/classic-veg-dum-biryani.jpg",
         menuGroup: "veg-biryani-rice"
     },
     {
@@ -250,7 +244,7 @@ const menuDishes = [
         category: "biryani",
         price: 170,
         foodType: "veg",
-        image: "./assets/images/categories/biryani.jpg",
+        image: "./assets/images/categories/north-indian/kashmiri-saffron-pulao.jpg",
         menuGroup: "veg-biryani-rice"
     },
     {
@@ -259,7 +253,7 @@ const menuDishes = [
         category: "biryani",
         price: 140,
         foodType: "veg",
-        image: "./assets/images/categories/biryani.jpg",
+        image: "./assets/images/categories/north-indian/jeera-basmati-rice.jpg",
         menuGroup: "veg-biryani-rice"
     },
     {
@@ -277,7 +271,7 @@ const menuDishes = [
         category: "chinese",
         price: 250,
         foodType: "veg",
-        image: "./assets/images/categories/chinese.jpg",
+        image: "./assets/images/categories/north-indian/rasoi-special-butter-paneer-garlic-naan-combo.jpg",
         menuGroup: "chinese-veg"
     },
     {
@@ -286,7 +280,7 @@ const menuDishes = [
         category: "south-indian",
         price: 140,
         foodType: "veg",
-        image: "./assets/images/categories/south-indian.jpg",
+        image: "./assets/images/categories/south-indian/mysore-masala-dosa.jpg",
         menuGroup: "south-indian"
     },
     {
@@ -295,7 +289,7 @@ const menuDishes = [
         category: "south-indian",
         price: 110,
         foodType: "veg",
-        image: "./assets/images/categories/south-indian.jpg",
+        image: "./assets/images/categories/south-indian/classic-idli-sambar.jpg",
         menuGroup: "south-indian"
     },
     {
@@ -304,7 +298,7 @@ const menuDishes = [
         category: "south-indian",
         price: 120,
         foodType: "veg",
-        image: "./assets/images/categories/south-indian.jpg",
+        image: "./assets/images/categories/south-indian/medu-vada-sambar.jpg",
         menuGroup: "south-indian"
     },
     {
@@ -313,7 +307,7 @@ const menuDishes = [
         category: "breads",
         price: 55,
         foodType: "veg",
-        image: "./assets/images/categories/breads.jpg",
+        image: "./assets/images/indian-rotis/butter-naan.jpg",
         menuGroup: "indian-breads"
     },
     {
@@ -322,7 +316,7 @@ const menuDishes = [
         category: "breads",
         price: 70,
         foodType: "veg",
-        image: "./assets/images/categories/breads.jpg",
+        image: "./assets/images/indian-rotis/garlic-butter-naan.jpg",
         menuGroup: "indian-breads"
     },
     {
@@ -331,7 +325,7 @@ const menuDishes = [
         category: "breads",
         price: 35,
         foodType: "veg",
-        image: "./assets/images/categories/breads.jpg",
+        image: "./assets/images/indian-rotis/classic-tandoori-roti.jpg",
         menuGroup: "indian-breads"
     }
 ];
@@ -599,7 +593,7 @@ const biryaniDishes = [
         price: 280,
         image: {
             url: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/hyderabadi-chicken-dum-biryani.jpg"
+            local: "./assets/images/categories/biryani/hyderabadi-chicken-dum-biryani.jpg"
         }
     },
     {
@@ -610,7 +604,7 @@ const biryaniDishes = [
         price: 360,
         image: {
             url: "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/hyderabadi-mutton-dum-biryani.jpg"
+            local: "./assets/images/categories/biryani/hyderabadi-mutton-dum-biryani.jpg"
         }
     },
     {
@@ -621,7 +615,7 @@ const biryaniDishes = [
         price: 310,
         image: {
             url: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/hyderabadi-chicken-65-biryani.jpg"
+            local: "./assets/images/categories/biryani/hyderabadi-chicken-65-biryani.jpg"
         }
     },
     {
@@ -632,7 +626,7 @@ const biryaniDishes = [
         price: 290,
         image: {
             url: "https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/lucknowi-chicken-yakhni-biryani.jpg"
+            local: "./assets/images/categories/biryani/lucknowi-chicken-yakhni-biryani.jpg"
         }
     },
     {
@@ -643,7 +637,7 @@ const biryaniDishes = [
         price: 370,
         image: {
             url: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/awadhi-mutton-biryani.jpg"
+            local: "./assets/images/categories/biryani/awadhi-mutton-biryani.jpg"
         }
     },
     {
@@ -654,7 +648,7 @@ const biryaniDishes = [
         price: 230,
         image: {
             url: "https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/lucknowi-vegetable-biryani.jpg"
+            local: "./assets/images/categories/biryani/lucknowi-vegetable-biryani.jpg"
         }
     },
     {
@@ -665,7 +659,7 @@ const biryaniDishes = [
         price: 270,
         image: {
             url: "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/kolkata-chicken-biryani.jpg"
+            local: "./assets/images/categories/biryani/kolkata-chicken-biryani.jpg"
         }
     },
     {
@@ -676,7 +670,7 @@ const biryaniDishes = [
         price: 350,
         image: {
             url: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/kolkata-mutton-biryani.jpg"
+            local: "./assets/images/categories/biryani/kolkata-mutton-biryani.jpg"
         }
     },
     {
@@ -687,7 +681,7 @@ const biryaniDishes = [
         price: 220,
         image: {
             url: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/kolkata-egg-biryani.jpg"
+            local: "./assets/images/categories/biryani/kolkata-egg-biryani.jpg"
         }
     },
     {
@@ -698,7 +692,7 @@ const biryaniDishes = [
         price: 320,
         image: {
             url: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/chicken-handi-biryani.jpg"
+            local: "./assets/images/categories/biryani/chicken-handi-biryani.jpg"
         }
     },
     {
@@ -709,7 +703,7 @@ const biryaniDishes = [
         price: 390,
         image: {
             url: "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/mutton-handi-biryani.jpg"
+            local: "./assets/images/categories/biryani/mutton-handi-biryani.jpg"
         }
     },
     {
@@ -720,7 +714,7 @@ const biryaniDishes = [
         price: 340,
         image: {
             url: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1100&q=90",
-            local: "./assets/images/biryani/chefs-special-dum-biryani.jpg"
+            local: "./assets/images/categories/biryani/chefs-special-dum-biryani.jpg"
         }
     },
     {
@@ -731,7 +725,7 @@ const biryaniDishes = [
         price: 220,
         image: {
             url: "https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/classic-veg-dum-biryani.jpg"
+            local: "./assets/images/categories/biryani/classic-veg-dum-biryani.jpg"
         }
     },
     {
@@ -742,7 +736,7 @@ const biryaniDishes = [
         price: 260,
         image: {
             url: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/paneer-tikka-biryani.jpg"
+            local: "./assets/images/categories/biryani/paneer-tikka-biryani.jpg"
         }
     },
     {
@@ -753,7 +747,7 @@ const biryaniDishes = [
         price: 240,
         image: {
             url: "https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/biryani/mushroom-masala-biryani.jpg"
+            local: "./assets/images/categories/biryani/mushroom-masala-biryani.jpg"
         }
     }
 ];
@@ -775,7 +769,7 @@ const northIndianDishes = [
         price: 290,
         image: {
             url: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/paneer-lababdar.jpg"
+            local: "./assets/images/categories/north-indian/paneer-lababdar.jpg"
         }
     },
     {
@@ -786,7 +780,7 @@ const northIndianDishes = [
         price: 300,
         image: {
             url: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/amritsari-paneer-masala.jpg"
+            local: "./assets/images/categories/north-indian/amritsari-paneer-masala.jpg"
         }
     },
     {
@@ -797,7 +791,7 @@ const northIndianDishes = [
         price: 280,
         image: {
             url: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/dhaba-paneer-do-pyaza.jpg"
+            local: "./assets/images/categories/north-indian/dhaba-paneer-do-pyaza.jpg"
         }
     },
     {
@@ -808,7 +802,7 @@ const northIndianDishes = [
         price: 360,
         image: {
             url: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1100&q=90",
-            local: "./assets/images/north-indian/rasoi-special-butter-paneer-garlic-naan-combo.jpg"
+            local: "./assets/images/categories/north-indian/rasoi-special-butter-paneer-garlic-naan-combo.jpg"
         }
     },
     {
@@ -819,7 +813,7 @@ const northIndianDishes = [
         price: 220,
         image: {
             url: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/punjabi-chole-masala.jpg"
+            local: "./assets/images/categories/north-indian/punjabi-chole-masala.jpg"
         }
     },
     {
@@ -830,7 +824,7 @@ const northIndianDishes = [
         price: 230,
         image: {
             url: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/punjabi-rajma-masala.jpg"
+            local: "./assets/images/categories/north-indian/punjabi-rajma-masala.jpg"
         }
     },
     {
@@ -841,7 +835,7 @@ const northIndianDishes = [
         price: 210,
         image: {
             url: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/dal-panchmel.jpg"
+            local: "./assets/images/categories/north-indian/dal-panchmel.jpg"
         }
     },
     {
@@ -852,7 +846,7 @@ const northIndianDishes = [
         price: 270,
         image: {
             url: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/makhani-soya-chaap.jpg"
+            local: "./assets/images/categories/north-indian/makhani-soya-chaap.jpg"
         }
     },
     {
@@ -863,7 +857,7 @@ const northIndianDishes = [
         price: 75,
         image: {
             url: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/tandoori-garlic-naan.jpg"
+            local: "./assets/images/categories/north-indian/tandoori-garlic-naan.jpg"
         }
     },
     {
@@ -874,7 +868,7 @@ const northIndianDishes = [
         price: 90,
         image: {
             url: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/amritsari-kulcha.jpg"
+            local: "./assets/images/categories/north-indian/amritsari-kulcha.jpg"
         }
     },
     {
@@ -885,7 +879,7 @@ const northIndianDishes = [
         price: 70,
         image: {
             url: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/lachha-tandoori-paratha.jpg"
+            local: "./assets/images/categories/north-indian/lachha-tandoori-paratha.jpg"
         }
     },
     {
@@ -896,7 +890,7 @@ const northIndianDishes = [
         price: 60,
         image: {
             url: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/missi-roti.jpg"
+            local: "./assets/images/categories/north-indian/missi-roti.jpg"
         }
     },
     {
@@ -907,7 +901,7 @@ const northIndianDishes = [
         price: 160,
         image: {
             url: "https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/jeera-basmati-rice.jpg"
+            local: "./assets/images/categories/north-indian/jeera-basmati-rice.jpg"
         }
     },
     {
@@ -918,7 +912,7 @@ const northIndianDishes = [
         price: 190,
         image: {
             url: "https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/matar-pulao.jpg"
+            local: "./assets/images/categories/north-indian/matar-pulao.jpg"
         }
     },
     {
@@ -929,7 +923,7 @@ const northIndianDishes = [
         price: 240,
         image: {
             url: "https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/kashmiri-saffron-pulao.jpg"
+            local: "./assets/images/categories/north-indian/kashmiri-saffron-pulao.jpg"
         }
     },
     {
@@ -940,7 +934,7 @@ const northIndianDishes = [
         price: 320,
         image: {
             url: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/punjabi-veg-thali.jpg"
+            local: "./assets/images/categories/north-indian/punjabi-veg-thali.jpg"
         }
     },
     {
@@ -951,7 +945,7 @@ const northIndianDishes = [
         price: 390,
         image: {
             url: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/north-indian-deluxe-thali.jpg"
+            local: "./assets/images/categories/north-indian/north-indian-deluxe-thali.jpg"
         }
     },
     {
@@ -962,7 +956,7 @@ const northIndianDishes = [
         price: 280,
         image: {
             url: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/north-indian/chole-kulcha-thali.jpg"
+            local: "./assets/images/categories/north-indian/chole-kulcha-thali.jpg"
         }
     }
 ];
@@ -982,8 +976,8 @@ const southIndianDishes = [
         description: "Golden, crisp dosa filled with spiced potato, served with hot sambar and fresh coconut chutney.",
         price: 260,
         image: {
-            url: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=1000&q=90",
-            local: "./assets/images/south-indian/chefs-special-masala-dosa-combo.jpg"
+            url: "./assets/images/categories/south-indian/chefs-special-masala-dosa-combo.jpg",
+            local: "./assets/images/categories/south-indian/chefs-special-masala-dosa-combo.jpg"
         }
     },
     {
@@ -993,8 +987,8 @@ const southIndianDishes = [
         description: "Crisp dosa spread with fiery Mysore chutney and filled with warmly spiced potato.",
         price: 230,
         image: {
-            url: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/mysore-masala-dosa.jpg"
+            url: "./assets/images/categories/south-indian/mysore-masala-dosa.jpg",
+            local: "./assets/images/categories/south-indian/mysore-masala-dosa.jpg"
         }
     },
     {
@@ -1004,8 +998,8 @@ const southIndianDishes = [
         description: "A thin, extra-crisp dosa roasted with ghee and served with sambar and chutneys.",
         price: 210,
         image: {
-            url: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/paper-ghee-roast-dosa.jpg"
+            url: "./assets/images/categories/south-indian/paper-ghee-roast-dosa.jpg",
+            local: "./assets/images/categories/south-indian/paper-ghee-roast-dosa.jpg"
         }
     },
     {
@@ -1015,8 +1009,8 @@ const southIndianDishes = [
         description: "A soft, golden rice-and-lentil pancake topped with onion, tomato and green chilli.",
         price: 190,
         image: {
-            url: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/onion-uttapam.jpg"
+            url: "./assets/images/categories/south-indian/onion-uttapam.jpg",
+            local: "./assets/images/categories/south-indian/onion-uttapam.jpg"
         }
     },
     {
@@ -1026,8 +1020,8 @@ const southIndianDishes = [
         description: "Pillowy steamed idlis tossed in aromatic podi and warm ghee, with sambar on the side.",
         price: 170,
         image: {
-            url: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/ghee-podi-idli.jpg"
+            url: "./assets/images/categories/south-indian/ghee-podi-idli.jpg",
+            local: "./assets/images/categories/south-indian/ghee-podi-idli.jpg"
         }
     },
     {
@@ -1037,8 +1031,8 @@ const southIndianDishes = [
         description: "Soft, fluffy idlis served with piping hot lentil sambar and fresh coconut chutney.",
         price: 150,
         image: {
-            url: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/classic-idli-sambar.jpg"
+            url: "./assets/images/categories/south-indian/classic-idli-sambar.jpg",
+            local: "./assets/images/categories/south-indian/classic-idli-sambar.jpg"
         }
     },
     {
@@ -1048,8 +1042,8 @@ const southIndianDishes = [
         description: "Crisp-edged, fluffy lentil doughnuts paired with hot sambar and coconut chutney.",
         price: 160,
         image: {
-            url: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/medu-vada-sambar.jpg"
+            url: "./assets/images/categories/south-indian/medu-vada-sambar.jpg",
+            local: "./assets/images/categories/south-indian/medu-vada-sambar.jpg"
         }
     },
     {
@@ -1059,8 +1053,8 @@ const southIndianDishes = [
         description: "A soft, wide Karnataka-style steamed idli served with sambar and house chutney.",
         price: 180,
         image: {
-            url: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/thatte-idli-plate.jpg"
+            url: "./assets/images/categories/south-indian/thatte-idli-plate.jpg",
+            local: "./assets/images/categories/south-indian/thatte-idli-plate.jpg"
         }
     },
     {
@@ -1070,8 +1064,8 @@ const southIndianDishes = [
         description: "A comforting spread of rice, seasonal vegetables, sambar, rasam, curd and pickle.",
         price: 320,
         image: {
-            url: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/south-indian-veg-meals.jpg"
+            url: "./assets/images/categories/south-indian/south-indian-veg-meals.jpg",
+            local: "./assets/images/categories/south-indian/south-indian-veg-meals.jpg"
         }
     },
     {
@@ -1081,8 +1075,8 @@ const southIndianDishes = [
         description: "Fluffy rice tempered with lemon, mustard seeds, curry leaves and roasted peanuts.",
         price: 190,
         image: {
-            url: "https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/lemon-rice.jpg"
+            url: "./assets/images/categories/south-indian/lemon-rice.jpg",
+            local: "./assets/images/categories/south-indian/lemon-rice.jpg"
         }
     },
     {
@@ -1092,8 +1086,8 @@ const southIndianDishes = [
         description: "Cool, creamy rice with yogurt, tempered spices and a bright touch of fresh herbs.",
         price: 180,
         image: {
-            url: "https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/curd-rice.jpg"
+            url: "./assets/images/categories/south-indian/curd-rice.jpg",
+            local: "./assets/images/categories/south-indian/curd-rice.jpg"
         }
     },
     {
@@ -1103,8 +1097,8 @@ const southIndianDishes = [
         description: "Rice and lentils cooked with vegetables, tamarind and a fragrant sambar spice blend.",
         price: 200,
         image: {
-            url: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/sambar-rice.jpg"
+            url: "./assets/images/categories/south-indian/sambar-rice.jpg",
+            local: "./assets/images/categories/south-indian/sambar-rice.jpg"
         }
     },
     {
@@ -1114,8 +1108,8 @@ const southIndianDishes = [
         description: "Strong South Indian filter coffee with frothy milk, traditionally poured and served hot.",
         price: 100,
         image: {
-            url: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/madras-filter-coffee.jpg"
+            url: "./assets/images/categories/south-indian/madras-filter-coffee.jpg",
+            local: "./assets/images/categories/south-indian/madras-filter-coffee.jpg"
         }
     },
     {
@@ -1125,8 +1119,8 @@ const southIndianDishes = [
         description: "A chilled Madurai favourite with milk, almond gum and a rich scoop of ice cream.",
         price: 160,
         image: {
-            url: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/jigarthanda.jpg"
+            url: "./assets/images/categories/south-indian/jigarthanda.jpg",
+            local: "./assets/images/categories/south-indian/jigarthanda.jpg"
         }
     },
     {
@@ -1136,8 +1130,8 @@ const southIndianDishes = [
         description: "Cooling buttermilk stirred with ginger, green chilli, curry leaves and roasted cumin.",
         price: 90,
         image: {
-            url: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/spiced-neer-mor.jpg"
+            url: "./assets/images/categories/south-indian/spiced-neer-mor.jpg",
+            local: "./assets/images/categories/south-indian/spiced-neer-mor.jpg"
         }
     },
     {
@@ -1147,8 +1141,8 @@ const southIndianDishes = [
         description: "Chilled milk delicately flavoured with rose and served refreshingly cold.",
         price: 120,
         image: {
-            url: "https://images.unsplash.com/photo-1558857563-b371033873b8?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/south-indian/rose-milk.jpg"
+            url: "./assets/images/categories/south-indian/rose-milk.jpg",
+            local: "./assets/images/categories/south-indian/rose-milk.jpg"
         }
     }
 ];
@@ -1764,8 +1758,79 @@ const dessertDishes = [
 
 const CART_STORAGE_KEY = "rasoiExpressCart";
 const FAVORITES_STORAGE_KEY = "rasoiExpressFavorites";
+const ORDERS_STORAGE_KEY = "rasoiExpressDemoOrders";
+
+const checkoutAddons = [
+    { id: "extra-raita", name: "Extra raita", price: 25 },
+    { id: "extra-gravy", name: "Extra gravy", price: 35 },
+    { id: "cheese", name: "Cheese", price: 30 },
+    { id: "sauces", name: "Sauces", price: 15 },
+    { id: "toppings", name: "Extra toppings", price: 20 }
+];
+
+function getCheckoutDishType(item) {
+    const dish = menuDishes.find(product => product.id === item.id) ||
+        beverageDishes.find(product => product.id === item.id) ||
+        biryaniDishes.find(product => product.id === item.id) ||
+        northIndianDishes.find(product => product.id === item.id) ||
+        southIndianDishes.find(product => product.id === item.id) ||
+        chineseDishes.find(product => product.id === item.id) ||
+        indianRotisDishes.find(product => product.id === item.id) ||
+        dessertDishes.find(product => product.id === item.id);
+
+    if (!dish) return "other";
+
+    const category = dish.menuGroup || dish.category;
+    const name = dish.name.toLowerCase();
+
+    if (name.includes("biryani")) return "biryani";
+
+    if ([
+        "dal-curries",
+        "paneer-specials",
+        "paneer-specialities",
+        "rich-gravies-dal",
+        "veg-main-course"
+    ].includes(category) || name === "butter chicken") {
+        return "curry";
+    }
+
+    const isBreadCategory = [
+        "tandoori-breads",
+        "tandoori-rotis",
+        "butter-garlic-naans",
+        "stuffed-parathas",
+        "lachha-special-breads",
+        "tawa-rotis-phulkas",
+        "indian-breads"
+    ].includes(category);
+
+    if (
+        category === "veg-starters" ||
+        category === "soups-starters" ||
+        (name.includes("tandoori") && !isBreadCategory)
+    ) {
+        return "starter";
+    }
+
+    return "other";
+}
+
+function getCheckoutAddons(item) {
+    const dishType = getCheckoutDishType(item);
+    const addonIds = dishType === "biryani" || dishType === "curry"
+        ? ["extra-raita", "extra-gravy"]
+        : dishType === "starter"
+            ? ["sauces", "toppings"]
+            : [];
+
+    return checkoutAddons.filter(addon => addonIds.includes(addon.id));
+}
 
 let cart = loadCart();
+let checkoutTipSelection = "none";
+let checkoutCustomTip = 0;
+let isPlacingOrder = false;
 
 function loadCart() {
     try {
@@ -1795,9 +1860,36 @@ function getCartCount() {
 
 function getCartTotal() {
     return cart.reduce(
-        (total, item) => total + item.price * item.quantity,
+        (total, item) => total + (item.price + getItemAddonTotal(item)) * item.quantity,
         0
     );
+}
+
+function getItemAddonTotal(item) {
+    const selectedAddons = item.customizations?.addons || [];
+
+    return selectedAddons.reduce((total, addonId) => {
+        const addon = checkoutAddons.find(option => option.id === addonId);
+        return total + (addon ? addon.price : 0);
+    }, 0);
+}
+
+function getCheckoutTip() {
+    if (checkoutTipSelection === "custom") {
+        return checkoutCustomTip;
+    }
+
+    return Number(checkoutTipSelection) || 0;
+}
+
+function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[character]);
 }
 
 function getFavorites() {
@@ -1977,7 +2069,7 @@ function createCartModal() {
     modal.innerHTML = `
         <div class="cart-modal-overlay" data-close-cart></div>
 
-        <div class="cart-modal-content">
+        <div class="cart-modal-content" id="cart-modal-content">
             <div class="cart-modal-header">
                 <h2>
                     <i class="fa-solid fa-cart-shopping"></i>
@@ -2007,10 +2099,12 @@ function createCartModal() {
 function openCart() {
     createCartModal();
 
-    document.getElementById("cart-modal").classList.add("open");
+    const modal = document.getElementById("cart-modal");
+    modal.classList.remove("checkout-open");
+    modal.classList.add("open");
     document.body.classList.add("modal-open");
 
-    renderCartItems();
+    restoreCartView();
 }
 
 function closeCart() {
@@ -2019,6 +2113,7 @@ function closeCart() {
     if (!modal) return;
 
     modal.classList.remove("open");
+    modal.classList.remove("checkout-open");
     document.body.classList.remove("modal-open");
 }
 
@@ -2102,9 +2197,476 @@ function renderCartItems() {
         </button>
 
         <p class="cart-demo-note">
-            Ordering functionality will be connected later.
+            No payment is taken and no order is sent to the restaurant.
         </p>
     `;
+}
+
+function restoreCartView() {
+    const content = document.getElementById("cart-modal-content");
+    if (!content) return;
+
+    content.innerHTML = `
+        <div class="cart-modal-header">
+            <h2><i class="fa-solid fa-cart-shopping"></i> Your Cart</h2>
+            <button class="cart-close-button" type="button" data-close-cart aria-label="Close cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container"></div>
+        <div class="cart-modal-footer" id="cart-modal-footer"></div>
+    `;
+
+    renderCartItems();
+}
+
+function initializeCheckoutCustomizations() {
+    cart.forEach(item => {
+        if (!item.customizations || typeof item.customizations !== "object") {
+            item.customizations = {
+                spice: "Medium",
+                addons: [],
+                instructions: ""
+            };
+        }
+
+        if (!["Mild", "Medium", "Spicy"].includes(item.customizations.spice)) {
+            item.customizations.spice = "Medium";
+        }
+
+        if (!Array.isArray(item.customizations.addons)) {
+            item.customizations.addons = [];
+        }
+
+        const availableAddonIds = getCheckoutAddons(item).map(addon => addon.id);
+        item.customizations.addons = item.customizations.addons.filter(addonId =>
+            availableAddonIds.includes(addonId)
+        );
+        item.customizations.instructions =
+            typeof item.customizations.instructions === "string"
+                ? item.customizations.instructions
+                : "";
+    });
+
+    saveCart();
+}
+
+function openCheckout() {
+    if (cart.length === 0) {
+        showToast("Your cart is empty.");
+        return;
+    }
+
+    try {
+        initializeCheckoutCustomizations();
+    } catch (error) {
+        console.error("Unable to prepare checkout:", error);
+        showToast("Checkout could not be saved. Please try again.");
+        return;
+    }
+
+    checkoutTipSelection = "none";
+    checkoutCustomTip = 0;
+    document.getElementById("cart-modal").classList.add("checkout-open");
+    renderCheckout();
+}
+
+function getCheckoutSubtotal() {
+    return getCartTotal();
+}
+
+function renderCheckout() {
+    const modal = document.getElementById("cart-modal");
+    const content = document.getElementById("cart-modal-content");
+
+    if (!modal || !content) return;
+
+    const subtotal = getCheckoutSubtotal();
+    const tip = getCheckoutTip();
+    const displayedTip = Number.isFinite(tip) && tip >= 0 ? tip : null;
+
+    content.innerHTML = `
+        <div class="checkout-header">
+            <div>
+                <span class="checkout-eyebrow">RASOI EXPRESS · CHECKOUT</span>
+                <h2><i class="fa-solid fa-bag-shopping"></i> Review your order</h2>
+            </div>
+            <div class="checkout-header-actions">
+                <button class="checkout-back-button" type="button" data-back-to-cart>
+                    <i class="fa-solid fa-arrow-left"></i> Cart
+                </button>
+                <button class="cart-close-button" type="button" data-close-cart aria-label="Close checkout">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="checkout-content" id="checkout-view">
+            ${cart.length ? `
+                <section class="checkout-section">
+                    <div class="checkout-section-heading">
+                        <div>
+                            <span class="checkout-step">01</span>
+                            <h3>Your dishes</h3>
+                        </div>
+                        <span>${getCartCount()} ${getCartCount() === 1 ? "item" : "items"}</span>
+                    </div>
+
+                    <div class="checkout-items">
+                        ${cart.map(item => {
+                            const selectedAddons = item.customizations.addons;
+                            const availableAddons = getCheckoutAddons(item);
+                            const showSpiceLevel = getCheckoutDishType(item) !== "other";
+                            const addonTotal = getItemAddonTotal(item);
+                            return `
+                                <article class="checkout-item" data-checkout-item="${item.id}">
+                                    <div class="checkout-item-heading">
+                                        <img src="${escapeHtml(item.image)}" alt="">
+                                        <div class="checkout-item-title">
+                                            <h4>${escapeHtml(item.name)}</h4>
+                                            <span>₹${item.price} each</span>
+                                        </div>
+                                        <strong class="checkout-line-total" data-line-total="${item.id}">
+                                            ₹${(item.price + addonTotal) * item.quantity}
+                                        </strong>
+                                    </div>
+
+                                    <div class="checkout-item-controls">
+                                        <div class="checkout-quantity-controls">
+                                            <button type="button" data-cart-action="decrease" data-item-id="${item.id}" aria-label="Decrease ${escapeHtml(item.name)} quantity">
+                                                <i class="fa-solid fa-minus"></i>
+                                            </button>
+                                            <span>${item.quantity}</span>
+                                            <button type="button" data-cart-action="increase" data-item-id="${item.id}" aria-label="Increase ${escapeHtml(item.name)} quantity">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </button>
+                                        </div>
+                                        <button class="checkout-remove-button" type="button" data-cart-action="remove" data-item-id="${item.id}">
+                                            <i class="fa-regular fa-trash-can"></i> Remove
+                                        </button>
+                                    </div>
+
+                                    <div class="checkout-customization-grid">
+                                        ${showSpiceLevel ? `
+                                        <label class="checkout-field">
+                                            <span><i class="fa-solid fa-pepper-hot"></i> Spice level</span>
+                                            <select data-checkout-spice="${item.id}">
+                                                ${["Mild", "Medium", "Spicy"].map(level => `
+                                                    <option value="${level}" ${item.customizations.spice === level ? "selected" : ""}>${level}</option>
+                                                `).join("")}
+                                            </select>
+                                        </label>
+                                        ` : ""}
+
+                                        ${availableAddons.length ? `
+                                        <fieldset class="checkout-addons">
+                                            <legend><i class="fa-solid fa-circle-plus"></i> Add-ons</legend>
+                                            <div class="checkout-addon-list">
+                                                ${availableAddons.map(addon => `
+                                                    <label>
+                                                        <input type="checkbox" data-checkout-addon="${item.id}" value="${addon.id}" ${selectedAddons.includes(addon.id) ? "checked" : ""}>
+                                                        <span>${addon.name}</span>
+                                                        <strong>+₹${addon.price}</strong>
+                                                    </label>
+                                                `).join("")}
+                                            </div>
+                                        </fieldset>
+                                        ` : ""}
+
+                                        <label class="checkout-field checkout-instructions">
+                                            <span><i class="fa-regular fa-note-sticky"></i> Special instructions</span>
+                                            <textarea data-checkout-instructions="${item.id}" rows="2" maxlength="300" placeholder="Anything our kitchen should know?">${escapeHtml(item.customizations.instructions)}</textarea>
+                                        </label>
+                                    </div>
+                                </article>
+                            `;
+                        }).join("")}
+                    </div>
+                </section>
+
+                <section class="checkout-section checkout-tip-section">
+                    <div class="checkout-section-heading">
+                        <div>
+                            <span class="checkout-step">02</span>
+                            <h3>Add a tip <small>Optional</small></h3>
+                        </div>
+                        <i class="fa-solid fa-heart checkout-tip-heart"></i>
+                    </div>
+                    <div class="checkout-tip-options">
+                        ${[
+                            { value: "none", label: "No tip" },
+                            { value: "10", label: "₹10" },
+                            { value: "20", label: "₹20" },
+                            { value: "50", label: "₹50" }
+                        ].map(option => `
+                            <label class="checkout-tip-option ${checkoutTipSelection === option.value ? "selected" : ""}">
+                                <input type="radio" name="checkout-tip" value="${option.value}" ${checkoutTipSelection === option.value ? "checked" : ""}>
+                                <span>${option.label}</span>
+                            </label>
+                        `).join("")}
+                        <label class="checkout-tip-option checkout-custom-tip-option ${checkoutTipSelection === "custom" ? "selected" : ""}">
+                            <input type="radio" name="checkout-tip" value="custom" ${checkoutTipSelection === "custom" ? "checked" : ""}>
+                            <span>Custom</span>
+                            <input type="number" min="0" step="1" inputmode="numeric" data-custom-tip aria-label="Custom tip amount" placeholder="₹" value="${checkoutCustomTip || ""}" ${checkoutTipSelection === "custom" ? "" : "disabled"}>
+                        </label>
+                    </div>
+                </section>
+
+                <section class="checkout-section checkout-summary-section">
+                    <div class="checkout-section-heading">
+                        <div>
+                            <span class="checkout-step">03</span>
+                            <h3>Order summary</h3>
+                        </div>
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <div class="checkout-summary-details" id="checkout-summary-details"></div>
+                    <div class="checkout-total-row"><span>Subtotal</span><strong id="checkout-subtotal">₹${subtotal}</strong></div>
+                    <div class="checkout-total-row"><span>Tip</span><strong id="checkout-tip-total">₹${displayedTip === null ? "—" : displayedTip}</strong></div>
+                    <div class="checkout-total-row checkout-grand-total"><span>Total</span><strong id="checkout-final-total">₹${displayedTip === null ? "—" : subtotal + displayedTip}</strong></div>
+                    <p class="checkout-demo-disclaimer"><i class="fa-solid fa-circle-info"></i> No payment is taken and this order is not sent to the restaurant.</p>
+                </section>
+
+                <div class="checkout-error" id="checkout-error" role="alert" hidden></div>
+                <button class="checkout-place-button" type="button" id="place-order-button">
+                    <i class="fa-solid fa-check"></i> Place Order
+                </button>
+            ` : `
+                <div class="checkout-empty">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <h3>Your cart is empty</h3>
+                    <p>Add a dish to continue with checkout.</p>
+                </div>
+            `}
+        </div>
+    `;
+
+    updateCheckoutSummary();
+}
+
+function updateCheckoutSummary() {
+    const summary = document.getElementById("checkout-summary-details");
+    if (!summary) return;
+
+    summary.innerHTML = cart.map(item => {
+        const addons = item.customizations.addons
+            .map(addonId => checkoutAddons.find(addon => addon.id === addonId))
+            .filter(Boolean);
+        const instruction = item.customizations.instructions.trim();
+        const dishType = getCheckoutDishType(item);
+        const customizationSummary = [];
+
+        if (dishType !== "other") {
+            customizationSummary.push(`${escapeHtml(item.customizations.spice)} spice`);
+        }
+        if (addons.length) {
+            customizationSummary.push(addons.map(addon => escapeHtml(addon.name)).join(", "));
+        } else if (getCheckoutAddons(item).length) {
+            customizationSummary.push("No add-ons");
+        }
+
+        return `
+            <div class="checkout-summary-item">
+                <div class="checkout-summary-item-title">
+                    <strong>${escapeHtml(item.name)} <span>× ${item.quantity}</span></strong>
+                    <span>₹${(item.price + getItemAddonTotal(item)) * item.quantity}</span>
+                </div>
+                ${customizationSummary.length ? `<p>${customizationSummary.join(" · ")}</p>` : ""}
+                <p class="checkout-summary-instructions">${instruction ? `Note: ${escapeHtml(instruction)}` : "No special instructions"}</p>
+            </div>
+        `;
+    }).join("");
+
+    const subtotal = getCheckoutSubtotal();
+    const tip = getCheckoutTip();
+    document.getElementById("checkout-subtotal").textContent = `₹${subtotal}`;
+    const validTip = Number.isFinite(tip) && tip >= 0;
+    document.getElementById("checkout-tip-total").textContent = `₹${validTip ? tip : "—"}`;
+    document.getElementById("checkout-final-total").textContent =
+        `₹${validTip ? subtotal + tip : "—"}`;
+
+    document.querySelectorAll(".checkout-tip-option").forEach(option => {
+        const radio = option.querySelector('input[type="radio"]');
+        option.classList.toggle("selected", Boolean(radio && radio.checked));
+    });
+
+    const customTipInput = document.querySelector("[data-custom-tip]");
+    if (customTipInput) {
+        customTipInput.disabled = checkoutTipSelection !== "custom";
+    }
+
+    document.querySelectorAll("[data-line-total]").forEach(element => {
+        const item = cart.find(product => product.id === Number(element.dataset.lineTotal));
+        if (item) element.textContent = `₹${(item.price + getItemAddonTotal(item)) * item.quantity}`;
+    });
+}
+
+function saveCheckoutCustomization(item, update) {
+    update(item.customizations);
+
+    try {
+        saveCart();
+    } catch (error) {
+        console.error("Unable to save checkout customization:", error);
+        const errorMessage = document.getElementById("checkout-error");
+        if (errorMessage) {
+            errorMessage.textContent = "Your changes could not be saved in this browser. Please try again.";
+            errorMessage.hidden = false;
+        }
+    }
+
+    updateCheckoutSummary();
+}
+
+function showCheckoutError(message) {
+    const errorMessage = document.getElementById("checkout-error");
+    if (!errorMessage) return;
+
+    errorMessage.textContent = message;
+    errorMessage.hidden = false;
+}
+
+function createOrderReference(existingOrders) {
+    let reference;
+
+    do {
+        const uniquePart = window.crypto?.randomUUID
+            ? window.crypto.randomUUID().slice(0, 8)
+            : Math.random().toString(36).slice(2, 10);
+        reference = `RE-${Date.now().toString(36).toUpperCase()}-${uniquePart.toUpperCase()}`;
+    } while (existingOrders.some(order => order.reference === reference));
+
+    return reference;
+}
+
+function placeDemoOrder() {
+    if (isPlacingOrder) return;
+
+    const invalidItem = cart.some(item =>
+        !Number.isInteger(item.id) ||
+        typeof item.name !== "string" ||
+        !item.name.trim() ||
+        !Number.isInteger(item.quantity) || item.quantity < 1 ||
+        !Number.isFinite(item.price) || item.price < 0
+    );
+
+    if (cart.length === 0 || invalidItem) {
+        showCheckoutError("Your cart needs at least one valid dish before placing an order.");
+        return;
+    }
+
+    const tip = getCheckoutTip();
+    if (!Number.isFinite(tip) || tip < 0) {
+        showCheckoutError("Enter a valid non-negative tip amount, or choose No tip.");
+        return;
+    }
+
+    isPlacingOrder = true;
+    const placeButton = document.getElementById("place-order-button");
+    if (placeButton) {
+        placeButton.disabled = true;
+        placeButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Placing order…';
+    }
+
+    let previousOrdersValue;
+    let hadPreviousOrders = false;
+    let order;
+
+    try {
+        previousOrdersValue = localStorage.getItem(ORDERS_STORAGE_KEY);
+        hadPreviousOrders = previousOrdersValue !== null;
+        const existingOrders = previousOrdersValue ? JSON.parse(previousOrdersValue) : [];
+
+        if (!Array.isArray(existingOrders)) {
+            throw new Error("Saved orders are not in a valid format.");
+        }
+
+        const subtotal = getCheckoutSubtotal();
+        order = {
+            reference: createOrderReference(existingOrders),
+            createdAt: new Date().toISOString(),
+            isFrontendDemo: true,
+            items: cart.map(item => ({
+                id: item.id,
+                name: item.name,
+                quantity: item.quantity,
+                unitPrice: item.price,
+                ...(getCheckoutDishType(item) === "other" ? {} : { spice: item.customizations.spice }),
+                addons: item.customizations.addons.map(addonId => {
+                    const addon = checkoutAddons.find(option => option.id === addonId);
+                    return { id: addon.id, name: addon.name, price: addon.price };
+                }),
+                instructions: item.customizations.instructions,
+                lineTotal: (item.price + getItemAddonTotal(item)) * item.quantity
+            })),
+            subtotal,
+            tip,
+            total: subtotal + tip
+        };
+
+        localStorage.setItem(
+            ORDERS_STORAGE_KEY,
+            JSON.stringify([...existingOrders, order])
+        );
+
+        try {
+            localStorage.setItem(CART_STORAGE_KEY, JSON.stringify([]));
+        } catch (error) {
+            if (hadPreviousOrders) {
+                localStorage.setItem(ORDERS_STORAGE_KEY, previousOrdersValue);
+            } else {
+                localStorage.removeItem(ORDERS_STORAGE_KEY);
+            }
+            throw error;
+        }
+
+    } catch (error) {
+        console.error("Unable to create order:", error);
+        isPlacingOrder = false;
+        showCheckoutError("We couldn't save your order in this browser. Your cart has been kept; please try again.");
+        if (placeButton) placeButton.disabled = false;
+        return;
+    }
+
+    cart = [];
+    updateCartCount();
+    renderOrderConfirmation(order);
+}
+
+function renderOrderConfirmation(order) {
+    const content = document.getElementById("cart-modal-content");
+    if (!content) return;
+
+    content.innerHTML = `
+        <div class="order-confirmation" id="order-confirmation">
+            <button class="cart-close-button confirmation-close" type="button" data-close-cart aria-label="Close confirmation">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="confirmation-confetti" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="confirmation-success-icon"><i class="fa-solid fa-check"></i></div>
+            <div class="confirmation-chef-icon"><i class="fa-solid fa-kitchen-set"></i><span>✦</span></div>
+            <span class="checkout-eyebrow">ORDER CONFIRMED</span>
+            <h2>Order Received!</h2>
+            <p class="confirmation-message">Thank you for choosing Rasoi Express. Our kitchen is getting ready for your delicious meal!</p>
+            <p class="confirmation-demo-note"><i class="fa-solid fa-circle-info"></i> This order has not been sent to the restaurant and no payment was taken.</p>
+            <div class="confirmation-order-reference">
+                <span>Order reference</span>
+                <strong>${escapeHtml(order.reference)}</strong>
+            </div>
+            <div class="confirmation-items">
+                ${order.items.map(item => `
+                    <div><span>${escapeHtml(item.name)} × ${item.quantity}</span><strong>₹${item.lineTotal}</strong></div>
+                `).join("")}
+            </div>
+            <div class="confirmation-total"><span>Total${order.tip ? " (including tip)" : ""}</span><strong>₹${order.total}</strong></div>
+            <button type="button" class="checkout-place-button confirmation-continue" data-close-cart>
+                Continue Exploring Menu <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    `;
+    isPlacingOrder = false;
 }
 
 function updateCartItem(itemId, action) {
@@ -2136,7 +2698,11 @@ function updateCartItem(itemId, action) {
 
     saveCart();
     updateCartCount();
-    renderCartItems();
+    if (document.getElementById("checkout-view")) {
+        renderCheckout();
+    } else {
+        renderCartItems();
+    }
 }
 
 
@@ -2951,7 +3517,7 @@ function renderBiryanis() {
             <article class="biryani-card">
                 <div class="biryani-card-image">
                     <img
-                        src="${dish.image.url}"
+                        src="${dish.image.local}"
                         data-local-image="${dish.image.local}"
                         alt="${dish.name}"
                         loading="lazy">
@@ -3082,8 +3648,9 @@ function renderNorthIndianDishes() {
             <article class="north-indian-card">
                 <div class="north-indian-card-image">
                     <img
-                        src="${dish.image.url}"
+                        src="${dish.image.local}"
                         data-local-image="${dish.image.local}"
+                        data-fallback-image="${dish.image.url}"
                         alt="${dish.name}"
                         loading="lazy">
                     <span class="north-indian-card-category">${category.name}</span>
@@ -3102,6 +3669,12 @@ function renderNorthIndianDishes() {
             </article>
         `;
     }).join("");
+
+    grid.querySelectorAll("img[data-fallback-image]").forEach(image => {
+        image.addEventListener("error", () => {
+            image.src = image.dataset.fallbackImage;
+        }, { once: true });
+    });
 
     if (resultTitle) {
         resultTitle.textContent = activeNorthIndianCategory === "all"
@@ -3126,6 +3699,13 @@ function initializeNorthIndianPage() {
     const grid = document.getElementById("north-indian-grid");
 
     if (!grid) return;
+
+    const featuredImage = document.querySelector(".north-indian-feature-image img");
+    if (featuredImage) {
+        featuredImage.addEventListener("error", () => {
+            featuredImage.src = featuredImage.dataset.fallbackImage;
+        }, { once: true });
+    }
 
     const params = new URLSearchParams(window.location.search);
     const searchInput = document.getElementById("north-indian-search-input");
@@ -3475,7 +4055,7 @@ function renderIndianRotis() {
             <article class="indian-rotis-card">
                 <div class="indian-rotis-card-image">
                     <img
-                        src="${dish.image.url}"
+                        src="${dish.image.local}"
                         data-local-image="${dish.image.local}"
                         alt="${dish.name}"
                         loading="lazy">
@@ -3864,7 +4444,73 @@ function initializeGlobalEvents() {
         }
 
         if (event.target.closest("#checkout-button")) {
-            showToast("Order placement will be connected later.");
+            openCheckout();
+            return;
+        }
+
+        if (event.target.closest("[data-back-to-cart]")) {
+            document.getElementById("cart-modal").classList.remove("checkout-open");
+            restoreCartView();
+            return;
+        }
+
+        if (event.target.closest("#place-order-button")) {
+            placeDemoOrder();
+        }
+    });
+
+    document.addEventListener("change", event => {
+        const target = event.target;
+
+        if (target.matches("[data-checkout-spice]")) {
+            const item = cart.find(product => product.id === Number(target.dataset.checkoutSpice));
+            if (item) {
+                saveCheckoutCustomization(item, customizations => {
+                    customizations.spice = target.value;
+                });
+            }
+            return;
+        }
+
+        if (target.matches("[data-checkout-addon]")) {
+            const itemId = Number(target.dataset.checkoutAddon);
+            const item = cart.find(product => product.id === itemId);
+            if (item) {
+                const checkedAddons = [...document.querySelectorAll(`[data-checkout-addon="${itemId}"]:checked`)]
+                    .map(input => input.value);
+                saveCheckoutCustomization(item, customizations => {
+                    customizations.addons = checkedAddons;
+                });
+            }
+            return;
+        }
+
+        if (target.matches('input[name="checkout-tip"]')) {
+            checkoutTipSelection = target.value;
+            if (target.value !== "custom") checkoutCustomTip = 0;
+            updateCheckoutSummary();
+        }
+    });
+
+    document.addEventListener("input", event => {
+        const target = event.target;
+
+        if (target.matches("[data-checkout-instructions]")) {
+            const item = cart.find(product => product.id === Number(target.dataset.checkoutInstructions));
+            if (item) {
+                saveCheckoutCustomization(item, customizations => {
+                    customizations.instructions = target.value;
+                });
+            }
+            return;
+        }
+
+        if (target.matches("[data-custom-tip]")) {
+            checkoutTipSelection = "custom";
+            checkoutCustomTip = target.value === "" ? NaN : Number(target.value);
+            const customTipRadio = document.querySelector('input[name="checkout-tip"][value="custom"]');
+            if (customTipRadio) customTipRadio.checked = true;
+            updateCheckoutSummary();
         }
     });
 

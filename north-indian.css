@@ -6,7 +6,7 @@
 }
 
 .north-indian-hero {
-    --north-indian-hero-image: url("https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=2200&q=90");
+    --north-indian-hero-image: url("./assets/images/categories/north-indian/north-indian-hero.jpg");
     position: relative;
     min-height: 490px;
     display: flex;
@@ -106,21 +106,6 @@
 .north-indian-menu-section {
     padding: 62px 0 82px;
     background: #fffdf9;
-}
-
-.north-indian-back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-    color: #927253;
-    font-size: 11px;
-    font-weight: 700;
-    transition: color 0.2s ease;
-}
-
-.north-indian-back-link:hover {
-    color: #a3422e;
 }
 
 .north-indian-menu-heading {
