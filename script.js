@@ -3189,8 +3189,12 @@ function renderMenuDishes() {
             ? activeMenuGroup === "all" || dish.menuGroup === activeMenuGroup
             : activeMenuCategory === "all" || dish.category === activeMenuCategory;
 
+        const categoryName =
+            categories.find(category => category.id === dish.category)?.name || "";
+        const menuGroupName =
+            vegMenuGroups.find(group => group.id === dish.menuGroup)?.name || "";
         const matchesSearch =
-            `${dish.name} ${dish.category} ${dish.menuGroup || ""} ${vegMenuGroups.find(group => group.id === dish.menuGroup)?.name || ""}`
+            `${dish.name} ${categoryName} ${dish.category} ${dish.menuGroup || ""} ${menuGroupName}`
                 .toLowerCase()
                 .includes(menuSearchQuery);
 
@@ -3271,6 +3275,25 @@ function initializeMenuPage() {
     const params = new URLSearchParams(window.location.search);
 
     menuSearchQuery = (params.get("q") || "").trim().toLowerCase();
+
+    const searchForm = document.getElementById("menu-search-form");
+    const searchInput = document.getElementById("menu-search");
+
+    if (searchInput) {
+        searchInput.value = params.get("q") || "";
+    }
+
+    if (searchForm && searchInput) {
+        searchForm.addEventListener("submit", event => {
+            event.preventDefault();
+            menuSearchQuery = searchInput.value.trim().toLowerCase();
+            renderMenuDishes();
+            document.querySelector(".menu-listing")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    }
 
     document.querySelectorAll(".food-filter").forEach(button => {
         button.addEventListener("click", () => {
