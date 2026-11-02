@@ -3270,31 +3270,7 @@ function initializeMenuPage() {
 
     const params = new URLSearchParams(window.location.search);
 
-    const searchInput = document.getElementById("menu-search-input");
-    const searchForm = document.getElementById("menu-search-form");
-
     menuSearchQuery = (params.get("q") || "").trim().toLowerCase();
-
-    if (searchInput) {
-        searchInput.value = params.get("q") || "";
-
-        searchInput.addEventListener("input", () => {
-            menuSearchQuery = searchInput.value.trim().toLowerCase();
-            renderMenuDishes();
-        });
-    }
-
-    if (searchForm) {
-        searchForm.addEventListener("submit", event => {
-            event.preventDefault();
-
-            menuSearchQuery = searchInput
-                ? searchInput.value.trim().toLowerCase()
-                : "";
-
-            renderMenuDishes();
-        });
-    }
 
     document.querySelectorAll(".food-filter").forEach(button => {
         button.addEventListener("click", () => {
