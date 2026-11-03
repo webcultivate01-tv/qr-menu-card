@@ -1802,19 +1802,9 @@ function getPortionPrice(dish, portion) {
     return Number.isFinite(price) ? price : null;
 }
 
-function renderPortionSelector(dish) {
-    if (!dish.portionPrices) return "";
-
-    return `
-        <div class="portion-selector" role="group" aria-label="Choose portion for ${escapeHtml(dish.name)}">
-            <button class="portion-option" type="button" data-portion-option="half" aria-pressed="false">
-                Half Plate
-            </button>
-            <button class="portion-option is-selected" type="button" data-portion-option="full" aria-pressed="true">
-                Full Plate
-            </button>
-        </div>
-    `;
+function formatDishPrice(dish) {
+    if (!dish.portionPrices) return `₹${dish.price}`;
+    return `₹${dish.portionPrices.full} / ₹${dish.portionPrices.half}`;
 }
 
 function getCartItemKey(item) {
@@ -2018,10 +2008,8 @@ function renderPopularDishes() {
                 <div class="dish-info">
                     <h3>${dish.name}</h3>
 
-                    ${renderPortionSelector(dish)}
-
                     <div class="dish-bottom">
-                        <span class="dish-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
+                        <span class="dish-price">${formatDishPrice(dish)}</span>
 
                         <button
                             class="add-to-cart-button"
@@ -3197,13 +3185,9 @@ function renderMenuDishes() {
 
             <div class="menu-dish-details">
                 <h3>${escapeHtml(dish.name)}</h3>
-                <p class="menu-dish-category">${escapeHtml(dish.subcategoryName || dish.categoryName)}</p>
-                <p class="menu-dish-description">${escapeHtml(dish.description)}</p>
-
-                ${renderPortionSelector(dish)}
 
                 <div class="menu-dish-bottom">
-                    <span class="menu-dish-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
+                    <span class="menu-dish-price">${formatDishPrice(dish)}</span>
 
                     <button class="menu-add-button" data-add-cart="${dish.id}">
                         Add <i class="fa-solid fa-plus"></i>
@@ -3393,7 +3377,6 @@ function renderBeverages() {
                 </div>
                 <div class="beverage-card-body">
                     <h4>${drink.name}</h4>
-                    <p>${drink.description}</p>
                     <div class="beverage-card-bottom">
                         <span class="beverage-card-price">₹${drink.price}</span>
                         <button class="beverage-card-add" type="button" data-add-cart="${drink.id}">
@@ -3524,10 +3507,8 @@ function renderBiryanis() {
                 </div>
                 <div class="biryani-card-body">
                     <h4>${dish.name}</h4>
-                    <p>${dish.description}</p>
-                    ${renderPortionSelector(dish)}
                     <div class="biryani-card-bottom">
-                        <span class="biryani-card-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
+                        <span class="biryani-card-price">${formatDishPrice(dish)}</span>
                         <button class="biryani-card-add" type="button" data-add-cart="${dish.id}">
                             Add to Cart
                             <i class="fa-solid fa-plus"></i>
@@ -3657,10 +3638,8 @@ function renderNorthIndianDishes() {
                 </div>
                 <div class="north-indian-card-body">
                     <h4>${dish.name}</h4>
-                    <p>${dish.description}</p>
-                    ${renderPortionSelector(dish)}
                     <div class="north-indian-card-bottom">
-                        <span class="north-indian-card-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
+                        <span class="north-indian-card-price">${formatDishPrice(dish)}</span>
                         <button class="north-indian-card-add" type="button" data-add-cart="${dish.id}">
                             Add to Cart
                             <i class="fa-solid fa-plus"></i>
@@ -3802,10 +3781,8 @@ function renderSouthIndianDishes() {
                 </div>
                 <div class="south-indian-card-body">
                     <h4>${dish.name}</h4>
-                    <p>${dish.description}</p>
-                    ${renderPortionSelector(dish)}
                     <div class="south-indian-card-bottom">
-                        <span class="south-indian-card-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
+                        <span class="south-indian-card-price">${formatDishPrice(dish)}</span>
                         <button class="south-indian-card-add" type="button" data-add-cart="${dish.id}">
                             Add to Cart
                             <i class="fa-solid fa-plus"></i>
@@ -3946,17 +3923,11 @@ function renderChineseDishes() {
 
                 <div class="chinese-card-body">
                     <h4>${dish.name}</h4>
-                    <p>${dish.description}</p>
-
-                    ${renderPortionSelector(dish)}
 
                     <div class="chinese-card-bottom">
                         <span
                             class="chinese-card-price"
-                            ${dish.portionPrices ? "data-portion-price" : ""}
-                        >
-                            ₹${dish.price}
-                        </span>
+                        >${formatDishPrice(dish)}</span>
 
                         <button
                             class="chinese-card-add"
@@ -4108,9 +4079,8 @@ function renderIndianRotis() {
                 </div>
                 <div class="indian-rotis-card-body">
                     <h4>${dish.name}</h4>
-                    <p>${dish.description}</p>
                     <div class="indian-rotis-card-bottom">
-                        <span class="indian-rotis-card-price">₹${dish.price}</span>
+                        <span class="indian-rotis-card-price">${formatDishPrice(dish)}</span>
                         <button class="indian-rotis-card-add" type="button" data-add-cart="${dish.id}">
                             Add to Cart
                             <i class="fa-solid fa-plus"></i>
@@ -4239,9 +4209,8 @@ function renderDesserts() {
                 </div>
                 <div class="desserts-card-body">
                     <h4>${dish.name}</h4>
-                    <p>${dish.description}</p>
                     <div class="desserts-card-bottom">
-                        <span class="desserts-card-price">₹${dish.price}</span>
+                        <span class="desserts-card-price">${formatDishPrice(dish)}</span>
                         <button class="desserts-card-add" type="button" data-add-cart="${dish.id}">
                             Add to Cart
                             <i class="fa-solid fa-plus"></i>
@@ -4359,11 +4328,8 @@ function renderCategoryDishes(categoryId) {
 
             <div class="menu-dish-details">
                 <h3>${dish.name}</h3>
-                <p>${categories.find(c => c.id === dish.category)?.name || ""}</p>
-                ${renderPortionSelector(dish)}
-
                 <div class="menu-dish-bottom">
-                    <span class="menu-dish-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
+                    <span class="menu-dish-price">${formatDishPrice(dish)}</span>
 
                     <button class="menu-add-button" data-add-cart="${dish.id}">
                         Add <i class="fa-solid fa-plus"></i>
@@ -4454,32 +4420,7 @@ function initializeGlobalEvents() {
         const addButton = event.target.closest("[data-add-cart]");
 
         if (addButton) {
-            const portion = addButton.closest("article")
-                ?.querySelector('[data-portion-option][aria-pressed="true"]')
-                ?.dataset.portionOption || "full";
-            addToCart(addButton.dataset.addCart, portion);
-            return;
-        }
-
-        const portionButton = event.target.closest("[data-portion-option]");
-
-        if (portionButton) {
-            const dishCard = portionButton.closest("article");
-            const dishId = dishCard?.querySelector("[data-add-cart]")?.dataset.addCart;
-            const dish = getDishById(dishId);
-            const portion = portionButton.dataset.portionOption;
-            const price = dish ? getPortionPrice(dish, portion) : null;
-
-            if (!dishCard || !dish || price === null) return;
-
-            dishCard.querySelectorAll("[data-portion-option]").forEach(option => {
-                const isSelected = option === portionButton;
-                option.classList.toggle("is-selected", isSelected);
-                option.setAttribute("aria-pressed", String(isSelected));
-            });
-
-            const priceElement = dishCard.querySelector("[data-portion-price]");
-            if (priceElement) priceElement.textContent = `₹${price}`;
+            addToCart(addButton.dataset.addCart);
             return;
         }
 

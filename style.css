@@ -3446,3 +3446,55 @@ button[data-add-cart]:hover:not(:disabled) {
     background: #68121b !important;
     border-color: #68121b !important;
 }
+/* Keep full and half prices readable on compact menu cards. */
+.menu-dish-card .menu-dish-price,
+.dish-card .dish-price,
+.beverage-card .beverage-card-price,
+.biryani-card .biryani-card-price,
+.north-indian-card .north-indian-card-price,
+.south-indian-card .south-indian-card-price,
+.chinese-card .chinese-card-price,
+.indian-rotis-card .indian-rotis-card-price,
+.desserts-card .desserts-card-price {
+    flex: 0 1 auto;
+    white-space: nowrap;
+    font-size: clamp(12px, 1.1vw, 16px);
+    letter-spacing: -0.02em;
+}
+
+/* Minimal attribution footer for menu and category pages. */
+.powered-by-footer {
+    padding: 24px 16px;
+    text-align: center;
+    background: #fff;
+}
+.powered-by-footer p { margin: 0; color: #1f2937; }
+.powered-by-footer span { color: #1D4ED8; font-weight: 600; }
+
+@media (max-width: 480px) {
+    .menu-dish-card .menu-dish-bottom,
+    .dish-card .dish-bottom,
+    .beverage-card .beverage-card-bottom,
+    .biryani-card .biryani-card-bottom,
+    .north-indian-card .north-indian-card-bottom,
+    .south-indian-card .south-indian-card-bottom,
+    .chinese-card .chinese-card-bottom,
+    .indian-rotis-card .indian-rotis-card-bottom,
+    .desserts-card .desserts-card-bottom {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-dish-card .menu-add-button,
+    .dish-card .add-to-cart-button,
+    .beverage-card .beverage-card-add,
+    .biryani-card .biryani-card-add,
+    .north-indian-card .north-indian-card-add,
+    .south-indian-card .south-indian-card-add,
+    .chinese-card .chinese-card-add,
+    .indian-rotis-card .indian-rotis-card-add,
+    .desserts-card .desserts-card-add {
+        width: 100%;
+    }
+}
