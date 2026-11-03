@@ -195,15 +195,15 @@
 
 .north-indian-filter:hover,
 .north-indian-filter.active {
-    color: #fffdf9;
-    background: #a3422e;
+    color: var(--button-text);
+    background: var(--brand-gold);
 }
 
 .north-indian-filter:focus-visible,
 .north-indian-more-button:focus-visible,
 .north-indian-card-add:focus-visible,
 .north-indian-feature-add:focus-visible {
-    outline: 3px solid rgba(163, 66, 46, 0.3);
+    outline: 3px solid rgba(240, 200, 108, 0.7);
     outline-offset: 3px;
 }
 

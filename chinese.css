@@ -195,15 +195,15 @@
 
 .chinese-filter:hover,
 .chinese-filter.active {
-    color: #fffdf9;
-    background: #a92d23;
+    color: var(--button-text);
+    background: var(--brand-gold);
 }
 
 .chinese-filter:focus-visible,
 .chinese-more-button:focus-visible,
 .chinese-card-add:focus-visible,
 .chinese-feature-add:focus-visible {
-    outline: 3px solid rgba(169, 45, 35, 0.3);
+    outline: 3px solid rgba(240, 200, 108, 0.7);
     outline-offset: 3px;
 }
 

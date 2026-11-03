@@ -195,15 +195,15 @@
 
 .indian-rotis-filter:hover,
 .indian-rotis-filter.active {
-    color: #fffdf9;
-    background: #9d571e;
+    color: var(--button-text);
+    background: var(--brand-gold);
 }
 
 .indian-rotis-filter:focus-visible,
 .indian-rotis-more-button:focus-visible,
 .indian-rotis-card-add:focus-visible,
 .indian-rotis-feature-add:focus-visible {
-    outline: 3px solid rgba(157, 87, 30, 0.3);
+    outline: 3px solid rgba(240, 200, 108, 0.7);
     outline-offset: 3px;
 }
 

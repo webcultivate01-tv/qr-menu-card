@@ -195,15 +195,15 @@
 
 .south-indian-filter:hover,
 .south-indian-filter.active {
-    color: #fffdf8;
-    background: #58753e;
+    color: var(--button-text);
+    background: var(--brand-gold);
 }
 
 .south-indian-filter:focus-visible,
 .south-indian-more-button:focus-visible,
 .south-indian-card-add:focus-visible,
 .south-indian-feature-add:focus-visible {
-    outline: 3px solid rgba(88, 117, 62, 0.3);
+    outline: 3px solid rgba(240, 200, 108, 0.7);
     outline-offset: 3px;
 }
 

@@ -191,15 +191,15 @@
 
 .beverage-filter:hover,
 .beverage-filter.active {
-    color: #fff;
-    background: #b98568;
+    color: var(--button-text);
+    background: var(--brand-gold);
 }
 
 .beverage-filter:focus-visible,
 .beverage-more-button:focus-visible,
 .beverage-card-add:focus-visible,
 .beverage-feature-add:focus-visible {
-    outline: 3px solid rgba(100, 21, 165, 0.3);
+    outline: 3px solid rgba(240, 200, 108, 0.7);
     outline-offset: 3px;
 }
 

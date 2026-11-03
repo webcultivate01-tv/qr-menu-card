@@ -1,6 +1,6 @@
 
 /* =========================================================
-   RASOI EXPRESS - MAIN JAVASCRIPT
+   HOTEL HARSHVARDHAN - MAIN JAVASCRIPT
    ========================================================= */
 
 
@@ -52,28 +52,6 @@ const categories = [
         image: "./assets/images/categories/beverages.jpg"
     }
 ];
-
-const dedicatedCategoryPages = {
-    beverages: "./beverages.html",
-    biryani: "./biryani.html",
-    "north-indian": "./north-indian.html",
-    "south-indian": "./south-indian.html",
-    chinese: "./chinese.html",
-    breads: "./indian-rotis.html",
-    desserts: "./desserts.html"
-};
-
-const vegMenuGroups = [
-    { id: "paneer-specials", name: "Paneer Specials" },
-    { id: "veg-starters", name: "Veg Starters" },
-    { id: "veg-main-course", name: "Veg Main Course" },
-    { id: "dal-curries", name: "Dal & Curries" },
-    { id: "veg-biryani-rice", name: "Veg Biryani & Rice" },
-    { id: "chinese-veg", name: "Chinese Veg" },
-    { id: "south-indian", name: "South Indian" },
-    { id: "indian-breads", name: "Indian Breads" }
-];
-
 
 /* =========================================================
    2. DISH DATA
@@ -330,7 +308,7 @@ const menuDishes = [
     }
 ];
 
-const popularDishes = menuDishes.slice(0, 4);
+const popularDishes = menuDishes.slice(0, 16);
 
 const beverageCategories = [
     { id: "iced-coffee", name: "Iced Coffee" },
@@ -1751,13 +1729,105 @@ const dessertDishes = [
     }
 ];
 
+const menuCategorySources = [
+    { id: "biryani", categories: biryaniCategories, dishes: biryaniDishes },
+    { id: "north-indian", categories: northIndianCategories, dishes: northIndianDishes },
+    { id: "south-indian", categories: southIndianCategories, dishes: southIndianDishes },
+    { id: "chinese", categories: chineseCategories, dishes: chineseDishes },
+    { id: "breads", categories: indianRotisCategories, dishes: indianRotisDishes },
+    { id: "desserts", categories: dessertCategories, dishes: dessertDishes },
+    { id: "beverages", categories: beverageCategories, dishes: beverageDishes }
+];
+
+const portionEligibleCategories = new Set(
+    categories
+        .filter(category => !["beverages", "desserts"].includes(category.id))
+        .map(category => category.id)
+);
+
+function initializeDishPortionPrices(dish) {
+    dish.portionPrices = {
+        half: dish.price / 2,
+        full: dish.price
+    };
+}
+
+menuDishes
+    .filter(dish => portionEligibleCategories.has(dish.category))
+    .forEach(initializeDishPortionPrices);
+
+menuCategorySources.forEach(source => {
+    if (!portionEligibleCategories.has(source.id)) return;
+    source.dishes.forEach(initializeDishPortionPrices);
+});
+
+const categoryMenuDishes = menuCategorySources.flatMap(source => {
+    const menuCategory = categories.find(item => item.id === source.id);
+
+    return source.dishes.map(dish => {
+        const typeFromMenu = menuDishes.find(
+            item => item.name.toLowerCase() === dish.name.toLowerCase()
+        )?.foodType;
+        const isMeatOrEggDish = /\b(chicken|mutton|lamb|fish|prawn|shrimp|egg)\b/i.test(dish.name);
+        const useCategoryImage =
+            ["beverages", "chinese", "desserts"].includes(source.id) ||
+            (source.id === "north-indian" && ["Dal Panchmel", "Matar Pulao"].includes(dish.name));
+
+        return {
+            ...dish,
+            category: source.id,
+            categoryName: menuCategory?.name || "",
+            subcategoryName: source.categories.find(item => item.id === dish.category)?.name || "",
+            menuImage: useCategoryImage ? menuCategory?.image || "" : dish.image.local,
+            fallbackImage: menuCategory?.image || "",
+            foodType: typeFromMenu || (isMeatOrEggDish ? "non-veg" : "veg")
+        };
+    });
+});
+
+function getDishById(dishId) {
+    const numericDishId = Number(dishId);
+
+    return menuDishes.find(dish => dish.id === numericDishId) ||
+        categoryMenuDishes.find(dish => dish.id === numericDishId);
+}
+
+function getPortionLabel(portion) {
+    return portion === "half" ? "Half Plate" : "Full Plate";
+}
+
+function getPortionPrice(dish, portion) {
+    if (!dish.portionPrices) return portion === "full" ? dish.price : null;
+
+    const price = dish.portionPrices[portion];
+    return Number.isFinite(price) ? price : null;
+}
+
+function renderPortionSelector(dish) {
+    if (!dish.portionPrices) return "";
+
+    return `
+        <div class="portion-selector" role="group" aria-label="Choose portion for ${escapeHtml(dish.name)}">
+            <button class="portion-option" type="button" data-portion-option="half" aria-pressed="false">
+                Half Plate
+            </button>
+            <button class="portion-option is-selected" type="button" data-portion-option="full" aria-pressed="true">
+                Full Plate
+            </button>
+        </div>
+    `;
+}
+
+function getCartItemKey(item) {
+    return `${item.id}:${item.portion || "full"}`;
+}
+
 
 /* =========================================================
    3. CART STORAGE
    ========================================================= */
 
 const CART_STORAGE_KEY = "rasoiExpressCart";
-const FAVORITES_STORAGE_KEY = "rasoiExpressFavorites";
 const ORDERS_STORAGE_KEY = "rasoiExpressDemoOrders";
 
 const checkoutAddons = [
@@ -1892,18 +1962,6 @@ function escapeHtml(value) {
     })[character]);
 }
 
-function getFavorites() {
-    try {
-        const saved = localStorage.getItem(FAVORITES_STORAGE_KEY);
-        const parsed = saved ? JSON.parse(saved) : [];
-
-        return Array.isArray(parsed) ? parsed : [];
-    } catch (error) {
-        return [];
-    }
-}
-
-
 /* =========================================================
    4. HOMEPAGE CATEGORY RENDERING
    ========================================================= */
@@ -1948,10 +2006,7 @@ function renderPopularDishes() {
 
     if (!container) return;
 
-    container.innerHTML = popularDishes.map(dish => {
-        const favorite = getFavorites().includes(dish.id);
-
-        return `
+    container.innerHTML = popularDishes.map(dish => `
             <article class="dish-card">
                 <div class="dish-image">
                     <img
@@ -1959,30 +2014,15 @@ function renderPopularDishes() {
                         alt="${dish.name}"
                         loading="lazy"
                     >
-
-                    <button
-                        class="favorite-button ${favorite ? "active" : ""}"
-                        data-favorite="${dish.id}"
-                        aria-label="Toggle favourite"
-                        aria-pressed="${favorite}"
-                    >
-                        <i class="${favorite
-                            ? "fa-solid fa-heart"
-                            : "fa-regular fa-heart"}"></i>
-                    </button>
                 </div>
 
                 <div class="dish-info">
                     <h3>${dish.name}</h3>
 
-                    <div class="dish-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <span>${dish.rating}</span>
-                        <span>(${dish.reviews})</span>
-                    </div>
+                    ${renderPortionSelector(dish)}
 
                     <div class="dish-bottom">
-                        <span class="dish-price">₹${dish.price}</span>
+                        <span class="dish-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
 
                         <button
                             class="add-to-cart-button"
@@ -1994,8 +2034,7 @@ function renderPopularDishes() {
                     </div>
                 </div>
             </article>
-        `;
-    }).join("");
+        `).join("");
 }
 
 
@@ -2003,30 +2042,21 @@ function renderPopularDishes() {
    6. ADD TO CART
    ========================================================= */
 
-function addToCart(dishId) {
+function addToCart(dishId, portion = "full") {
     const numericDishId = Number(dishId);
-    const dish = menuDishes.find(
-        item => item.id === numericDishId
-    ) || beverageDishes.find(
-        item => item.id === numericDishId
-    ) || biryaniDishes.find(
-        item => item.id === numericDishId
-    ) || northIndianDishes.find(
-        item => item.id === numericDishId
-    ) || southIndianDishes.find(
-        item => item.id === numericDishId
-    ) || chineseDishes.find(
-        item => item.id === numericDishId
-    ) || indianRotisDishes.find(
-        item => item.id === numericDishId
-    ) || dessertDishes.find(
-        item => item.id === numericDishId
-    );
+    const categoryDish = categoryMenuDishes.find(item => item.id === numericDishId);
+    const dish = getDishById(numericDishId);
 
     if (!dish) return;
 
+    const price = getPortionPrice(dish, portion);
+    if (price === null) {
+        showToast(`${getPortionLabel(portion)} pricing isn't available yet.`);
+        return;
+    }
+
     const existing = cart.find(
-        item => item.id === dish.id
+        item => item.id === dish.id && (item.portion || "full") === portion
     );
 
     if (existing) {
@@ -2035,8 +2065,11 @@ function addToCart(dishId) {
         cart.push({
             id: dish.id,
             name: dish.name,
-            price: dish.price,
-            image: typeof dish.image === "string" ? dish.image : dish.image.url,
+            ...(dish.portionPrices ? { portion, portionLabel: getPortionLabel(portion) } : {}),
+            price,
+            image: categoryDish?.menuImage ||
+                (typeof dish.image === "string" ? dish.image : dish.image.local),
+            fallbackImage: categoryDish?.fallbackImage || "",
             quantity: 1
         });
     }
@@ -2051,6 +2084,21 @@ function updateCartCount() {
     document.querySelectorAll(".cart-count").forEach(element => {
         element.textContent = getCartCount();
     });
+}
+
+function initializeFloatingCartButton() {
+    if (document.querySelector(".floating-cart-button")) return;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "icon-button floating-cart-button";
+    button.setAttribute("aria-label", "Open shopping cart");
+    button.innerHTML = `
+        <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+        <span class="cart-count">${getCartCount()}</span>
+    `;
+
+    document.body.appendChild(button);
 }
 
 
@@ -2146,16 +2194,20 @@ function renderCartItems() {
 
     itemsContainer.innerHTML = cart.map(item => `
         <div class="cart-item">
-            <img src="${item.image}" alt="${item.name}">
+            <img
+                src="${escapeHtml(item.image)}"
+                onerror="this.onerror=null;if(this.dataset.fallbackImage)this.src=this.dataset.fallbackImage"
+                data-fallback-image="${escapeHtml(item.fallbackImage || "")}"
+                alt="${escapeHtml(item.name)}">
 
             <div class="cart-item-details">
-                <h3>${item.name}</h3>
+                <h3>${escapeHtml(item.name)}${item.portionLabel ? ` <small>${escapeHtml(item.portionLabel)}</small>` : ""}</h3>
                 <p>₹${item.price}</p>
 
                 <div class="cart-quantity-controls">
                     <button
                         data-cart-action="decrease"
-                        data-item-id="${item.id}"
+                        data-cart-key="${escapeHtml(getCartItemKey(item))}"
                     >
                         <i class="fa-solid fa-minus"></i>
                     </button>
@@ -2164,7 +2216,7 @@ function renderCartItems() {
 
                     <button
                         data-cart-action="increase"
-                        data-item-id="${item.id}"
+                        data-cart-key="${escapeHtml(getCartItemKey(item))}"
                     >
                         <i class="fa-solid fa-plus"></i>
                     </button>
@@ -2177,7 +2229,7 @@ function renderCartItems() {
                 <button
                     class="remove-cart-item"
                     data-cart-action="remove"
-                    data-item-id="${item.id}"
+                    data-cart-key="${escapeHtml(getCartItemKey(item))}"
                 >
                     <i class="fa-solid fa-trash"></i>
                 </button>
@@ -2288,7 +2340,7 @@ function renderCheckout() {
     content.innerHTML = `
         <div class="checkout-header">
             <div>
-                <span class="checkout-eyebrow">RASOI EXPRESS · CHECKOUT</span>
+                <span class="checkout-eyebrow">HOTEL HARSHVARDHAN · CHECKOUT</span>
                 <h2><i class="fa-solid fa-bag-shopping"></i> Review your order</h2>
             </div>
             <div class="checkout-header-actions">
@@ -2318,39 +2370,46 @@ function renderCheckout() {
                             const availableAddons = getCheckoutAddons(item);
                             const showSpiceLevel = getCheckoutDishType(item) !== "other";
                             const addonTotal = getItemAddonTotal(item);
+                            const cartKey = getCartItemKey(item);
                             return `
-                                <article class="checkout-item" data-checkout-item="${item.id}">
+                                <article class="checkout-item" data-checkout-item="${escapeHtml(cartKey)}">
                                     <div class="checkout-item-heading">
                                         <img src="${escapeHtml(item.image)}" alt="">
                                         <div class="checkout-item-title">
                                             <h4>${escapeHtml(item.name)}</h4>
+                                            ${item.portionLabel ? `<span>${escapeHtml(item.portionLabel)}</span>` : ""}
                                             <span>₹${item.price} each</span>
                                         </div>
-                                        <strong class="checkout-line-total" data-line-total="${item.id}">
+                                        <strong class="checkout-line-total" data-line-total="${escapeHtml(cartKey)}">
                                             ₹${(item.price + addonTotal) * item.quantity}
                                         </strong>
                                     </div>
 
                                     <div class="checkout-item-controls">
                                         <div class="checkout-quantity-controls">
-                                            <button type="button" data-cart-action="decrease" data-item-id="${item.id}" aria-label="Decrease ${escapeHtml(item.name)} quantity">
+                                            <button type="button" data-cart-action="decrease" data-cart-key="${escapeHtml(cartKey)}" aria-label="Decrease ${escapeHtml(item.name)} quantity">
                                                 <i class="fa-solid fa-minus"></i>
                                             </button>
                                             <span>${item.quantity}</span>
-                                            <button type="button" data-cart-action="increase" data-item-id="${item.id}" aria-label="Increase ${escapeHtml(item.name)} quantity">
+                                            <button type="button" data-cart-action="increase" data-cart-key="${escapeHtml(cartKey)}" aria-label="Increase ${escapeHtml(item.name)} quantity">
                                                 <i class="fa-solid fa-plus"></i>
                                             </button>
                                         </div>
-                                        <button class="checkout-remove-button" type="button" data-cart-action="remove" data-item-id="${item.id}">
-                                            <i class="fa-regular fa-trash-can"></i> Remove
+                                        <button class="checkout-remove-button" type="button" data-cart-action="remove" data-cart-key="${escapeHtml(cartKey)}" aria-label="Remove ${escapeHtml(item.name)} from order">
+                                            <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
                                         </button>
                                     </div>
 
-                                    <div class="checkout-customization-grid">
+                                    <details class="checkout-customizations">
+                                        <summary>
+                                            <span>Customize dish</span>
+                                            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+                                        </summary>
+                                        <div class="checkout-customization-grid">
                                         ${showSpiceLevel ? `
                                         <label class="checkout-field">
                                             <span><i class="fa-solid fa-pepper-hot"></i> Spice level</span>
-                                            <select data-checkout-spice="${item.id}">
+                                            <select data-checkout-spice="${escapeHtml(cartKey)}">
                                                 ${["Mild", "Medium", "Spicy"].map(level => `
                                                     <option value="${level}" ${item.customizations.spice === level ? "selected" : ""}>${level}</option>
                                                 `).join("")}
@@ -2364,7 +2423,7 @@ function renderCheckout() {
                                             <div class="checkout-addon-list">
                                                 ${availableAddons.map(addon => `
                                                     <label>
-                                                        <input type="checkbox" data-checkout-addon="${item.id}" value="${addon.id}" ${selectedAddons.includes(addon.id) ? "checked" : ""}>
+                                                        <input type="checkbox" data-checkout-addon="${escapeHtml(cartKey)}" value="${addon.id}" ${selectedAddons.includes(addon.id) ? "checked" : ""}>
                                                         <span>${addon.name}</span>
                                                         <strong>+₹${addon.price}</strong>
                                                     </label>
@@ -2375,9 +2434,10 @@ function renderCheckout() {
 
                                         <label class="checkout-field checkout-instructions">
                                             <span><i class="fa-regular fa-note-sticky"></i> Special instructions</span>
-                                            <textarea data-checkout-instructions="${item.id}" rows="2" maxlength="300" placeholder="Anything our kitchen should know?">${escapeHtml(item.customizations.instructions)}</textarea>
+                                            <textarea data-checkout-instructions="${escapeHtml(cartKey)}" rows="2" maxlength="300" placeholder="Anything our kitchen should know?">${escapeHtml(item.customizations.instructions)}</textarea>
                                         </label>
-                                    </div>
+                                        </div>
+                                    </details>
                                 </article>
                             `;
                         }).join("")}
@@ -2407,30 +2467,13 @@ function renderCheckout() {
                         <label class="checkout-tip-option checkout-custom-tip-option ${checkoutTipSelection === "custom" ? "selected" : ""}">
                             <input type="radio" name="checkout-tip" value="custom" ${checkoutTipSelection === "custom" ? "checked" : ""}>
                             <span>Custom</span>
-                            <input type="number" min="0" step="1" inputmode="numeric" data-custom-tip aria-label="Custom tip amount" placeholder="₹" value="${checkoutCustomTip || ""}" ${checkoutTipSelection === "custom" ? "" : "disabled"}>
                         </label>
                     </div>
+                    <label class="checkout-custom-tip-field" ${checkoutTipSelection === "custom" ? "" : "hidden"}>
+                        <span>Custom tip amount</span>
+                        <input type="number" min="0" step="1" inputmode="numeric" data-custom-tip aria-label="Custom tip amount" placeholder="Enter amount" value="${checkoutCustomTip || ""}" ${checkoutTipSelection === "custom" ? "" : "disabled"}>
+                    </label>
                 </section>
-
-                <section class="checkout-section checkout-summary-section">
-                    <div class="checkout-section-heading">
-                        <div>
-                            <span class="checkout-step">03</span>
-                            <h3>Order summary</h3>
-                        </div>
-                        <i class="fa-solid fa-receipt"></i>
-                    </div>
-                    <div class="checkout-summary-details" id="checkout-summary-details"></div>
-                    <div class="checkout-total-row"><span>Subtotal</span><strong id="checkout-subtotal">₹${subtotal}</strong></div>
-                    <div class="checkout-total-row"><span>Tip</span><strong id="checkout-tip-total">₹${displayedTip === null ? "—" : displayedTip}</strong></div>
-                    <div class="checkout-total-row checkout-grand-total"><span>Total</span><strong id="checkout-final-total">₹${displayedTip === null ? "—" : subtotal + displayedTip}</strong></div>
-                    <p class="checkout-demo-disclaimer"><i class="fa-solid fa-circle-info"></i> No payment is taken and this order is not sent to the restaurant.</p>
-                </section>
-
-                <div class="checkout-error" id="checkout-error" role="alert" hidden></div>
-                <button class="checkout-place-button" type="button" id="place-order-button">
-                    <i class="fa-solid fa-check"></i> Place Order
-                </button>
             ` : `
                 <div class="checkout-empty">
                     <i class="fa-solid fa-basket-shopping"></i>
@@ -2439,51 +2482,35 @@ function renderCheckout() {
                 </div>
             `}
         </div>
+        ${cart.length ? `
+            <footer class="checkout-sticky-footer">
+                <div class="checkout-error" id="checkout-error" role="alert" hidden></div>
+                <div class="checkout-sticky-totals">
+                    <div><span>Subtotal</span><strong id="checkout-subtotal">₹${subtotal}</strong></div>
+                    <div><span>Tip</span><strong id="checkout-tip-total">₹${displayedTip === null ? "—" : displayedTip}</strong></div>
+                    <div class="checkout-sticky-grand-total"><span>Total</span><strong id="checkout-final-total">₹${displayedTip === null ? "—" : subtotal + displayedTip}</strong></div>
+                </div>
+                <p class="checkout-demo-disclaimer"><i class="fa-solid fa-circle-info"></i> No payment is taken and this order is not sent to the restaurant.</p>
+                <button class="checkout-place-button" type="button" id="place-order-button">
+                    <i class="fa-solid fa-check"></i> Place Order
+                </button>
+            </footer>
+        ` : ""}
     `;
 
     updateCheckoutSummary();
 }
 
 function updateCheckoutSummary() {
-    const summary = document.getElementById("checkout-summary-details");
-    if (!summary) return;
-
-    summary.innerHTML = cart.map(item => {
-        const addons = item.customizations.addons
-            .map(addonId => checkoutAddons.find(addon => addon.id === addonId))
-            .filter(Boolean);
-        const instruction = item.customizations.instructions.trim();
-        const dishType = getCheckoutDishType(item);
-        const customizationSummary = [];
-
-        if (dishType !== "other") {
-            customizationSummary.push(`${escapeHtml(item.customizations.spice)} spice`);
-        }
-        if (addons.length) {
-            customizationSummary.push(addons.map(addon => escapeHtml(addon.name)).join(", "));
-        } else if (getCheckoutAddons(item).length) {
-            customizationSummary.push("No add-ons");
-        }
-
-        return `
-            <div class="checkout-summary-item">
-                <div class="checkout-summary-item-title">
-                    <strong>${escapeHtml(item.name)} <span>× ${item.quantity}</span></strong>
-                    <span>₹${(item.price + getItemAddonTotal(item)) * item.quantity}</span>
-                </div>
-                ${customizationSummary.length ? `<p>${customizationSummary.join(" · ")}</p>` : ""}
-                <p class="checkout-summary-instructions">${instruction ? `Note: ${escapeHtml(instruction)}` : "No special instructions"}</p>
-            </div>
-        `;
-    }).join("");
-
     const subtotal = getCheckoutSubtotal();
     const tip = getCheckoutTip();
-    document.getElementById("checkout-subtotal").textContent = `₹${subtotal}`;
     const validTip = Number.isFinite(tip) && tip >= 0;
-    document.getElementById("checkout-tip-total").textContent = `₹${validTip ? tip : "—"}`;
-    document.getElementById("checkout-final-total").textContent =
-        `₹${validTip ? subtotal + tip : "—"}`;
+    const subtotalElement = document.getElementById("checkout-subtotal");
+    const tipElement = document.getElementById("checkout-tip-total");
+    const totalElement = document.getElementById("checkout-final-total");
+    if (subtotalElement) subtotalElement.textContent = `₹${subtotal}`;
+    if (tipElement) tipElement.textContent = `₹${validTip ? tip : "—"}`;
+    if (totalElement) totalElement.textContent = `₹${validTip ? subtotal + tip : "—"}`;
 
     document.querySelectorAll(".checkout-tip-option").forEach(option => {
         const radio = option.querySelector('input[type="radio"]');
@@ -2493,10 +2520,11 @@ function updateCheckoutSummary() {
     const customTipInput = document.querySelector("[data-custom-tip]");
     if (customTipInput) {
         customTipInput.disabled = checkoutTipSelection !== "custom";
+        customTipInput.closest(".checkout-custom-tip-field").hidden = checkoutTipSelection !== "custom";
     }
 
     document.querySelectorAll("[data-line-total]").forEach(element => {
-        const item = cart.find(product => product.id === Number(element.dataset.lineTotal));
+        const item = cart.find(product => getCartItemKey(product) === element.dataset.lineTotal);
         if (item) element.textContent = `₹${(item.price + getItemAddonTotal(item)) * item.quantity}`;
     });
 }
@@ -2589,6 +2617,10 @@ function placeDemoOrder() {
             items: cart.map(item => ({
                 id: item.id,
                 name: item.name,
+                ...(item.portionLabel ? {
+                    portion: item.portion,
+                    portionLabel: item.portionLabel
+                } : {}),
                 quantity: item.quantity,
                 unitPrice: item.price,
                 ...(getCheckoutDishType(item) === "other" ? {} : { spice: item.customizations.spice }),
@@ -2649,7 +2681,7 @@ function renderOrderConfirmation(order) {
             <div class="confirmation-chef-icon"><i class="fa-solid fa-kitchen-set"></i><span>✦</span></div>
             <span class="checkout-eyebrow">ORDER CONFIRMED</span>
             <h2>Order Received!</h2>
-            <p class="confirmation-message">Thank you for choosing Rasoi Express. Our kitchen is getting ready for your delicious meal!</p>
+            <p class="confirmation-message">Thank you for choosing Hotel Harshvardhan. Our kitchen is getting ready for your delicious meal!</p>
             <p class="confirmation-demo-note"><i class="fa-solid fa-circle-info"></i> This order has not been sent to the restaurant and no payment was taken.</p>
             <div class="confirmation-order-reference">
                 <span>Order reference</span>
@@ -2657,7 +2689,7 @@ function renderOrderConfirmation(order) {
             </div>
             <div class="confirmation-items">
                 ${order.items.map(item => `
-                    <div><span>${escapeHtml(item.name)} × ${item.quantity}</span><strong>₹${item.lineTotal}</strong></div>
+                    <div><span>${escapeHtml(item.name)}${item.portionLabel ? ` · ${escapeHtml(item.portionLabel)}` : ""} × ${item.quantity}</span><strong>₹${item.lineTotal}</strong></div>
                 `).join("")}
             </div>
             <div class="confirmation-total"><span>Total${order.tip ? " (including tip)" : ""}</span><strong>₹${order.total}</strong></div>
@@ -2669,9 +2701,9 @@ function renderOrderConfirmation(order) {
     isPlacingOrder = false;
 }
 
-function updateCartItem(itemId, action) {
+function updateCartItem(cartKey, action) {
     const item = cart.find(
-        product => product.id === Number(itemId)
+        product => getCartItemKey(product) === cartKey
     );
 
     if (!item) return;
@@ -2685,14 +2717,14 @@ function updateCartItem(itemId, action) {
 
         if (item.quantity <= 0) {
             cart = cart.filter(
-                product => product.id !== Number(itemId)
+                product => getCartItemKey(product) !== cartKey
             );
         }
     }
 
     if (action === "remove") {
         cart = cart.filter(
-            product => product.id !== Number(itemId)
+            product => getCartItemKey(product) !== cartKey
         );
     }
 
@@ -2703,31 +2735,6 @@ function updateCartItem(itemId, action) {
     } else {
         renderCartItems();
     }
-}
-
-
-/* =========================================================
-   8. FAVOURITES
-   ========================================================= */
-
-function toggleFavorite(dishId) {
-    let favorites = getFavorites();
-    const id = Number(dishId);
-
-    if (favorites.includes(id)) {
-        favorites = favorites.filter(item => item !== id);
-        showToast("Removed from favourites");
-    } else {
-        favorites.push(id);
-        showToast("Added to favourites ❤️");
-    }
-
-    localStorage.setItem(
-        FAVORITES_STORAGE_KEY,
-        JSON.stringify(favorites)
-    );
-
-    renderPopularDishes();
 }
 
 
@@ -3096,15 +3103,8 @@ function initializeCategoryNavigation() {
 
         if (!card) return;
 
-        const categoryPage = dedicatedCategoryPages[card.dataset.category];
-
-        if (categoryPage) {
-            window.location.href = categoryPage;
-            return;
-        }
-
         window.location.href =
-            `./category.html?category=${encodeURIComponent(card.dataset.category)}`;
+            `./menu.html?category=${encodeURIComponent(card.dataset.category)}`;
     }
 
     container.addEventListener("click", navigate);
@@ -3124,38 +3124,18 @@ function initializeCategoryNavigation() {
 
 let activeMenuFilter = "all";
 let activeMenuCategory = "all";
-let activeMenuGroup = "all";
 let menuSearchQuery = "";
+let menuCurrentPage = 1;
+const MENU_PAGE_SIZE = 8;
 
 function renderMenuCategories() {
     const container = document.getElementById("menu-category-list");
 
     if (!container) return;
 
-    if (activeMenuFilter === "veg") {
-        container.innerHTML = `
-            <button
-                class="menu-category-item ${activeMenuGroup === "all" ? "active" : ""}"
-                data-menu-group="all"
-            >
-                All Veg Sections
-            </button>
-
-            ${vegMenuGroups.map(group => `
-                <button
-                    class="menu-category-item ${activeMenuGroup === group.id ? "active" : ""}"
-                    data-menu-group="${group.id}"
-                >
-                    ${group.name}
-                </button>
-            `).join("")}
-        `;
-
-        return;
-    }
-
     container.innerHTML = `
         <button
+            type="button"
             class="menu-category-item ${activeMenuCategory === "all" ? "active" : ""}"
             data-menu-category="all"
         >
@@ -3164,6 +3144,7 @@ function renderMenuCategories() {
 
         ${categories.map(category => `
             <button
+                type="button"
                 class="menu-category-item ${activeMenuCategory === category.id ? "active" : ""}"
                 data-menu-category="${category.id}"
             >
@@ -3177,34 +3158,38 @@ function renderMenuDishes() {
     const container = document.getElementById("menu-dishes-grid");
     const emptyState = document.getElementById("menu-empty-state");
     const resultCount = document.getElementById("menu-result-count");
+    const pagination = document.getElementById("menu-pagination");
 
     if (!container) return;
 
-    const filtered = menuDishes.filter(dish => {
+    const filtered = categoryMenuDishes.filter(dish => {
         const matchesType =
             activeMenuFilter === "all" ||
             dish.foodType === activeMenuFilter;
-
-        const matchesCategory = activeMenuFilter === "veg"
-            ? activeMenuGroup === "all" || dish.menuGroup === activeMenuGroup
-            : activeMenuCategory === "all" || dish.category === activeMenuCategory;
-
-        const categoryName =
-            categories.find(category => category.id === dish.category)?.name || "";
-        const menuGroupName =
-            vegMenuGroups.find(group => group.id === dish.menuGroup)?.name || "";
+        const matchesCategory =
+            activeMenuCategory === "all" || dish.category === activeMenuCategory;
         const matchesSearch =
-            `${dish.name} ${categoryName} ${dish.category} ${dish.menuGroup || ""} ${menuGroupName}`
+            `${dish.name} ${dish.description} ${dish.categoryName} ${dish.subcategoryName} ${dish.category}`
                 .toLowerCase()
                 .includes(menuSearchQuery);
 
         return matchesType && matchesCategory && matchesSearch;
     });
 
+    const pageCount = Math.ceil(filtered.length / MENU_PAGE_SIZE);
+    menuCurrentPage = Math.min(menuCurrentPage, Math.max(pageCount, 1));
+    const pageStart = (menuCurrentPage - 1) * MENU_PAGE_SIZE;
+    const pageDishes = filtered.slice(pageStart, pageStart + MENU_PAGE_SIZE);
+
     const renderDishCard = dish => `
         <article class="menu-dish-card">
             <div class="menu-dish-image">
-                <img src="${dish.image}" alt="${dish.name}" loading="lazy">
+                <img
+                    src="${escapeHtml(dish.menuImage)}"
+                    data-fallback-image="${escapeHtml(dish.fallbackImage)}"
+                    onerror="this.onerror=null;this.src=this.dataset.fallbackImage"
+                    alt="${escapeHtml(dish.name)}"
+                    loading="lazy">
 
                 <span class="menu-dish-type ${dish.foodType}">
                     <span class="${dish.foodType === "veg" ? "veg-indicator" : "nonveg-indicator"}"></span>
@@ -3213,11 +3198,14 @@ function renderMenuDishes() {
             </div>
 
             <div class="menu-dish-details">
-                <h3>${dish.name}</h3>
-                <p>${categories.find(c => c.id === dish.category)?.name || ""}</p>
+                <h3>${escapeHtml(dish.name)}</h3>
+                <p class="menu-dish-category">${escapeHtml(dish.subcategoryName || dish.categoryName)}</p>
+                <p class="menu-dish-description">${escapeHtml(dish.description)}</p>
+
+                ${renderPortionSelector(dish)}
 
                 <div class="menu-dish-bottom">
-                    <span class="menu-dish-price">₹${dish.price}</span>
+                    <span class="menu-dish-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
 
                     <button class="menu-add-button" data-add-cart="${dish.id}">
                         Add <i class="fa-solid fa-plus"></i>
@@ -3227,27 +3215,37 @@ function renderMenuDishes() {
         </article>
     `;
 
-    if (activeMenuFilter === "veg") {
-        const groups = activeMenuGroup === "all"
-            ? vegMenuGroups
-            : vegMenuGroups.filter(group => group.id === activeMenuGroup);
-
-        container.innerHTML = groups.map(group => {
-            const groupDishes = filtered.filter(dish => dish.menuGroup === group.id);
-
-            if (groupDishes.length === 0) return "";
-
-            return `
-                <h3 class="menu-dish-group-heading">${group.name}</h3>
-                ${groupDishes.map(renderDishCard).join("")}
-            `;
-        }).join("");
-    } else {
-        container.innerHTML = filtered.map(renderDishCard).join("");
-    }
+    container.innerHTML = pageDishes.map(renderDishCard).join("");
 
     if (emptyState) {
         emptyState.hidden = filtered.length > 0;
+    }
+
+    if (pagination) {
+        pagination.hidden = filtered.length === 0;
+        pagination.innerHTML = `
+            <button type="button" data-menu-page="${menuCurrentPage - 1}" ${menuCurrentPage === 1 ? "disabled" : ""} aria-label="Previous page">
+                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                Previous
+            </button>
+            <div class="menu-pagination-pages">
+                ${Array.from({ length: pageCount }, (_, index) => {
+                    const page = index + 1;
+                    return `
+                        <button
+                            type="button"
+                            data-menu-page="${page}"
+                            ${page === menuCurrentPage ? 'aria-current="page"' : ""}
+                            aria-label="Page ${page}"
+                        >${page}</button>
+                    `;
+                }).join("")}
+            </div>
+            <button type="button" data-menu-page="${menuCurrentPage + 1}" ${menuCurrentPage === pageCount ? "disabled" : ""} aria-label="Next page">
+                Next
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        `;
     }
 
     if (resultCount) {
@@ -3262,6 +3260,7 @@ function setMenuCategory(categoryId) {
         categories.some(category => category.id === categoryId);
 
     activeMenuCategory = valid ? categoryId : "all";
+    menuCurrentPage = 1;
 
     renderMenuCategories();
     renderMenuDishes();
@@ -3287,6 +3286,7 @@ function initializeMenuPage() {
         searchForm.addEventListener("submit", event => {
             event.preventDefault();
             menuSearchQuery = searchInput.value.trim().toLowerCase();
+            menuCurrentPage = 1;
             renderMenuDishes();
             document.querySelector(".menu-listing")?.scrollIntoView({
                 behavior: "smooth",
@@ -3299,7 +3299,7 @@ function initializeMenuPage() {
         button.addEventListener("click", () => {
             activeMenuFilter = button.dataset.filter || "all";
             activeMenuCategory = "all";
-            activeMenuGroup = "all";
+            menuCurrentPage = 1;
 
             document.querySelectorAll(".food-filter").forEach(item => {
                 item.classList.toggle("active", item === button);
@@ -3317,21 +3317,27 @@ function initializeMenuPage() {
     if (categoryContainer) {
         categoryContainer.addEventListener("click", event => {
             const button = event.target.closest("[data-menu-category]");
-            const groupButton = event.target.closest("[data-menu-group]");
 
             if (button) {
-                const categoryPage = dedicatedCategoryPages[button.dataset.menuCategory];
-
-                if (categoryPage) {
-                    window.location.href = categoryPage;
-                } else {
-                    setMenuCategory(button.dataset.menuCategory);
-                }
-            } else if (groupButton) {
-                activeMenuGroup = groupButton.dataset.menuGroup || "all";
-                renderMenuCategories();
-                renderMenuDishes();
+                setMenuCategory(button.dataset.menuCategory);
             }
+        });
+    }
+
+    const pagination = document.getElementById("menu-pagination");
+
+    if (pagination) {
+        pagination.addEventListener("click", event => {
+            const button = event.target.closest("[data-menu-page]");
+
+            if (!button || button.disabled) return;
+
+            menuCurrentPage = Number(button.dataset.menuPage);
+            renderMenuDishes();
+            pagination.querySelector('[aria-current="page"]')?.scrollIntoView({
+                block: "nearest",
+                inline: "center"
+            });
         });
     }
 
@@ -3525,8 +3531,9 @@ function renderBiryanis() {
                 <div class="biryani-card-body">
                     <h4>${dish.name}</h4>
                     <p>${dish.description}</p>
+                    ${renderPortionSelector(dish)}
                     <div class="biryani-card-bottom">
-                        <span class="biryani-card-price">₹${dish.price}</span>
+                        <span class="biryani-card-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
                         <button class="biryani-card-add" type="button" data-add-cart="${dish.id}">
                             Add to Cart
                             <i class="fa-solid fa-plus"></i>
@@ -3657,8 +3664,9 @@ function renderNorthIndianDishes() {
                 <div class="north-indian-card-body">
                     <h4>${dish.name}</h4>
                     <p>${dish.description}</p>
+                    ${renderPortionSelector(dish)}
                     <div class="north-indian-card-bottom">
-                        <span class="north-indian-card-price">₹${dish.price}</span>
+                        <span class="north-indian-card-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
                         <button class="north-indian-card-add" type="button" data-add-cart="${dish.id}">
                             Add to Cart
                             <i class="fa-solid fa-plus"></i>
@@ -3801,8 +3809,9 @@ function renderSouthIndianDishes() {
                 <div class="south-indian-card-body">
                     <h4>${dish.name}</h4>
                     <p>${dish.description}</p>
+                    ${renderPortionSelector(dish)}
                     <div class="south-indian-card-bottom">
-                        <span class="south-indian-card-price">₹${dish.price}</span>
+                        <span class="south-indian-card-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
                         <button class="south-indian-card-add" type="button" data-add-cart="${dish.id}">
                             Add to Cart
                             <i class="fa-solid fa-plus"></i>
@@ -3932,8 +3941,9 @@ function renderChineseDishes() {
                 <div class="chinese-card-body">
                     <h4>${dish.name}</h4>
                     <p>${dish.description}</p>
+                    ${renderPortionSelector(dish)}
                     <div class="chinese-card-bottom">
-                        <span class="chinese-card-price">₹${dish.price}</span>
+                        <span class="chinese-card-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
                         <button class="chinese-card-add" type="button" data-add-cart="${dish.id}">
                             Add to Cart
                             <i class="fa-solid fa-plus"></i>
@@ -4314,9 +4324,10 @@ function renderCategoryDishes(categoryId) {
             <div class="menu-dish-details">
                 <h3>${dish.name}</h3>
                 <p>${categories.find(c => c.id === dish.category)?.name || ""}</p>
+                ${renderPortionSelector(dish)}
 
                 <div class="menu-dish-bottom">
-                    <span class="menu-dish-price">₹${dish.price}</span>
+                    <span class="menu-dish-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
 
                     <button class="menu-add-button" data-add-cart="${dish.id}">
                         Add <i class="fa-solid fa-plus"></i>
@@ -4369,7 +4380,7 @@ function initializeCategoryPage() {
         return;
     }
 
-    document.title = `${category.name} | Rasoi Express`;
+    document.title = `${category.name} | Hotel Harshvardhan`;
 
     if (title) title.textContent = category.name;
 
@@ -4407,20 +4418,36 @@ function initializeGlobalEvents() {
         const addButton = event.target.closest("[data-add-cart]");
 
         if (addButton) {
-            addToCart(addButton.dataset.addCart);
+            const portion = addButton.closest("article")
+                ?.querySelector('[data-portion-option][aria-pressed="true"]')
+                ?.dataset.portionOption || "full";
+            addToCart(addButton.dataset.addCart, portion);
             return;
         }
 
-        const favoriteButton = event.target.closest("[data-favorite]");
+        const portionButton = event.target.closest("[data-portion-option]");
 
-        if (favoriteButton) {
-            toggleFavorite(favoriteButton.dataset.favorite);
+        if (portionButton) {
+            const dishCard = portionButton.closest("article");
+            const dishId = dishCard?.querySelector("[data-add-cart]")?.dataset.addCart;
+            const dish = getDishById(dishId);
+            const portion = portionButton.dataset.portionOption;
+            const price = dish ? getPortionPrice(dish, portion) : null;
+
+            if (!dishCard || !dish || price === null) return;
+
+            dishCard.querySelectorAll("[data-portion-option]").forEach(option => {
+                const isSelected = option === portionButton;
+                option.classList.toggle("is-selected", isSelected);
+                option.setAttribute("aria-pressed", String(isSelected));
+            });
+
+            const priceElement = dishCard.querySelector("[data-portion-price]");
+            if (priceElement) priceElement.textContent = `₹${price}`;
             return;
         }
 
-        const cartButton = event.target.closest(
-            ".cart-button, .mobile-bottom-cart"
-        );
+        const cartButton = event.target.closest(".floating-cart-button");
 
         if (cartButton) {
             openCart();
@@ -4436,7 +4463,7 @@ function initializeGlobalEvents() {
 
         if (cartAction) {
             updateCartItem(
-                cartAction.dataset.itemId,
+                cartAction.dataset.cartKey,
                 cartAction.dataset.cartAction
             );
             return;
@@ -4462,7 +4489,7 @@ function initializeGlobalEvents() {
         const target = event.target;
 
         if (target.matches("[data-checkout-spice]")) {
-            const item = cart.find(product => product.id === Number(target.dataset.checkoutSpice));
+            const item = cart.find(product => getCartItemKey(product) === target.dataset.checkoutSpice);
             if (item) {
                 saveCheckoutCustomization(item, customizations => {
                     customizations.spice = target.value;
@@ -4472,10 +4499,11 @@ function initializeGlobalEvents() {
         }
 
         if (target.matches("[data-checkout-addon]")) {
-            const itemId = Number(target.dataset.checkoutAddon);
-            const item = cart.find(product => product.id === itemId);
+            const cartKey = target.dataset.checkoutAddon;
+            const item = cart.find(product => getCartItemKey(product) === cartKey);
             if (item) {
-                const checkedAddons = [...document.querySelectorAll(`[data-checkout-addon="${itemId}"]:checked`)]
+                const checkedAddons = [...document.querySelectorAll("[data-checkout-addon]")]
+                    .filter(input => input.dataset.checkoutAddon === cartKey && input.checked)
                     .map(input => input.value);
                 saveCheckoutCustomization(item, customizations => {
                     customizations.addons = checkedAddons;
@@ -4495,7 +4523,7 @@ function initializeGlobalEvents() {
         const target = event.target;
 
         if (target.matches("[data-checkout-instructions]")) {
-            const item = cart.find(product => product.id === Number(target.dataset.checkoutInstructions));
+            const item = cart.find(product => getCartItemKey(product) === target.dataset.checkoutInstructions);
             if (item) {
                 saveCheckoutCustomization(item, customizations => {
                     customizations.instructions = target.value;
@@ -4515,7 +4543,6 @@ function initializeGlobalEvents() {
 
     document.addEventListener("keydown", event => {
         if (event.key === "Escape") {
-            closeWaiterModal();
             closeCart();
         }
     });
@@ -4543,11 +4570,11 @@ function initializeHomepage() {
     renderCategories();
     renderPopularDishes();
 
+    initializeFloatingCartButton();
     updateCartCount();
 
     initializeMobileNavigation();
     initializeSearch();
-    initializeWaiterButtons();
     initializeCategoryNavigation();
     initializeGlobalEvents();
 

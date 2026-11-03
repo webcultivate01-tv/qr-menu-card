@@ -195,15 +195,15 @@
 
 .biryani-filter:hover,
 .biryani-filter.active {
-    color: #fffdf9;
-    background: #a65c11;
+    color: var(--button-text);
+    background: var(--brand-gold);
 }
 
 .biryani-filter:focus-visible,
 .biryani-more-button:focus-visible,
 .biryani-card-add:focus-visible,
 .biryani-feature-add:focus-visible {
-    outline: 3px solid rgba(166, 92, 17, 0.32);
+    outline: 3px solid rgba(240, 200, 108, 0.7);
     outline-offset: 3px;
 }
 

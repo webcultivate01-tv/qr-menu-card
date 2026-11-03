@@ -195,15 +195,15 @@
 
 .desserts-filter:hover,
 .desserts-filter.active {
-    color: #fffdf9;
-    background: #75412c;
+    color: var(--button-text);
+    background: var(--brand-gold);
 }
 
 .desserts-filter:focus-visible,
 .desserts-more-button:focus-visible,
 .desserts-card-add:focus-visible,
 .desserts-feature-add:focus-visible {
-    outline: 3px solid rgba(117, 65, 44, 0.3);
+    outline: 3px solid rgba(240, 200, 108, 0.7);
     outline-offset: 3px;
 }
 

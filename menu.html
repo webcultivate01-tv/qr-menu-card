@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Our Menu | Rasoi Express</title>
+    <title>Our Menu | Hotel Harshvardhan</title>
 
-    <meta name="description" content="Explore the complete food menu at Rasoi Express.">
+    <meta name="description" content="Explore the complete food menu at Hotel Harshvardhan.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,8 +36,8 @@
                     <i class="fa-solid fa-utensils"></i>
                 </span>
                 <span class="logo-text">
-                    <strong>Rasoi Express</strong>
-                    <small>GOOD FOOD. GREAT MOMENTS.</small>
+                    <strong>Hotel Harshvardhan</strong>
+                    <small>Delicious Food • Great Service</small>
                 </span>
             </a>
 
@@ -47,15 +47,6 @@
             </nav>
 
             <div class="header-actions">
-                <button class="icon-button cart-button" aria-label="Shopping cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="cart-count">0</span>
-                </button>
-
-                <button class="call-waiter-button">
-                    <i class="fa-solid fa-bell-concierge"></i>
-                    <span>Call Waiter</span>
-                </button>
             </div>
 
         </div>
@@ -64,57 +55,27 @@
             <a href="./index.html" class="mobile-nav-link">Home</a>
             <a href="./menu.html" class="mobile-nav-link active">Menu</a>
 
-            <button class="mobile-waiter-button">
-                <i class="fa-solid fa-bell-concierge"></i>
-                Call Waiter
-            </button>
         </nav>
     </header>
 
 
     <main>
 
-        <!-- MENU HERO -->
-        <section class="menu-hero">
-            <div class="section-container">
-                <div class="menu-hero-visual" aria-hidden="true">
-                    <span class="menu-hero-orbit"></span>
-                    <span class="menu-hero-spark menu-hero-spark-one">✦</span>
-                    <span class="menu-hero-spark menu-hero-spark-two">✦</span>
-                    <span class="menu-hero-food-note">
-                        <i class="fa-solid fa-pepper-hot"></i>
-                        Made with love
-                    </span>
-                    <img src="./assets/images/menu-chef-cutout.png" alt="">
-                </div>
-
-                <div class="menu-hero-content">
-                    <span class="menu-hero-eyebrow">
-                        <i class="fa-solid fa-seedling" aria-hidden="true"></i>
-                        GOOD FOOD. GREAT MOOD.
-                    </span>
-                    <h1>A Menu Full of <span>Happiness.</span></h1>
-                    <p>From comforting Indian classics to irresistible favourites, find something you'll love.</p>
-                    <form class="menu-search-form" id="menu-search-form" role="search">
-                        <label class="sr-only" for="menu-search">Search dishes or categories</label>
-                        <input
-                            type="search"
-                            id="menu-search"
-                            name="q"
-                            placeholder="Search dishes or categories"
-                            autocomplete="off"
-                        >
-                        <button type="submit" aria-label="Search menu">
-                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- FOOD TYPE FILTERS -->
         <section class="menu-main section-container">
+
+            <form class="menu-search-form" id="menu-search-form" role="search">
+                <label class="sr-only" for="menu-search">Search dishes or categories</label>
+                <input
+                    type="search"
+                    id="menu-search"
+                    name="q"
+                    placeholder="Search dishes or categories"
+                    autocomplete="off"
+                >
+                <button type="submit" aria-label="Search menu">
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                </button>
+            </form>
 
             <div class="food-type-filters">
                 <button class="food-filter active" data-filter="all">
@@ -159,6 +120,8 @@
                     <!-- Dishes generated through JavaScript -->
                 </div>
 
+                <nav class="menu-pagination" id="menu-pagination" aria-label="Dish pages" hidden></nav>
+
                 <div class="menu-empty-state" id="menu-empty-state" hidden>
                     <i class="fa-solid fa-bowl-food"></i>
                     <h3>No dishes found</h3>
@@ -176,12 +139,12 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <h3>About Rasoi Express</h3>
+                <h3>About Hotel Harshvardhan</h3>
                 <a href="./index.html" class="brand-logo footer-logo">
                     <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
                     <span class="logo-text">
-                        <strong>Rasoi Express</strong>
-                        <small>GOOD FOOD. GREAT MOMENTS.</small>
+                        <strong>Hotel Harshvardhan</strong>
+                        <small>Delicious Food • Great Service</small>
                     </span>
                 </a>
                 <p>Bringing delicious flavours and memorable dining experiences to your table.</p>
@@ -202,12 +165,13 @@
             <div class="footer-column">
                 <h3>Popular Categories</h3>
                 <ul>
-                    <li><a href="./biryani.html">Biryani</a></li>
-                    <li><a href="./north-indian.html">North Indian</a></li>
-                    <li><a href="./south-indian.html">South Indian</a></li>
-                    <li><a href="./chinese.html">Chinese</a></li>
-                    <li><a href="./beverages.html">Beverages</a></li>
-                    <li><a href="./desserts.html">Desserts</a></li>
+                    <li><a href="./menu.html?category=biryani">Biryani</a></li>
+                    <li><a href="./menu.html?category=north-indian">North Indian</a></li>
+                    <li><a href="./menu.html?category=south-indian">South Indian</a></li>
+                    <li><a href="./menu.html?category=chinese">Chinese</a></li>
+                    <li><a href="./menu.html?category=breads">Rotis</a></li>
+                    <li><a href="./menu.html?category=beverages">Beverages</a></li>
+                    <li><a href="./menu.html?category=desserts">Desserts</a></li>
                 </ul>
             </div>
 
@@ -219,25 +183,11 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Rasoi Express. All rights reserved.</p>
+            <p>&copy; 2026 Hotel Harshvardhan</p>
             <p>Designed and Developed by <span class="footer-credit-name">Webcultivate</span></p>
         </div>
     </footer>
 
-
-    <!-- MOBILE BOTTOM BAR -->
-    <div class="mobile-bottom-bar">
-        <button class="mobile-bottom-waiter">
-            <i class="fa-solid fa-bell-concierge"></i>
-            <span>Call Waiter</span>
-        </button>
-
-        <button class="mobile-bottom-cart">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span>View Cart</span>
-            <span class="cart-count">0</span>
-        </button>
-    </div>
 
     <script src="./script.js" defer></script>
 

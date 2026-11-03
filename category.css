@@ -1,11 +1,11 @@
 
 /* =========================================
-   RASOI EXPRESS - CATEGORY PAGE
+   HOTEL HARSHVARDHAN - CATEGORY PAGE
 ========================================= */
 
 .category-hero {
     padding: 55px 24px 65px;
-    background: linear-gradient(135deg, #f8f1ff, #fff 70%);
+    background: linear-gradient(135deg, var(--primary-light), #fff 70%);
 }
 
 .category-hero .section-container,
@@ -54,7 +54,7 @@
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    color: #6415a5;
+    color: var(--primary);
     font-size: 13px;
     font-weight: 700;
     text-decoration: none;
