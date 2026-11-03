@@ -43,13 +43,13 @@ const categories = [
         id: "desserts",
         name: "Desserts",
         description: "Something sweet to finish your meal.",
-        image: "./assets/images/categories/desserts.jpg"
+        image: "./assets/images/categories/desserts/desserts-hero.webp"
     },
     {
         id: "beverages",
         name: "Beverages",
         description: "Refreshing drinks for every occasion.",
-        image: "./assets/images/categories/beverages.jpg"
+        image: "./assets/images/categories/beverages/beverage-hero.webp"
     }
 ];
 
@@ -329,7 +329,7 @@ const beverageDishes = [
         price: 150,
         image: {
             url: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/iced-americano.jpg"
+            local: "./assets/images/categories/beverages/iced-americano.webp"
         }
     },
     {
@@ -340,7 +340,7 @@ const beverageDishes = [
         price: 190,
         image: {
             url: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/iced-latte.jpg"
+            local: "./assets/images/categories/beverages/iced-latte.webp"
         }
     },
     {
@@ -351,7 +351,7 @@ const beverageDishes = [
         price: 200,
         image: {
             url: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/classic-cold-brew.jpg"
+            local: "./assets/images/categories/beverages/classic-cold-brew.webp"
         }
     },
     {
@@ -362,7 +362,7 @@ const beverageDishes = [
         price: 170,
         image: {
             url: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/cappuccino.jpg"
+            local: "./assets/images/categories/beverages/cappuccino.webp"
         }
     },
     {
@@ -373,7 +373,7 @@ const beverageDishes = [
         price: 180,
         image: {
             url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/cafe-latte.jpg"
+            local: "./assets/images/categories/beverages/cafe-latte.webp"
         }
     },
     {
@@ -384,7 +384,7 @@ const beverageDishes = [
         price: 185,
         image: {
             url: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/flat-white.jpg"
+            local: "./assets/images/categories/beverages/flat-white.webp"
         }
     },
     {
@@ -395,7 +395,7 @@ const beverageDishes = [
         price: 110,
         image: {
             url: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/espresso.jpg"
+            local: "./assets/images/categories/beverages/espresso.webp"
         }
     },
     {
@@ -406,7 +406,7 @@ const beverageDishes = [
         price: 140,
         image: {
             url: "https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/americano.jpg"
+            local: "./assets/images/categories/beverages/americano.webp"
         }
     },
     {
@@ -417,7 +417,7 @@ const beverageDishes = [
         price: 145,
         image: {
             url: "https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/long-black.jpg"
+            local: "./assets/images/categories/beverages/long-black.webp"
         }
     },
     {
@@ -428,7 +428,7 @@ const beverageDishes = [
         price: 165,
         image: {
             url: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/cortado.jpg"
+            local: "./assets/images/categories/beverages/cortado.webp"
         }
     },
     {
@@ -439,7 +439,7 @@ const beverageDishes = [
         price: 180,
         image: {
             url: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/turkish-coffee.jpg"
+            local: "./assets/images/categories/beverages/turkish-coffee.webp"
         }
     },
     {
@@ -450,7 +450,7 @@ const beverageDishes = [
         price: 175,
         image: {
             url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/cafe-au-lait.jpg"
+            local: "./assets/images/categories/beverages/cafe-au-lait.webp"
         }
     },
     {
@@ -461,7 +461,7 @@ const beverageDishes = [
         price: 220,
         image: {
             url: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/caramel-macchiato.jpg"
+            local: "./assets/images/categories/beverages/caramel-macchiato.webp"
         }
     },
     {
@@ -472,7 +472,7 @@ const beverageDishes = [
         price: 210,
         image: {
             url: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/vanilla-latte.jpg"
+            local: "./assets/images/categories/beverages/vanilla-latte.webp"
         }
     },
     {
@@ -483,7 +483,7 @@ const beverageDishes = [
         price: 220,
         image: {
             url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/mocha.jpg"
+            local: "./assets/images/categories/beverages/mocha.webp"
         }
     },
     {
@@ -494,7 +494,7 @@ const beverageDishes = [
         price: 210,
         image: {
             url: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/chocolate-frappe.jpg"
+            local: "./assets/images/categories/beverages/chocolate-frappe.webp"
         }
     },
     {
@@ -505,7 +505,7 @@ const beverageDishes = [
         price: 190,
         image: {
             url: "https://images.unsplash.com/photo-1577805947697-89e18249d767?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/vanilla-milkshake.jpg"
+            local: "./assets/images/categories/beverages/vanilla-milkshake.webp"
         }
     },
     {
@@ -516,7 +516,7 @@ const beverageDishes = [
         price: 175,
         image: {
             url: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/iced-chocolate.jpg"
+            local: "./assets/images/categories/beverages/iced-chocolate.webp"
         }
     },
     {
@@ -527,7 +527,7 @@ const beverageDishes = [
         price: 110,
         image: {
             url: "https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/fresh-lime-soda.jpg"
+            local: "./assets/images/categories/beverages/fresh-lime-soda.webp"
         }
     },
     {
@@ -538,7 +538,7 @@ const beverageDishes = [
         price: 130,
         image: {
             url: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/mint-cooler.jpg"
+            local: "./assets/images/categories/beverages/mint-cooler.webp"
         }
     },
     {
@@ -549,7 +549,7 @@ const beverageDishes = [
         price: 150,
         image: {
             url: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=800&q=85",
-            local: "./assets/images/beverages/fresh-orange-juice.jpg"
+            local: "./assets/images/categories/beverages/fresh-orange-juice.webp"
         }
     }
 ];
@@ -1141,8 +1141,8 @@ const chineseDishes = [
         description: "Garlic-kissed hakka noodles and crisp chilli paneer tossed in signature Indo-Chinese sauces.",
         price: 340,
         image: {
-            url: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=1100&q=90",
-            local: "./assets/images/chinese/wok-tossed-veg-hakka-noodles-chilli-paneer-combo.jpg"
+            url: "./assets/images/categories/chinese/wok-tossed-veg-hakka-noodles-chilli-paneer-combo.webp",
+            local: "./assets/images/categories/chinese/wok-tossed-veg-hakka-noodles-chilli-paneer-combo.webp"
         }
     },
     {
@@ -1152,8 +1152,8 @@ const chineseDishes = [
         description: "Crisp rolls packed with wok-seasoned vegetables and served with tangy chilli dip.",
         price: 190,
         image: {
-            url: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/veg-spring-rolls.jpg"
+            url: "./assets/images/categories/chinese/veg-spring-rolls.webp",
+            local: "./assets/images/categories/chinese/veg-spring-rolls.webp"
         }
     },
     {
@@ -1163,8 +1163,8 @@ const chineseDishes = [
         description: "Golden potato fingers tossed with fresh garlic, sesame and sweet-hot chilli sauce.",
         price: 210,
         image: {
-            url: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/crispy-chilli-potato.jpg"
+            url: "./assets/images/categories/chinese/crispy-chilli-potato.webp",
+            local: "./assets/images/categories/chinese/crispy-chilli-potato.webp"
         }
     },
     {
@@ -1174,8 +1174,8 @@ const chineseDishes = [
         description: "A warming, tangy broth with garden vegetables, pepper and a hint of chilli.",
         price: 140,
         image: {
-            url: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/hot-sour-veg-soup.jpg"
+            url: "./assets/images/categories/chinese/hot-sour-veg-soup.webp",
+            local: "./assets/images/categories/chinese/hot-sour-veg-soup.webp"
         }
     },
     {
@@ -1185,8 +1185,8 @@ const chineseDishes = [
         description: "Paneer cubes seared golden and tossed with bell peppers, spring onion and chilli.",
         price: 250,
         image: {
-            url: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/chilli-paneer-dry.jpg"
+            url: "./assets/images/categories/chinese/chilli-paneer-dry.webp",
+            local: "./assets/images/categories/chinese/chilli-paneer-dry.webp"
         }
     },
     {
@@ -1196,8 +1196,8 @@ const chineseDishes = [
         description: "Springy noodles wok-tossed with fresh garlic, cabbage, peppers and soy.",
         price: 220,
         image: {
-            url: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/classic-veg-hakka-noodles.jpg"
+            url: "./assets/images/categories/chinese/classic-veg-hakka-noodles.webp",
+            local: "./assets/images/categories/chinese/classic-veg-hakka-noodles.webp"
         }
     },
     {
@@ -1207,8 +1207,8 @@ const chineseDishes = [
         description: "Fiery wok-fried noodles coated in house Schezwan sauce with crisp vegetables.",
         price: 240,
         image: {
-            url: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/schezwan-noodles.jpg"
+            url: "./assets/images/categories/chinese/schezwan-noodles.webp",
+            local: "./assets/images/categories/chinese/schezwan-noodles.webp"
         }
     },
     {
@@ -1218,8 +1218,8 @@ const chineseDishes = [
         description: "Noodles tossed over a hot wok with toasted garlic, chilli flakes and greens.",
         price: 230,
         image: {
-            url: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/chilli-garlic-noodles.jpg"
+            url: "./assets/images/categories/chinese/chilli-garlic-noodles.webp",
+            local: "./assets/images/categories/chinese/chilli-garlic-noodles.webp"
         }
     },
     {
@@ -1229,8 +1229,8 @@ const chineseDishes = [
         description: "Crisp-edged noodles finished with garlic, peppers and a savoury chilli glaze.",
         price: 260,
         image: {
-            url: "https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/pan-fried-chilli-garlic-noodles.jpg"
+            url: "./assets/images/categories/chinese/pan-fried-chilli-garlic-noodles.webp",
+            local: "./assets/images/categories/chinese/pan-fried-chilli-garlic-noodles.webp"
         }
     },
     {
@@ -1240,8 +1240,8 @@ const chineseDishes = [
         description: "Fluffy rice tossed quickly with crunchy vegetables, garlic and light soy.",
         price: 210,
         image: {
-            url: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/veg-fried-rice.jpg"
+            url: "./assets/images/categories/chinese/veg-fried-rice.webp",
+            local: "./assets/images/categories/chinese/veg-fried-rice.webp"
         }
     },
     {
@@ -1251,8 +1251,8 @@ const chineseDishes = [
         description: "Wok-fried rice with vegetables and a bold, spicy house Schezwan sauce.",
         price: 230,
         image: {
-            url: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/schezwan-fried-rice.jpg"
+            url: "./assets/images/categories/chinese/schezwan-fried-rice.webp",
+            local: "./assets/images/categories/chinese/schezwan-fried-rice.webp"
         }
     },
     {
@@ -1262,8 +1262,8 @@ const chineseDishes = [
         description: "Fragrant rice tossed with fresh garlic, chilli and colourful vegetables.",
         price: 230,
         image: {
-            url: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/chilli-garlic-fried-rice.jpg"
+            url: "./assets/images/categories/chinese/chilli-garlic-fried-rice.webp",
+            local: "./assets/images/categories/chinese/chilli-garlic-fried-rice.webp"
         }
     },
     {
@@ -1273,8 +1273,8 @@ const chineseDishes = [
         description: "A hearty rice bowl topped with crisp burnt garlic and wok-seared vegetables.",
         price: 250,
         image: {
-            url: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/burnt-garlic-rice-bowl.jpg"
+            url: "./assets/images/categories/chinese/burnt-garlic-rice-bowl.webp",
+            local: "./assets/images/categories/chinese/burnt-garlic-rice-bowl.webp"
         }
     },
     {
@@ -1284,8 +1284,8 @@ const chineseDishes = [
         description: "Vegetable dumplings simmered in a glossy garlic, ginger and soy gravy.",
         price: 240,
         image: {
-            url: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/veg-manchurian-gravy.jpg"
+            url: "./assets/images/categories/chinese/veg-manchurian-gravy.webp",
+            local: "./assets/images/categories/chinese/veg-manchurian-gravy.webp"
         }
     },
     {
@@ -1295,8 +1295,8 @@ const chineseDishes = [
         description: "Tender paneer and bell peppers coated in a spicy, savoury Indo-Chinese gravy.",
         price: 270,
         image: {
-            url: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/paneer-chilli-gravy.jpg"
+            url: "./assets/images/categories/chinese/paneer-chilli-gravy.webp",
+            local: "./assets/images/categories/chinese/paneer-chilli-gravy.webp"
         }
     },
     {
@@ -1306,8 +1306,8 @@ const chineseDishes = [
         description: "Golden mushrooms tossed with ginger, garlic and a rich Manchurian sauce.",
         price: 260,
         image: {
-            url: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/mushroom-manchurian.jpg"
+            url: "./assets/images/categories/chinese/mushroom-manchurian.webp",
+            local: "./assets/images/categories/chinese/mushroom-manchurian.webp"
         }
     },
     {
@@ -1317,8 +1317,8 @@ const chineseDishes = [
         description: "Soft tofu and crisp peppers in a warming garlic sauce with a chilli finish.",
         price: 250,
         image: {
-            url: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/tofu-hot-garlic-sauce.jpg"
+            url: "./assets/images/categories/chinese/tofu-hot-garlic-sauce.webp",
+            local: "./assets/images/categories/chinese/tofu-hot-garlic-sauce.webp"
         }
     },
     {
@@ -1328,8 +1328,8 @@ const chineseDishes = [
         description: "Hot-plate noodles with wok vegetables and a tangy, peppery house sauce.",
         price: 320,
         image: {
-            url: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/sizzling-veg-noodle-platter.jpg"
+            url: "./assets/images/categories/chinese/sizzling-veg-noodle-platter.webp",
+            local: "./assets/images/categories/chinese/sizzling-veg-noodle-platter.webp"
         }
     },
     {
@@ -1339,8 +1339,8 @@ const chineseDishes = [
         description: "Savoury fried rice paired with crisp chilli paneer and fresh wok-tossed peppers.",
         price: 330,
         image: {
-            url: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/chilli-paneer-fried-rice.jpg"
+            url: "./assets/images/categories/chinese/chilli-paneer-fried-rice.webp",
+            local: "./assets/images/categories/chinese/chilli-paneer-fried-rice.webp"
         }
     },
     {
@@ -1350,8 +1350,8 @@ const chineseDishes = [
         description: "Sweet corn kernels fried crisp and tossed with cracked pepper, garlic and herbs.",
         price: 220,
         image: {
-            url: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/chinese/crispy-corn-pepper-salt.jpg"
+            url: "./assets/images/categories/chinese/crispy-corn-pepper-salt.webp",
+            local: "./assets/images/categories/chinese/crispy-corn-pepper-salt.webp"
         }
     }
 ];
@@ -1558,8 +1558,8 @@ const dessertDishes = [
         description: "Warm chocolate brownie on a sizzling plate with vanilla ice cream and hot fudge.",
         price: 280,
         image: {
-            url: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1100&q=90",
-            local: "./assets/images/desserts/sizzling-brownie-sundae.jpg"
+            url: "./assets/images/categories/desserts/sizzling-brownie-sundae.webp",
+            local: "./assets/images/categories/desserts/sizzling-brownie-sundae.webp"
         }
     },
     {
@@ -1569,8 +1569,8 @@ const dessertDishes = [
         description: "Soft golden khoya dumplings, slow-soaked in fragrant cardamom sugar syrup.",
         price: 120,
         image: {
-            url: "https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/gulab-jamun.jpg"
+            url: "./assets/images/categories/desserts/gulab-jamun.webp",
+            local: "./assets/images/categories/desserts/gulab-jamun.webp"
         }
     },
     {
@@ -1580,8 +1580,8 @@ const dessertDishes = [
         description: "Delicate chenna patties resting in chilled saffron-and-cardamom milk.",
         price: 160,
         image: {
-            url: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/rasmalai.jpg"
+            url: "./assets/images/categories/desserts/rasmalai.webp",
+            local: "./assets/images/categories/desserts/rasmalai.webp"
         }
     },
     {
@@ -1591,8 +1591,8 @@ const dessertDishes = [
         description: "Slow-cooked carrots with milk, ghee and nuts, served warm and richly aromatic.",
         price: 150,
         image: {
-            url: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/gajar-ka-halwa.jpg"
+            url: "./assets/images/categories/desserts/gajar-ka-halwa.webp",
+            local: "./assets/images/categories/desserts/gajar-ka-halwa.webp"
         }
     },
     {
@@ -1602,8 +1602,8 @@ const dessertDishes = [
         description: "Dense, creamy kulfi infused with saffron and studded with crushed pistachios.",
         price: 140,
         image: {
-            url: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/kesar-pista-kulfi.jpg"
+            url: "./assets/images/categories/desserts/kesar-pista-kulfi.webp",
+            local: "./assets/images/categories/desserts/kesar-pista-kulfi.webp"
         }
     },
     {
@@ -1613,8 +1613,8 @@ const dessertDishes = [
         description: "Moist chocolate sponge layered with silky ganache and a glossy truffle finish.",
         price: 170,
         image: {
-            url: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/chocolate-truffle-pastry.jpg"
+            url: "./assets/images/categories/desserts/chocolate-truffle-pastry.webp",
+            local: "./assets/images/categories/desserts/chocolate-truffle-pastry.webp"
         }
     },
     {
@@ -1624,8 +1624,8 @@ const dessertDishes = [
         description: "Rich cocoa cake layered with smooth chocolate fudge for an indulgent finish.",
         price: 210,
         image: {
-            url: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/classic-chocolate-fudge-cake.jpg"
+            url: "./assets/images/categories/desserts/classic-chocolate-fudge-cake.webp",
+            local: "./assets/images/categories/desserts/classic-chocolate-fudge-cake.webp"
         }
     },
     {
@@ -1635,8 +1635,8 @@ const dessertDishes = [
         description: "Tender cocoa sponge layered with a light, tangy cream-cheese frosting.",
         price: 180,
         image: {
-            url: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/red-velvet-pastry.jpg"
+            url: "./assets/images/categories/desserts/red-velvet-pastry.webp",
+            local: "./assets/images/categories/desserts/red-velvet-pastry.webp"
         }
     },
     {
@@ -1646,8 +1646,8 @@ const dessertDishes = [
         description: "Creamy baked cheesecake on a buttery biscuit base with a golden edge.",
         price: 230,
         image: {
-            url: "https://images.unsplash.com/photo-1564355808539-22fda35bed7e?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/new-york-baked-cheesecake.jpg"
+            url: "./assets/images/categories/desserts/new-york-baked-cheesecake.webp",
+            local: "./assets/images/categories/desserts/new-york-baked-cheesecake.webp"
         }
     },
     {
@@ -1657,8 +1657,8 @@ const dessertDishes = [
         description: "Two smooth scoops of classic vanilla bean ice cream, served chilled.",
         price: 120,
         image: {
-            url: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/vanilla-bean-ice-cream.jpg"
+            url: "./assets/images/categories/desserts/vanilla-bean-ice-cream.webp",
+            local: "./assets/images/categories/desserts/vanilla-bean-ice-cream.webp"
         }
     },
     {
@@ -1668,8 +1668,8 @@ const dessertDishes = [
         description: "Chocolate brownie, vanilla scoops, whipped cream and a generous fudge drizzle.",
         price: 240,
         image: {
-            url: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/chocolate-brownie-sundae.jpg"
+            url: "./assets/images/categories/desserts/chocolate-brownie-sundae.webp",
+            local: "./assets/images/categories/desserts/chocolate-brownie-sundae.webp"
         }
     },
     {
@@ -1679,8 +1679,8 @@ const dessertDishes = [
         description: "Creamy mango kulfi served with ripe mango, pistachio and a light cream swirl.",
         price: 190,
         image: {
-            url: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/mango-kulfi-sundae.jpg"
+            url: "./assets/images/categories/desserts/mango-kulfi-sundae.webp",
+            local: "./assets/images/categories/desserts/mango-kulfi-sundae.webp"
         }
     },
     {
@@ -1690,8 +1690,8 @@ const dessertDishes = [
         description: "Warm chocolate cake with a flowing molten centre, served with vanilla ice cream.",
         price: 250,
         image: {
-            url: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/hot-chocolate-lava-cake.jpg"
+            url: "./assets/images/categories/desserts/hot-chocolate-lava-cake.webp",
+            local: "./assets/images/categories/desserts/hot-chocolate-lava-cake.webp"
         }
     },
     {
@@ -1701,8 +1701,8 @@ const dessertDishes = [
         description: "A warm brownie on a sizzling plate with vanilla ice cream and rich hot chocolate fudge.",
         price: 290,
         image: {
-            url: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1100&q=90",
-            local: "./assets/images/desserts/sizzling-brownie-vanilla-ice-cream-hot-fudge.jpg"
+            url: "./assets/images/categories/desserts/sizzling-brownie-vanilla-ice-cream-hot-fudge.webp",
+            local: "./assets/images/categories/desserts/sizzling-brownie-vanilla-ice-cream-hot-fudge.webp"
         }
     },
     {
@@ -1712,8 +1712,8 @@ const dessertDishes = [
         description: "A freshly baked, gooey-centred cookie served warm with cool vanilla ice cream.",
         price: 230,
         image: {
-            url: "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/warm-chocolate-chip-cookie-skillet.jpg"
+            url: "./assets/images/categories/desserts/warm-chocolate-chip-cookie-skillet.webp",
+            local: "./assets/images/categories/desserts/warm-chocolate-chip-cookie-skillet.webp"
         }
     },
     {
@@ -1723,8 +1723,8 @@ const dessertDishes = [
         description: "Chilled, slow-cooked ground rice pudding flavoured with saffron and almonds.",
         price: 140,
         image: {
-            url: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85",
-            local: "./assets/images/desserts/kesar-badam-phirni.jpg"
+            url: "./assets/images/categories/desserts/kesar-badam-phirni.webp",
+            local: "./assets/images/categories/desserts/kesar-badam-phirni.webp"
         }
     }
 ];
@@ -1770,8 +1770,7 @@ const categoryMenuDishes = menuCategorySources.flatMap(source => {
         )?.foodType;
         const isMeatOrEggDish = /\b(chicken|mutton|lamb|fish|prawn|shrimp|egg)\b/i.test(dish.name);
         const useCategoryImage =
-            ["beverages", "chinese", "desserts"].includes(source.id) ||
-            (source.id === "north-indian" && ["Dal Panchmel", "Matar Pulao"].includes(dish.name));
+            source.id === "north-indian" && ["Dal Panchmel", "Matar Pulao"].includes(dish.name);
 
         return {
             ...dish,
@@ -3157,7 +3156,6 @@ function renderMenuCategories() {
 function renderMenuDishes() {
     const container = document.getElementById("menu-dishes-grid");
     const emptyState = document.getElementById("menu-empty-state");
-    const resultCount = document.getElementById("menu-result-count");
     const pagination = document.getElementById("menu-pagination");
 
     if (!container) return;
@@ -3248,10 +3246,6 @@ function renderMenuDishes() {
         `;
     }
 
-    if (resultCount) {
-        resultCount.textContent =
-            `${filtered.length} ${filtered.length === 1 ? "dish" : "dishes"}`;
-    }
 }
 
 function setMenuCategory(categoryId) {
@@ -3391,7 +3385,7 @@ function renderBeverages() {
             <article class="beverage-card">
                 <div class="beverage-card-image">
                     <img
-                        src="${drink.image.url}"
+                        src="${drink.image.local}"
                         data-local-image="${drink.image.local}"
                         alt="${drink.name}"
                         loading="lazy">
@@ -3911,10 +3905,14 @@ function renderChineseDishes() {
     if (!grid) return;
 
     const filtered = chineseDishes.filter(dish => {
-        const category = chineseCategories.find(item => item.id === dish.category);
+        const category = chineseCategories.find(
+            item => item.id === dish.category
+        );
+
         const matchesCategory =
             activeChineseCategory === "all" ||
             dish.category === activeChineseCategory;
+
         const matchesSearch =
             `${dish.name} ${dish.description} ${category?.name || ""}`
                 .toLowerCase()
@@ -3926,25 +3924,45 @@ function renderChineseDishes() {
     const visibleDishes = filtered.slice(0, visibleChineseCount);
 
     grid.innerHTML = visibleDishes.map(dish => {
-        const category = chineseCategories.find(item => item.id === dish.category);
+        const category = chineseCategories.find(
+            item => item.id === dish.category
+        );
 
         return `
             <article class="chinese-card">
                 <div class="chinese-card-image">
                     <img
-                        src="${dish.image.url}"
-                        data-local-image="${dish.image.local}"
+                        src="${dish.image.local}"
                         alt="${dish.name}"
-                        loading="lazy">
-                    <span class="chinese-card-category">${category.name}</span>
+                        loading="lazy"
+                        decoding="async"
+                        onerror="this.onerror=null; this.classList.add('image-load-failed');"
+                    >
+
+                    <span class="chinese-card-category">
+                        ${category?.name || ""}
+                    </span>
                 </div>
+
                 <div class="chinese-card-body">
                     <h4>${dish.name}</h4>
                     <p>${dish.description}</p>
+
                     ${renderPortionSelector(dish)}
+
                     <div class="chinese-card-bottom">
-                        <span class="chinese-card-price" ${dish.portionPrices ? "data-portion-price" : ""}>₹${dish.price}</span>
-                        <button class="chinese-card-add" type="button" data-add-cart="${dish.id}">
+                        <span
+                            class="chinese-card-price"
+                            ${dish.portionPrices ? "data-portion-price" : ""}
+                        >
+                            ₹${dish.price}
+                        </span>
+
+                        <button
+                            class="chinese-card-add"
+                            type="button"
+                            data-add-cart="${dish.id}"
+                        >
                             Add to Cart
                             <i class="fa-solid fa-plus"></i>
                         </button>
@@ -3955,13 +3973,17 @@ function renderChineseDishes() {
     }).join("");
 
     if (resultTitle) {
-        resultTitle.textContent = activeChineseCategory === "all"
-            ? "All Indo-Chinese Favourites"
-            : chineseCategories.find(item => item.id === activeChineseCategory)?.name || "All Indo-Chinese Favourites";
+        resultTitle.textContent =
+            activeChineseCategory === "all"
+                ? "All Indo-Chinese Favourites"
+                : chineseCategories.find(
+                    item => item.id === activeChineseCategory
+                )?.name || "All Indo-Chinese Favourites";
     }
 
     if (resultCount) {
-        resultCount.textContent = `${visibleDishes.length} of ${filtered.length} dishes`;
+        resultCount.textContent =
+            `${visibleDishes.length} of ${filtered.length} dishes`;
     }
 
     if (emptyState) {
@@ -3969,7 +3991,8 @@ function renderChineseDishes() {
     }
 
     if (moreButton) {
-        moreButton.hidden = filtered.length <= visibleDishes.length;
+        moreButton.hidden =
+            filtered.length <= visibleDishes.length;
     }
 }
 
@@ -3982,30 +4005,41 @@ function initializeChinesePage() {
     const searchInput = document.getElementById("chinese-search-input");
 
     chineseSearchQuery = (params.get("q") || "").trim().toLowerCase();
-    activeChineseCategory = chineseCategories.some(item => item.id === params.get("category"))
+
+    activeChineseCategory = chineseCategories.some(
+        item => item.id === params.get("category")
+    )
         ? params.get("category")
         : "all";
 
     if (searchInput) {
         searchInput.value = params.get("q") || "";
+
         searchInput.addEventListener("input", () => {
-            chineseSearchQuery = searchInput.value.trim().toLowerCase();
+            chineseSearchQuery =
+                searchInput.value.trim().toLowerCase();
+
             visibleChineseCount = 8;
             renderChineseDishes();
         });
     }
 
     document.querySelectorAll(".chinese-filter").forEach(button => {
-        const active = button.dataset.chineseCategory === activeChineseCategory;
+        const active =
+            button.dataset.chineseCategory === activeChineseCategory;
+
         button.classList.toggle("active", active);
         button.setAttribute("aria-pressed", String(active));
 
         button.addEventListener("click", () => {
-            activeChineseCategory = button.dataset.chineseCategory || "all";
+            activeChineseCategory =
+                button.dataset.chineseCategory || "all";
+
             visibleChineseCount = 8;
 
             document.querySelectorAll(".chinese-filter").forEach(filter => {
                 const isActive = filter === button;
+
                 filter.classList.toggle("active", isActive);
                 filter.setAttribute("aria-pressed", String(isActive));
             });
@@ -4014,7 +4048,9 @@ function initializeChinesePage() {
         });
     });
 
-    const moreButton = document.getElementById("chinese-more-button");
+    const moreButton =
+        document.getElementById("chinese-more-button");
+
     if (moreButton) {
         moreButton.addEventListener("click", () => {
             visibleChineseCount += 8;
@@ -4195,7 +4231,7 @@ function renderDesserts() {
             <article class="desserts-card">
                 <div class="desserts-card-image">
                     <img
-                        src="${dish.image.url}"
+                        src="${dish.image.local}"
                         data-local-image="${dish.image.local}"
                         alt="${dish.name}"
                         loading="lazy">

@@ -10,7 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com">
+
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="./style.css">
@@ -18,14 +20,20 @@
 </head>
 
 <body class="beverages-page">
+
+    <!-- HEADER -->
     <header class="site-header">
         <div class="header-container">
+
             <button class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
             <a href="./index.html" class="brand-logo">
-                <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+                <span class="logo-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </span>
+
                 <span class="logo-text">
                     <strong>Hotel Harshvardhan</strong>
                     <small>Delicious Food • Great Service</small>
@@ -39,6 +47,7 @@
 
             <div class="header-actions">
             </div>
+
         </div>
 
         <nav class="mobile-navigation">
@@ -47,169 +56,466 @@
         </nav>
     </header>
 
+
+    <!-- MAIN CONTENT -->
     <main>
-        <section class="beverage-hero" data-local-image="./assets/images/beverages/beverage-hero.jpg">
+
+        <!-- BEVERAGE HERO SECTION -->
+        <section
+            class="beverage-hero"
+            data-local-image="./assets/images/categories/beverages/beverage-hero.webp">
+
             <div class="beverage-hero-content">
-                <span class="beverage-hero-eyebrow">A LITTLE PAUSE, MADE BETTER</span>
-                <h1>ORDER YOUR<br>FAVOURITE DRINK</h1>
-                <p>Freshly poured coffee, cool refreshments and something lovely for every mood.</p>
+
+                <span class="beverage-hero-eyebrow">
+                    A LITTLE PAUSE, MADE BETTER
+                </span>
+
+                <h1>
+                    ORDER YOUR<br>
+                    FAVOURITE DRINK
+                </h1>
+
+                <p>
+                    Freshly poured coffee, cool refreshments and something lovely for every mood.
+                </p>
+
                 <a class="beverage-hero-button" href="#beverage-menu">
                     Explore Drinks
                     <i class="fa-solid fa-arrow-down"></i>
                 </a>
+
             </div>
-            <span class="beverage-hero-note">BREWED FRESH • SERVED WITH CARE</span>
+
+            <span class="beverage-hero-note">
+                BREWED FRESH • SERVED WITH CARE
+            </span>
+
         </section>
 
+
+        <!-- BEVERAGE MENU SECTION -->
         <section class="beverage-menu-section" id="beverage-menu">
+
             <div class="beverage-container">
+
+                <!-- MENU HEADING -->
                 <div class="beverage-menu-heading">
+
                     <div>
+
                         <a class="category-back-link" href="./menu.html">
                             <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
                             Back to Menu
                         </a>
-                        <span class="beverage-eyebrow">MADE FOR YOUR MOMENT</span>
-                        <h2>Our <span>Menu</span></h2>
-                        <p>Drinks to sip slowly and enjoy fully.</p>
+
+                        <span class="beverage-eyebrow">
+                            MADE FOR YOUR MOMENT
+                        </span>
+
+                        <h2>
+                            Our <span>Menu</span>
+                        </h2>
+
+                        <p>
+                            Drinks to sip slowly and enjoy fully.
+                        </p>
+
                     </div>
 
+
+                    <!-- SEARCH -->
                     <label class="beverage-search">
+
                         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+
                         <input
                             id="beverage-search-input"
                             type="search"
                             placeholder="Search drinks..."
                             aria-label="Search beverages">
+
                     </label>
+
                 </div>
 
-                <div class="beverage-category-filters" role="group" aria-label="Filter beverages by category">
-                    <button class="beverage-filter active" type="button" data-beverage-category="all" aria-pressed="true">
+
+                <!-- CATEGORY FILTERS -->
+                <div
+                    class="beverage-category-filters"
+                    role="group"
+                    aria-label="Filter beverages by category">
+
+                    <button
+                        class="beverage-filter active"
+                        type="button"
+                        data-beverage-category="all"
+                        aria-pressed="true">
+
                         All Drinks
+
                     </button>
-                    <button class="beverage-filter" type="button" data-beverage-category="iced-coffee" aria-pressed="false">
+
+
+                    <button
+                        class="beverage-filter"
+                        type="button"
+                        data-beverage-category="iced-coffee"
+                        aria-pressed="false">
+
                         Iced Coffee
+
                     </button>
-                    <button class="beverage-filter" type="button" data-beverage-category="milk-based-coffee" aria-pressed="false">
+
+
+                    <button
+                        class="beverage-filter"
+                        type="button"
+                        data-beverage-category="milk-based-coffee"
+                        aria-pressed="false">
+
                         Milk-Based Coffee
+
                     </button>
-                    <button class="beverage-filter" type="button" data-beverage-category="classic-coffee" aria-pressed="false">
+
+
+                    <button
+                        class="beverage-filter"
+                        type="button"
+                        data-beverage-category="classic-coffee"
+                        aria-pressed="false">
+
                         Classic Coffee
+
                     </button>
-                    <button class="beverage-filter" type="button" data-beverage-category="specialty-coffee" aria-pressed="false">
+
+
+                    <button
+                        class="beverage-filter"
+                        type="button"
+                        data-beverage-category="specialty-coffee"
+                        aria-pressed="false">
+
                         Specialty Coffee
+
                     </button>
-                    <button class="beverage-filter" type="button" data-beverage-category="sweet-coffee" aria-pressed="false">
+
+
+                    <button
+                        class="beverage-filter"
+                        type="button"
+                        data-beverage-category="sweet-coffee"
+                        aria-pressed="false">
+
                         Sweet Coffee
+
                     </button>
-                    <button class="beverage-filter" type="button" data-beverage-category="cold-beverages" aria-pressed="false">
+
+
+                    <button
+                        class="beverage-filter"
+                        type="button"
+                        data-beverage-category="cold-beverages"
+                        aria-pressed="false">
+
                         Cold Beverages
+
                     </button>
-                    <button class="beverage-filter" type="button" data-beverage-category="refreshments" aria-pressed="false">
+
+
+                    <button
+                        class="beverage-filter"
+                        type="button"
+                        data-beverage-category="refreshments"
+                        aria-pressed="false">
+
                         Refreshments
+
                     </button>
+
                 </div>
 
+
+                <!-- RESULTS HEADING -->
                 <div class="beverage-results-heading">
-                    <h3 id="beverage-results-title">All Drinks</h3>
-                    <span id="beverage-result-count" aria-live="polite"></span>
+
+                    <h3 id="beverage-results-title">
+                        All Drinks
+                    </h3>
+
+                    <span
+                        id="beverage-result-count"
+                        aria-live="polite">
+                    </span>
+
                 </div>
 
-                <div class="beverage-grid" id="beverage-grid"></div>
-                <p class="beverage-empty-state" id="beverage-empty-state" hidden>
+
+                <!-- DYNAMIC BEVERAGE GRID -->
+                <div
+                    class="beverage-grid"
+                    id="beverage-grid">
+                </div>
+
+
+                <!-- EMPTY STATE -->
+                <p
+                    class="beverage-empty-state"
+                    id="beverage-empty-state"
+                    hidden>
+
                     No drinks found. Try another search.
+
                 </p>
 
-                <button class="beverage-more-button" id="beverage-more-button" type="button">
+
+                <!-- LOAD MORE BUTTON -->
+                <button
+                    class="beverage-more-button"
+                    id="beverage-more-button"
+                    type="button">
+
                     More Drinks
+
                     <i class="fa-solid fa-chevron-down"></i>
+
                 </button>
+
             </div>
+
         </section>
 
+
+        <!-- FEATURED BEVERAGE SECTION -->
         <section class="beverage-feature">
+
             <div class="beverage-feature-inner">
+
                 <div class="beverage-feature-copy">
+
                     <span class="beverage-feature-tag">
+
                         <i class="fa-solid fa-sparkles"></i>
+
                         A RASOI FAVOURITE
+
                     </span>
-                    <span class="beverage-feature-kicker">A little treat</span>
-                    <h2>Iced Latte</h2>
-                    <p>Espresso and chilled milk swirled together over ice. Smooth, refreshing and just right for a bright afternoon.</p>
+
+
+                    <span class="beverage-feature-kicker">
+                        A little treat
+                    </span>
+
+
+                    <h2>
+                        Iced Latte
+                    </h2>
+
+
+                    <p>
+                        Espresso and chilled milk swirled together over ice. Smooth, refreshing and just right for a bright afternoon.
+                    </p>
+
+
                     <div class="beverage-feature-bottom">
-                        <span class="beverage-feature-price">₹190</span>
-                        <button class="beverage-feature-add" type="button" data-add-cart="102">
+
+                        <span class="beverage-feature-price">
+                            ₹190
+                        </span>
+
+
+                        <button
+                            class="beverage-feature-add"
+                            type="button"
+                            data-add-cart="102">
+
                             Add to Cart
+
                             <i class="fa-solid fa-plus"></i>
+
                         </button>
+
                     </div>
+
                 </div>
+
+
+                <!-- FEATURED IMAGE -->
                 <div class="beverage-feature-image">
+
                     <img
-                        src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&amp;fit=crop&amp;w=1100&amp;q=90"
-                        data-local-image="./assets/images/beverages/iced-latte.jpg"
+                        src="./assets/images/categories/beverages/iced-latte.webp"
                         alt="Iced latte with espresso and milk"
                         loading="lazy">
-                    <span class="beverage-feature-stamp">Freshly<br>made</span>
+
+                    <span class="beverage-feature-stamp">
+                        Freshly<br>
+                        made
+                    </span>
+
                 </div>
+
             </div>
+
         </section>
+
     </main>
 
+
+    <!-- FOOTER -->
     <footer class="site-footer">
+
         <div class="footer-container">
+
+            <!-- FOOTER BRAND -->
             <div class="footer-brand">
-                <h3>About Hotel Harshvardhan</h3>
+
+                <h3>
+                    About Hotel Harshvardhan
+                </h3>
+
+
                 <a href="./index.html" class="brand-logo footer-logo">
-                    <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </span>
+
                     <span class="logo-text">
                         <strong>Hotel Harshvardhan</strong>
                         <small>Delicious Food • Great Service</small>
                     </span>
+
                 </a>
-                <p>Bringing delicious flavours and memorable dining experiences to your table.</p>
+
+
+                <p>
+                    Bringing delicious flavours and memorable dining experiences to your table.
+                </p>
+
+
                 <div class="footer-social-links">
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
                 </div>
+
             </div>
 
+
+            <!-- QUICK LINKS -->
             <div class="footer-column">
-                <h3>Quick Links</h3>
+
+                <h3>
+                    Quick Links
+                </h3>
+
                 <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./menu.html">Menu</a></li>
+
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="./menu.html">Menu</a>
+                    </li>
+
                 </ul>
+
             </div>
 
+
+            <!-- POPULAR CATEGORIES -->
             <div class="footer-column">
-                <h3>Popular Categories</h3>
+
+                <h3>
+                    Popular Categories
+                </h3>
+
                 <ul>
-                    <li><a href="./menu.html?category=biryani">Biryani</a></li>
-                    <li><a href="./menu.html?category=north-indian">North Indian</a></li>
-                    <li><a href="./menu.html?category=south-indian">South Indian</a></li>
-                    <li><a href="./menu.html?category=chinese">Chinese</a></li>
-                    <li><a href="./menu.html?category=breads">Rotis</a></li>
-                    <li><a href="./menu.html?category=beverages">Beverages</a></li>
-                    <li><a href="./menu.html?category=desserts">Desserts</a></li>
+
+                    <li>
+                        <a href="./menu.html?category=biryani">Biryani</a>
+                    </li>
+
+                    <li>
+                        <a href="./menu.html?category=north-indian">North Indian</a>
+                    </li>
+
+                    <li>
+                        <a href="./menu.html?category=south-indian">South Indian</a>
+                    </li>
+
+                    <li>
+                        <a href="./menu.html?category=chinese">Chinese</a>
+                    </li>
+
+                    <li>
+                        <a href="./menu.html?category=breads">Rotis</a>
+                    </li>
+
+                    <li>
+                        <a href="./menu.html?category=beverages">Beverages</a>
+                    </li>
+
+                    <li>
+                        <a href="./menu.html?category=desserts">Desserts</a>
+                    </li>
+
                 </ul>
+
             </div>
 
+
+            <!-- CONTACT -->
             <div class="footer-column footer-contact">
-                <h3>Get In Touch</h3>
-                <p><i class="fa-solid fa-location-dot"></i> Visit our restaurant</p>
-                <p><i class="fa-solid fa-phone"></i> Contact our restaurant</p>
+
+                <h3>
+                    Get In Touch
+                </h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Visit our restaurant
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    Contact our restaurant
+                </p>
+
             </div>
+
         </div>
 
+
+        <!-- FOOTER BOTTOM -->
         <div class="footer-bottom">
-            <p>&copy; 2026 Hotel Harshvardhan</p>
-            <p>Designed and Developed by <span class="footer-credit-name">Webcultivate</span></p>
+
+            <p>
+                &copy; 2026 Hotel Harshvardhan
+            </p>
+
+            <p>
+                Designed and Developed by
+                <span class="footer-credit-name">
+                    Webcultivate
+                </span>
+            </p>
+
         </div>
+
     </footer>
 
+
+    <!-- JAVASCRIPT -->
     <script src="./script.js" defer></script>
+
 </body>
 </html>

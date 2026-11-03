@@ -6,7 +6,7 @@
 }
 
 .beverage-hero {
-    --beverage-hero-image: url("https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=2200&q=90");
+    --beverage-hero-image: url("./assets/images/categories/beverages/beverage-hero.webp");
     position: relative;
     min-height: 490px;
     display: flex;

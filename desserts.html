@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://images.unsplash.com">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -18,14 +18,19 @@
 </head>
 
 <body class="desserts-page">
+
+    <!-- HEADER -->
     <header class="site-header">
         <div class="header-container">
+
             <button class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
             <a href="./index.html" class="brand-logo">
-                <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+                <span class="logo-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </span>
                 <span class="logo-text">
                     <strong>Hotel Harshvardhan</strong>
                     <small>Delicious Food • Great Service</small>
@@ -37,8 +42,7 @@
                 <a href="./menu.html" class="nav-link active">Menu</a>
             </nav>
 
-            <div class="header-actions">
-            </div>
+            <div class="header-actions"></div>
         </div>
 
         <nav class="mobile-navigation">
@@ -48,34 +52,62 @@
     </header>
 
     <main>
-        <section class="desserts-hero" data-local-image="./assets/images/desserts/desserts-hero.jpg">
+
+        <!-- DESSERT HERO -->
+        <section
+            class="desserts-hero"
+            data-local-image="./assets/images/categories/desserts/desserts-hero.webp">
+
             <div class="desserts-hero-content">
-                <span class="desserts-hero-eyebrow">A SWEET FINISH • MADE WITH LOVE</span>
+                <span class="desserts-hero-eyebrow">
+                    A SWEET FINISH • MADE WITH LOVE
+                </span>
+
                 <h1>INDULGE IN<br>SWEET PERFECTION</h1>
-                <p>From beloved Indian mithai to decadent cakes and warm, chocolate-filled treats.</p>
+
+                <p>
+                    From beloved Indian mithai to decadent cakes and
+                    warm, chocolate-filled treats.
+                </p>
+
                 <a class="desserts-hero-button" href="#desserts-menu">
                     Explore Desserts
                     <i class="fa-solid fa-arrow-down"></i>
                 </a>
             </div>
-            <span class="desserts-hero-note">TRADITIONAL SWEETS • MODERN INDULGENCES</span>
+
+            <span class="desserts-hero-note">
+                TRADITIONAL SWEETS • MODERN INDULGENCES
+            </span>
         </section>
 
+
+        <!-- DESSERT MENU -->
         <section class="desserts-menu-section" id="desserts-menu">
             <div class="desserts-container">
+
                 <div class="desserts-menu-heading">
                     <div>
                         <a class="category-back-link" href="./menu.html">
                             <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
                             Back to Menu
                         </a>
-                        <span class="desserts-eyebrow">SAVE A LITTLE ROOM FOR SOMETHING SWEET</span>
+
+                        <span class="desserts-eyebrow">
+                            SAVE A LITTLE ROOM FOR SOMETHING SWEET
+                        </span>
+
                         <h2>Our <span>Desserts</span></h2>
-                        <p>Rich, comforting sweets and treats made for your sweetest moments.</p>
+
+                        <p>
+                            Rich, comforting sweets and treats made
+                            for your sweetest moments.
+                        </p>
                     </div>
 
                     <label class="desserts-search">
                         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+
                         <input
                             id="desserts-search-input"
                             type="search"
@@ -84,88 +116,179 @@
                     </label>
                 </div>
 
-                <div class="desserts-category-filters" role="group" aria-label="Filter desserts by category">
-                    <button class="desserts-filter active" type="button" data-dessert-category="all" aria-pressed="true">
+
+                <!-- CATEGORY FILTERS -->
+                <div
+                    class="desserts-category-filters"
+                    role="group"
+                    aria-label="Filter desserts by category">
+
+                    <button
+                        class="desserts-filter active"
+                        type="button"
+                        data-dessert-category="all"
+                        aria-pressed="true">
                         All Sweets
                     </button>
-                    <button class="desserts-filter" type="button" data-dessert-category="traditional-sweets" aria-pressed="false">
+
+                    <button
+                        class="desserts-filter"
+                        type="button"
+                        data-dessert-category="traditional-sweets"
+                        aria-pressed="false">
                         Traditional Indian Sweets
                     </button>
-                    <button class="desserts-filter" type="button" data-dessert-category="cakes-pastries" aria-pressed="false">
+
+                    <button
+                        class="desserts-filter"
+                        type="button"
+                        data-dessert-category="cakes-pastries"
+                        aria-pressed="false">
                         Rich Cakes &amp; Pastries
                     </button>
-                    <button class="desserts-filter" type="button" data-dessert-category="ice-creams-sundaes" aria-pressed="false">
+
+                    <button
+                        class="desserts-filter"
+                        type="button"
+                        data-dessert-category="ice-creams-sundaes"
+                        aria-pressed="false">
                         Ice Creams &amp; Sundaes
                     </button>
-                    <button class="desserts-filter" type="button" data-dessert-category="sizzling-hot-desserts" aria-pressed="false">
+
+                    <button
+                        class="desserts-filter"
+                        type="button"
+                        data-dessert-category="sizzling-hot-desserts"
+                        aria-pressed="false">
                         Sizzling Brownies &amp; Hot Desserts
                     </button>
                 </div>
 
+
+                <!-- RESULTS HEADING -->
                 <div class="desserts-results-heading">
-                    <h3 id="desserts-results-title">All Sweet Favourites</h3>
+                    <h3 id="desserts-results-title">
+                        All Sweet Favourites
+                    </h3>
                     <span id="desserts-result-count" aria-live="polite"></span>
                 </div>
 
+
+                <!-- DYNAMIC DESSERT CARDS -->
                 <div class="desserts-grid" id="desserts-grid"></div>
-                <p class="desserts-empty-state" id="desserts-empty-state" hidden>
+
+                <p
+                    class="desserts-empty-state"
+                    id="desserts-empty-state"
+                    hidden>
                     No desserts found. Try another search.
                 </p>
 
-                <button class="desserts-more-button" id="desserts-more-button" type="button">
+                <button
+                    class="desserts-more-button"
+                    id="desserts-more-button"
+                    type="button">
                     More Desserts
                     <i class="fa-solid fa-chevron-down"></i>
                 </button>
+
             </div>
         </section>
 
+
+        <!-- FEATURED DESSERT -->
         <section class="desserts-feature">
             <div class="desserts-feature-inner">
+
                 <div class="desserts-feature-copy">
+
                     <span class="desserts-feature-tag">
                         <i class="fa-solid fa-star"></i>
                         THE RASOI SIGNATURE
                     </span>
-                    <span class="desserts-feature-kicker">A little theatre, a lot of chocolate</span>
-                    <h2>Sizzling Brownie<br>&amp; Vanilla Ice Cream</h2>
-                    <p>A warm, rich chocolate brownie served on a sizzling plate with cool vanilla ice cream and a pour of hot chocolate fudge.</p>
+
+                    <span class="desserts-feature-kicker">
+                        A little theatre, a lot of chocolate
+                    </span>
+
+                    <h2>
+                        Sizzling Brownie<br>
+                        &amp; Vanilla Ice Cream
+                    </h2>
+
+                    <p>
+                        A warm, rich chocolate brownie served on a
+                        sizzling plate with cool vanilla ice cream
+                        and a pour of hot chocolate fudge.
+                    </p>
+
                     <div class="desserts-feature-bottom">
                         <span class="desserts-feature-price">₹290</span>
-                        <button class="desserts-feature-add" type="button" data-add-cart="714">
+
+                        <button
+                            class="desserts-feature-add"
+                            type="button"
+                            data-add-cart="714">
                             Add to Cart
                             <i class="fa-solid fa-plus"></i>
                         </button>
                     </div>
                 </div>
+
+
                 <div class="desserts-feature-image">
                     <img
-                        src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&amp;fit=crop&amp;w=1100&amp;q=90"
-                        data-local-image="./assets/images/desserts/sizzling-brownie-vanilla-ice-cream-hot-fudge.jpg"
+                        src="./assets/images/categories/desserts/sizzling-brownie-vanilla-ice-cream-hot-fudge.webp"
+                        data-local-image="./assets/images/categories/desserts/sizzling-brownie-vanilla-ice-cream-hot-fudge.webp"
                         alt="Warm chocolate brownie dessert served with ice cream"
-                        loading="lazy">
-                    <span class="desserts-feature-stamp">Sweet<br>moment</span>
+                        loading="lazy"
+                        decoding="async">
+
+                    <span class="desserts-feature-stamp">
+                        Sweet<br>moment
+                    </span>
                 </div>
+
             </div>
         </section>
+
     </main>
 
+
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-container">
+
             <div class="footer-brand">
                 <h3>About Hotel Harshvardhan</h3>
+
                 <a href="./index.html" class="brand-logo footer-logo">
-                    <span class="logo-icon"><i class="fa-solid fa-utensils"></i></span>
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </span>
+
                     <span class="logo-text">
                         <strong>Hotel Harshvardhan</strong>
                         <small>Delicious Food • Great Service</small>
                     </span>
                 </a>
-                <p>Bringing delicious flavours and memorable dining experiences to your table.</p>
+
+                <p>
+                    Bringing delicious flavours and memorable
+                    dining experiences to your table.
+                </p>
+
                 <div class="footer-social-links">
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
                 </div>
             </div>
+
 
             <div class="footer-column">
                 <h3>Quick Links</h3>
@@ -174,6 +297,7 @@
                     <li><a href="./menu.html">Menu</a></li>
                 </ul>
             </div>
+
 
             <div class="footer-column">
                 <h3>Popular Categories</h3>
@@ -188,19 +312,36 @@
                 </ul>
             </div>
 
+
             <div class="footer-column footer-contact">
                 <h3>Get In Touch</h3>
-                <p><i class="fa-solid fa-location-dot"></i> Visit our restaurant</p>
-                <p><i class="fa-solid fa-phone"></i> Contact our restaurant</p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Visit our restaurant
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    Contact our restaurant
+                </p>
             </div>
+
         </div>
+
 
         <div class="footer-bottom">
             <p>&copy; 2026 Hotel Harshvardhan</p>
-            <p>Designed and Developed by <span class="footer-credit-name">Webcultivate</span></p>
+
+            <p>
+                Designed and Developed by
+                <span class="footer-credit-name">Webcultivate</span>
+            </p>
         </div>
     </footer>
 
+
     <script src="./script.js" defer></script>
+
 </body>
 </html>

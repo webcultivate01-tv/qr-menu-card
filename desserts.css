@@ -1,3 +1,4 @@
+
 /* ================= DESSERTS PAGE ================= */
 
 .desserts-container {
@@ -6,7 +7,7 @@
 }
 
 .desserts-hero {
-    --desserts-hero-image: url("https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=2200&q=90");
+    --desserts-hero-image: url("./assets/images/categories/desserts/desserts-hero.webp");
     position: relative;
     min-height: 490px;
     display: flex;
