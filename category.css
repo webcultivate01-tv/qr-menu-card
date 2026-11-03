@@ -16,14 +16,14 @@
 
 .category-hero h1 {
     margin: 0;
-    color: #10152f;
-    font-family: "Playfair Display", serif;
+    color: var(--heading);
+    font-family: var(--font-serif);
     font-size: clamp(36px, 5vw, 54px);
 }
 
 .category-hero p {
     margin: 14px 0 0;
-    color: #777487;
+    color: var(--muted);
     font-size: 16px;
     line-height: 1.6;
 }
@@ -45,8 +45,8 @@
 
 .category-page-heading h2 {
     margin: 0;
-    color: #10152f;
-    font-family: "Playfair Display", serif;
+    color: var(--heading);
+    font-family: var(--font-serif);
     font-size: 29px;
 }
 

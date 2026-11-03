@@ -42,7 +42,7 @@
 .south-indian-hero-eyebrow,
 .south-indian-eyebrow {
     display: inline-block;
-    color: #e7d89a;
+    color: var(--champagne);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2.2px;
@@ -75,8 +75,8 @@
     gap: 12px;
     margin-top: 28px;
     padding: 0 21px;
-    color: #fffdf6;
-    background: #53733a;
+    color: var(--button-text);
+    background: var(--button-primary);
     border-radius: 30px;
     font-size: 12px;
     font-weight: 800;
@@ -84,7 +84,7 @@
 }
 
 .south-indian-hero-button:hover {
-    background: #6d8d4a;
+    background: var(--button-hover);
     box-shadow: 0 9px 22px rgba(24, 37, 19, 0.24);
     transform: translateY(-2px);
 }
@@ -105,7 +105,7 @@
 
 .south-indian-menu-section {
     padding: 62px 0 82px;
-    background: #fffdf8;
+    background: var(--background);
 }
 
 .south-indian-menu-heading {
@@ -116,12 +116,12 @@
 }
 
 .south-indian-eyebrow {
-    color: #58753e;
+    color: var(--primary);
 }
 
 .south-indian-menu-heading h2 {
     margin-top: 5px;
-    color: #332b1e;
+    color: var(--heading);
     font-family: var(--font-heading);
     font-size: clamp(34px, 4vw, 47px);
     font-weight: 800;
@@ -129,7 +129,7 @@
 }
 
 .south-indian-menu-heading h2 span {
-    color: #a77a31;
+    color: var(--primary);
     font-family: var(--font-serif);
     font-size: 0.72em;
     font-style: italic;
@@ -138,7 +138,7 @@
 
 .south-indian-menu-heading p {
     margin-top: 8px;
-    color: #837b6c;
+    color: var(--muted);
     font-size: 13px;
 }
 
@@ -149,21 +149,21 @@
     align-items: center;
     gap: 10px;
     padding: 0 14px;
-    color: #8c8a70;
-    background: #fcfbf4;
-    border: 1px solid #e8e5d4;
+    color: var(--muted);
+    background: var(--white);
+    border: 1px solid var(--border);
     border-radius: 12px;
 }
 
 .south-indian-search:focus-within {
-    border-color: #9caa68;
-    box-shadow: 0 0 0 3px rgba(89, 117, 62, 0.13);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(128, 25, 39, 0.13);
 }
 
 .south-indian-search input {
     width: 100%;
     min-width: 0;
-    color: #332b1e;
+    color: var(--heading);
     background: transparent;
     border: 0;
     outline: none;
@@ -177,15 +177,15 @@
     margin: 28px 0 30px;
     padding: 2px 2px 8px;
     scrollbar-width: thin;
-    scrollbar-color: #c9d0aa transparent;
+    scrollbar-color: var(--champagne) transparent;
 }
 
 .south-indian-filter {
     flex: 0 0 auto;
     min-height: 37px;
     padding: 0 17px;
-    color: #5e6344;
-    background: #f0f1df;
+    color: var(--text);
+    background: var(--white);
     border: 1px solid transparent;
     border-radius: 30px;
     font-size: 11px;
@@ -203,7 +203,7 @@
 .south-indian-more-button:focus-visible,
 .south-indian-card-add:focus-visible,
 .south-indian-feature-add:focus-visible {
-    outline: 3px solid rgba(240, 200, 108, 0.7);
+    outline: 3px solid rgba(128, 25, 39, 0.5);
     outline-offset: 3px;
 }
 
@@ -216,14 +216,14 @@
 }
 
 .south-indian-results-heading h3 {
-    color: #332b1e;
+    color: var(--heading);
     font-family: var(--font-heading);
     font-size: 19px;
     font-weight: 700;
 }
 
 .south-indian-results-heading span {
-    color: #928a78;
+    color: var(--muted);
     font-size: 11px;
 }
 
@@ -239,7 +239,7 @@
     flex-direction: column;
     overflow: hidden;
     background: #fff;
-    border: 1px solid #ece9dc;
+    border: 1px solid var(--border);
     border-radius: 16px;
     box-shadow: 0 5px 18px rgba(43, 46, 28, 0.045);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -254,7 +254,7 @@
     position: relative;
     overflow: hidden;
     aspect-ratio: 1 / 0.94;
-    background: #e9ead9;
+    background: var(--lavender);
 }
 
 .south-indian-card-image img {
@@ -273,7 +273,7 @@
     top: 11px;
     left: 11px;
     padding: 6px 9px;
-    color: #475b31;
+    color: var(--heading);
     background: rgba(255, 253, 244, 0.94);
     border-radius: 20px;
     font-size: 9px;
@@ -289,7 +289,7 @@
 }
 
 .south-indian-card-body h4 {
-    color: #332d20;
+    color: var(--heading);
     font-family: var(--font-heading);
     font-size: 15px;
     font-weight: 700;
@@ -299,7 +299,7 @@
 .south-indian-card-body > p {
     min-height: 37px;
     margin-top: 5px;
-    color: #827d6d;
+    color: var(--muted);
     font-size: 10px;
     line-height: 1.6;
 }
@@ -313,7 +313,7 @@
 }
 
 .south-indian-card-price {
-    color: #6b5426;
+    color: var(--primary);
     font-size: 15px;
     font-weight: 800;
 }
@@ -326,7 +326,7 @@
     gap: 6px;
     padding: 0 11px;
     color: #fff;
-    background: #58753e;
+    background: var(--primary);
     border: 0;
     border-radius: 20px;
     font-size: 10px;
@@ -335,13 +335,13 @@
 }
 
 .south-indian-card-add:hover {
-    background: #405b2c;
+    background: var(--primary-dark);
     transform: translateY(-1px);
 }
 
 .south-indian-empty-state {
     padding: 35px 0;
-    color: #81796a;
+    color: var(--muted);
     text-align: center;
     font-size: 13px;
 }
@@ -355,7 +355,7 @@
     margin: 30px auto 0;
     padding: 0 20px;
     color: #fff;
-    background: #a77a31;
+    background: var(--primary);
     border: 0;
     border-radius: 10px;
     font-size: 12px;
@@ -364,7 +364,7 @@
 }
 
 .south-indian-more-button:hover {
-    background: #805c24;
+    background: var(--primary-dark);
     transform: translateY(-2px);
 }
 
@@ -379,8 +379,8 @@
     padding: 65px 24px;
     overflow: hidden;
     background:
-        radial-gradient(circle at 78% 47%, rgba(255, 250, 221, 0.82), transparent 29%),
-        #dce2b5;
+        radial-gradient(circle at 78% 47%, rgba(255, 250, 235, 0.9), transparent 40%),
+        var(--background);
 }
 
 .south-indian-feature-inner {
@@ -401,7 +401,7 @@
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    color: #536d37;
+    color: var(--primary);
     font-size: 9px;
     font-weight: 800;
     letter-spacing: 1.5px;
@@ -410,7 +410,7 @@
 .south-indian-feature-kicker {
     display: block;
     margin-top: 23px;
-    color: #967335;
+    color: var(--primary);
     font-family: var(--font-serif);
     font-size: 21px;
     font-style: italic;
@@ -418,7 +418,7 @@
 
 .south-indian-feature-copy h2 {
     margin-top: -3px;
-    color: #334020;
+    color: var(--heading);
     font-family: var(--font-heading);
     font-size: clamp(39px, 5.5vw, 62px);
     font-weight: 800;
@@ -429,7 +429,7 @@
 .south-indian-feature-copy > p {
     max-width: 440px;
     margin-top: 15px;
-    color: #5e6244;
+    color: var(--text);
     font-size: 12px;
     line-height: 1.8;
 }
@@ -442,7 +442,7 @@
 }
 
 .south-indian-feature-price {
-    color: #334020;
+    color: var(--primary);
     font-family: var(--font-heading);
     font-size: 30px;
     font-weight: 800;
@@ -455,7 +455,7 @@
     gap: 10px;
     padding: 0 18px;
     color: #fff;
-    background: #496332;
+    background: var(--primary);
     border: 0;
     border-radius: 30px;
     font-size: 11px;
@@ -464,7 +464,7 @@
 }
 
 .south-indian-feature-add:hover {
-    background: #6a8444;
+    background: var(--primary-dark);
     transform: translateY(-2px);
 }
 
@@ -494,8 +494,8 @@
     display: grid;
     place-items: center;
     color: #fff9e9;
-    background: #58753e;
-    border: 5px solid #dce2b5;
+    background: var(--primary);
+    border: 5px solid var(--champagne);
     border-radius: 50%;
     font-family: var(--font-serif);
     font-size: 14px;

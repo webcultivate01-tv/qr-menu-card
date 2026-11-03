@@ -15,14 +15,14 @@
     margin-bottom: 36px;
     padding: 5px;
     background: #fff;
-    border: 1px solid #e8deeb;
-    border-radius: 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
     box-shadow: 0 10px 28px rgba(50, 19, 68, 0.08);
 }
 
 .menu-search-form:focus-within {
-    border-color: #a87acb;
-    box-shadow: 0 0 0 3px rgba(116, 38, 184, 0.12);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(128, 25, 39, 0.12);
 }
 
 .menu-search-form .sr-only {
@@ -47,27 +47,27 @@
 }
 
 .menu-search-form input::placeholder {
-    color: #898292;
+    color: var(--muted);
 }
 
 .menu-search-form button {
     display: grid;
     flex: 0 0 46px;
     place-items: center;
-    color: #fff;
-    background: #7426b8;
+    color: #000000;
+    background: transparent;
     border: 0;
     border-radius: 9px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .menu-search-form button:hover {
-    background: #5e1b99;
+    color: #000000;
 }
 
 .menu-search-form button:focus-visible {
-    outline: 3px solid #d6b5ee;
+    outline: 3px solid rgba(128, 25, 39, 0.35);
     outline-offset: 2px;
 }
 
@@ -89,9 +89,9 @@
     align-items: center;
     gap: 9px;
     padding: 12px 21px;
-    color: #51495b;
+    color: var(--text);
     background: #fff;
-    border: 1px solid #e9e2ef;
+    border: 1px solid var(--border);
     border-radius: 30px;
     font-size: 14px;
     font-weight: 700;
@@ -114,7 +114,7 @@
 .food-filter[data-filter="non-veg"].active {
     color: #000 !important;
     background: transparent !important;
-    border-color: #51495b !important;
+    border-color: var(--text) !important;
 }
 
 .veg-indicator,
@@ -156,8 +156,7 @@
 .menu-category-navigation h2,
 .section-heading h2 {
     margin: 0 0 22px;
-    color: #10152f;
-    font-family: "Playfair Display", serif;
+    color: var(--heading);
     font-size: 27px;
 }
 
@@ -167,13 +166,13 @@
     overflow-x: auto;
     padding: 3px 2px 15px;
     scrollbar-width: thin;
-    scrollbar-color: #d8c4e9 transparent;
+    scrollbar-color: var(--champagne) transparent;
 }
 
 .menu-category-item {
     flex: 0 0 auto;
     padding: 11px 19px;
-    color: #62576d;
+    color: var(--text);
     background: #fff;
     border: 1px solid transparent;
     border-radius: 25px;
@@ -220,8 +219,8 @@
 .menu-dish-group-heading {
     grid-column: 1 / -1;
     margin: 8px 0 -8px;
-    color: #10152f;
-    font-family: "Playfair Display", serif;
+    color: var(--heading);
+    font-family: var(--font-serif);
     font-size: 23px;
 }
 
@@ -231,7 +230,7 @@
     flex-direction: column;
     overflow: hidden;
     background: #fff;
-    border: 1px solid #eee9f2;
+    border: 1px solid var(--border);
     border-radius: 16px;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -245,7 +244,7 @@
     position: relative;
     height: 210px;
     overflow: hidden;
-    background: #f4eff8;
+    background: var(--lavender);
 }
 
 .menu-dish-image img {
@@ -290,14 +289,14 @@
 
 .menu-dish-details h3 {
     margin: 0 0 8px;
-    color: #202035;
+    color: var(--heading);
     font-size: 18px;
     font-weight: 700;
 }
 
 .menu-dish-details p {
     margin: 0 0 18px;
-    color: #85808e;
+    color: var(--muted);
     font-size: 13px;
     line-height: 1.6;
 }
@@ -313,20 +312,20 @@
 }
 
 .menu-listing .portion-option:not(.is-selected):not([aria-pressed="true"]) {
-    color: #7f1722 !important;
+    color: #801927 !important;
     background: transparent !important;
-    border-color: #7f1722 !important;
+    border-color: #801927 !important;
 }
 
 .menu-listing .portion-option.is-selected {
     color: #fff !important;
-    background: #7f1722 !important;
-    border-color: #7f1722 !important;
+    background: #801927 !important;
+    border-color: #801927 !important;
 }
 
 .menu-listing .portion-option.is-selected:hover {
-    background: #68121b !important;
-    border-color: #68121b !important;
+    background: #5E121C !important;
+    border-color: #5E121C !important;
 }
 
 .menu-dish-bottom {
@@ -370,18 +369,18 @@
 .menu-empty-state {
     padding: 65px 20px;
     text-align: center;
-    color: #898292;
+    color: var(--muted);
 }
 
 .menu-empty-state i {
     margin-bottom: 15px;
-    color: #b99bd0;
+    color: var(--champagne);
     font-size: 40px;
 }
 
 .menu-empty-state h3 {
     margin: 0 0 8px;
-    color: #252035;
+    color: var(--heading);
     font-size: 21px;
 }
 
@@ -411,7 +410,11 @@
     align-items: center;
     gap: 6px;
     overflow-x: auto;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+}
+
+.menu-pagination-pages::-webkit-scrollbar {
+    display: none;
 }
 
 .menu-pagination button {

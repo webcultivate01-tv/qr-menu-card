@@ -43,7 +43,7 @@
 .desserts-hero-eyebrow,
 .desserts-eyebrow {
     display: inline-block;
-    color: #f0d496;
+    color: var(--champagne);
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2.2px;
@@ -76,8 +76,8 @@
     gap: 12px;
     margin-top: 28px;
     padding: 0 21px;
-    color: #fffaf0;
-    background: #8d5427;
+    color: var(--button-text);
+    background: var(--button-primary);
     border-radius: 30px;
     font-size: 12px;
     font-weight: 800;
@@ -85,7 +85,7 @@
 }
 
 .desserts-hero-button:hover {
-    background: #ae7133;
+    background: var(--button-hover);
     box-shadow: 0 9px 22px rgba(35, 18, 5, 0.24);
     transform: translateY(-2px);
 }
@@ -106,7 +106,7 @@
 
 .desserts-menu-section {
     padding: 62px 0 82px;
-    background: #fffdf9;
+    background: var(--background);
 }
 
 .desserts-menu-heading {
@@ -117,12 +117,12 @@
 }
 
 .desserts-eyebrow {
-    color: #8d5427;
+    color: var(--primary);
 }
 
 .desserts-menu-heading h2 {
     margin-top: 5px;
-    color: #38241f;
+    color: var(--heading);
     font-family: var(--font-heading);
     font-size: clamp(34px, 4vw, 47px);
     font-weight: 800;
@@ -130,7 +130,7 @@
 }
 
 .desserts-menu-heading h2 span {
-    color: #b98542;
+    color: var(--primary);
     font-family: var(--font-serif);
     font-size: 0.72em;
     font-style: italic;
@@ -139,7 +139,7 @@
 
 .desserts-menu-heading p {
     margin-top: 8px;
-    color: #83756f;
+    color: var(--muted);
     font-size: 13px;
 }
 
@@ -150,21 +150,21 @@
     align-items: center;
     gap: 10px;
     padding: 0 14px;
-    color: #98867c;
-    background: #fffaf5;
-    border: 1px solid #eee3dc;
+    color: var(--muted);
+    background: var(--white);
+    border: 1px solid var(--border);
     border-radius: 12px;
 }
 
 .desserts-search:focus-within {
-    border-color: #c49a5b;
-    box-shadow: 0 0 0 3px rgba(141, 84, 39, 0.12);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(128, 25, 39, 0.12);
 }
 
 .desserts-search input {
     width: 100%;
     min-width: 0;
-    color: #38241f;
+    color: var(--heading);
     background: transparent;
     border: 0;
     outline: none;
@@ -178,15 +178,15 @@
     margin: 28px 0 30px;
     padding: 2px 2px 8px;
     scrollbar-width: thin;
-    scrollbar-color: #ddc6a9 transparent;
+    scrollbar-color: var(--champagne) transparent;
 }
 
 .desserts-filter {
     flex: 0 0 auto;
     min-height: 37px;
     padding: 0 17px;
-    color: #6b5144;
-    background: #f6eee7;
+    color: var(--text);
+    background: var(--white);
     border: 1px solid transparent;
     border-radius: 30px;
     font-size: 11px;
@@ -204,7 +204,7 @@
 .desserts-more-button:focus-visible,
 .desserts-card-add:focus-visible,
 .desserts-feature-add:focus-visible {
-    outline: 3px solid rgba(240, 200, 108, 0.7);
+    outline: 3px solid rgba(128, 25, 39, 0.5);
     outline-offset: 3px;
 }
 
@@ -217,14 +217,14 @@
 }
 
 .desserts-results-heading h3 {
-    color: #38241f;
+    color: var(--heading);
     font-family: var(--font-heading);
     font-size: 19px;
     font-weight: 700;
 }
 
 .desserts-results-heading span {
-    color: #92837b;
+    color: var(--muted);
     font-size: 11px;
 }
 
@@ -240,7 +240,7 @@
     flex-direction: column;
     overflow: hidden;
     background: #fff;
-    border: 1px solid #eee5df;
+    border: 1px solid var(--border);
     border-radius: 16px;
     box-shadow: 0 5px 18px rgba(57, 34, 20, 0.045);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -255,7 +255,7 @@
     position: relative;
     overflow: hidden;
     aspect-ratio: 1 / 0.94;
-    background: #eee3db;
+    background: var(--lavender);
 }
 
 .desserts-card-image img {
@@ -274,7 +274,7 @@
     top: 11px;
     left: 11px;
     padding: 6px 9px;
-    color: #69402b;
+    color: var(--heading);
     background: rgba(255, 250, 243, 0.94);
     border-radius: 20px;
     font-size: 9px;
@@ -290,7 +290,7 @@
 }
 
 .desserts-card-body h4 {
-    color: #38241f;
+    color: var(--heading);
     font-family: var(--font-heading);
     font-size: 15px;
     font-weight: 700;
@@ -300,7 +300,7 @@
 .desserts-card-body > p {
     min-height: 37px;
     margin-top: 5px;
-    color: #887b73;
+    color: var(--muted);
     font-size: 10px;
     line-height: 1.6;
 }
@@ -314,7 +314,7 @@
 }
 
 .desserts-card-price {
-    color: #6b3826;
+    color: var(--primary);
     font-size: 15px;
     font-weight: 800;
 }
@@ -327,7 +327,7 @@
     gap: 6px;
     padding: 0 11px;
     color: #fff;
-    background: #75412c;
+    background: var(--primary);
     border: 0;
     border-radius: 20px;
     font-size: 10px;
@@ -336,13 +336,13 @@
 }
 
 .desserts-card-add:hover {
-    background: #542d21;
+    background: var(--primary-dark);
     transform: translateY(-1px);
 }
 
 .desserts-empty-state {
     padding: 35px 0;
-    color: #81736d;
+    color: var(--muted);
     text-align: center;
     font-size: 13px;
 }
@@ -355,8 +355,8 @@
     gap: 9px;
     margin: 30px auto 0;
     padding: 0 20px;
-    color: #3a251b;
-    background: #dfb55f;
+    color: var(--white);
+    background: var(--primary);
     border: 0;
     border-radius: 10px;
     font-size: 12px;
@@ -365,7 +365,7 @@
 }
 
 .desserts-more-button:hover {
-    background: #c9963f;
+    background: var(--primary-dark);
     transform: translateY(-2px);
 }
 
@@ -380,8 +380,8 @@
     padding: 65px 24px;
     overflow: hidden;
     background:
-        radial-gradient(circle at 78% 47%, rgba(255, 242, 211, 0.82), transparent 29%),
-        #e7c9a8;
+        radial-gradient(circle at 78% 47%, rgba(255, 250, 235, 0.9), transparent 40%),
+        var(--background);
 }
 
 .desserts-feature-inner {
@@ -402,7 +402,7 @@
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    color: #71412c;
+    color: var(--primary);
     font-size: 9px;
     font-weight: 800;
     letter-spacing: 1.5px;
@@ -411,7 +411,7 @@
 .desserts-feature-kicker {
     display: block;
     margin-top: 23px;
-    color: #9c6632;
+    color: var(--primary);
     font-family: var(--font-serif);
     font-size: 21px;
     font-style: italic;
@@ -419,7 +419,7 @@
 
 .desserts-feature-copy h2 {
     margin-top: -3px;
-    color: #40251d;
+    color: var(--heading);
     font-family: var(--font-heading);
     font-size: clamp(39px, 5.5vw, 62px);
     font-weight: 800;
@@ -430,7 +430,7 @@
 .desserts-feature-copy > p {
     max-width: 440px;
     margin-top: 15px;
-    color: #6b4c3b;
+    color: var(--text);
     font-size: 12px;
     line-height: 1.8;
 }
@@ -443,7 +443,7 @@
 }
 
 .desserts-feature-price {
-    color: #40251d;
+    color: var(--primary);
     font-family: var(--font-heading);
     font-size: 30px;
     font-weight: 800;
@@ -456,7 +456,7 @@
     gap: 10px;
     padding: 0 18px;
     color: #fff;
-    background: #633522;
+    background: var(--primary);
     border: 0;
     border-radius: 30px;
     font-size: 11px;
@@ -465,7 +465,7 @@
 }
 
 .desserts-feature-add:hover {
-    background: #8d5427;
+    background: var(--button-primary);
     transform: translateY(-2px);
 }
 
@@ -495,8 +495,8 @@
     display: grid;
     place-items: center;
     color: #fff8ee;
-    background: #80502e;
-    border: 5px solid #e7c9a8;
+    background: var(--primary);
+    border: 5px solid var(--champagne);
     border-radius: 50%;
     font-family: var(--font-serif);
     font-size: 14px;
