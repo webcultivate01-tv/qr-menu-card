@@ -326,20 +326,25 @@ input:focus-visible,
 }
 
 
-/* ================= MOBILE NAVIGATION ================= */
+/* ================= HEADER MENU LINK ================= */
 
-.mobile-menu-button {
-    display: none;
+.header-menu-link {
+    display: grid;
+    place-items: center;
     width: 42px;
     height: 42px;
-    background: transparent;
+    flex: 0 0 42px;
+    order: 3;
+    color: var(--button-text);
+    background: var(--button-primary);
     border: none;
-    color: var(--brand-gold);
+    text-decoration: none;
     font-size: 21px;
 }
 
-.mobile-navigation {
-    display: none;
+.header-menu-link:hover {
+    color: var(--button-text);
+    background: var(--button-hover);
 }
 
 /* ================= HERO SECTION ================= */
@@ -1633,9 +1638,7 @@ input:focus-visible,
         font-size: 15px;
     }
 
-    .mobile-menu-button {
-        display: grid;
-        place-items: center;
+    .header-menu-link {
         order: 2;
     }
 
@@ -1660,37 +1663,6 @@ input:focus-visible,
     .logo-text small {
         font-size: 8px;
         letter-spacing: 0.8px;
-    }
-
-    .mobile-navigation {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        padding: 0 20px;
-        background: var(--white);
-        transition: max-height 0.3s ease,
-                    padding 0.3s ease;
-    }
-
-    .mobile-navigation.open {
-        max-height: 250px;
-        padding-top: 10px;
-        padding-bottom: 18px;
-        border-top: 1px solid var(--border);
-    }
-
-    .mobile-nav-link {
-        padding: 12px 5px;
-        color: var(--heading);
-        font-size: 14px;
-        font-weight: 700;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .mobile-nav-link.active {
-        color: var(--primary);
     }
 
     .mobile-waiter-button {
@@ -1978,7 +1950,7 @@ input:focus-visible,
     }
 
     .header-actions .cart-button,
-    .mobile-menu-button {
+    .header-menu-link {
         width: 36px;
         height: 36px;
     }
@@ -3467,8 +3439,18 @@ button[data-add-cart]:hover:not(:disabled) {
     padding: 24px 16px;
     text-align: center;
     background: #fff;
+    overflow-x: hidden;
 }
-.powered-by-footer p { margin: 0; color: #1f2937; }
+.powered-by-footer p {
+    margin: 0;
+    color: #1f2937;
+    white-space: nowrap;
+    font-size: clamp(11px, 3.6vw, 15px);
+}
+.powered-by-footer a {
+    color: #1f2937;
+    text-decoration: none;
+}
 .powered-by-footer span { color: #1D4ED8; font-weight: 600; }
 
 @media (max-width: 480px) {

@@ -525,30 +525,6 @@
         display: none;
     }
 
-    .desserts-page .mobile-menu-button {
-        display: grid;
-        place-items: center;
-        order: -1;
-    }
-
-    .desserts-page .mobile-navigation {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        padding: 0 20px;
-        background: var(--white);
-        transition: max-height 0.3s ease, padding 0.3s ease;
-    }
-
-    .desserts-page .mobile-navigation.open {
-        max-height: min(75vh, 560px);
-        overflow-y: auto;
-        padding-top: 10px;
-        padding-bottom: 18px;
-        border-top: 1px solid var(--border);
-    }
 }
 
 @media (max-width: 680px) {
@@ -671,7 +647,7 @@
         gap: 5px;
     }
 
-    .desserts-page .mobile-menu-button {
+    .desserts-page .header-menu-link {
         width: 32px;
         flex: 0 0 32px;
     }

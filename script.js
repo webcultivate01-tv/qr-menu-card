@@ -2726,36 +2726,6 @@ function updateCartItem(cartKey, action) {
 
 
 /* =========================================================
-   9. MOBILE NAVIGATION
-   ========================================================= */
-
-function initializeMobileNavigation() {
-    const button = document.querySelector(".mobile-menu-button");
-    const navigation = document.querySelector(".mobile-navigation");
-
-    if (!button || !navigation) return;
-
-    button.addEventListener("click", () => {
-        const open = navigation.classList.toggle("open");
-
-        button.setAttribute("aria-expanded", String(open));
-
-        button.innerHTML = open
-            ? '<i class="fa-solid fa-xmark"></i>'
-            : '<i class="fa-solid fa-bars"></i>';
-    });
-
-    navigation.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-            navigation.classList.remove("open");
-            button.setAttribute("aria-expanded", "false");
-            button.innerHTML = '<i class="fa-solid fa-bars"></i>';
-        });
-    });
-}
-
-
-/* =========================================================
    10. HOMEPAGE SEARCH
    ========================================================= */
 
@@ -4550,7 +4520,6 @@ function initializeHomepage() {
     initializeFloatingCartButton();
     updateCartCount();
 
-    initializeMobileNavigation();
     initializeSearch();
     initializeCategoryNavigation();
     initializeGlobalEvents();
