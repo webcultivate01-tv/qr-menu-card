@@ -2064,7 +2064,10 @@ function addToCart(dishId, portion = "full") {
     saveCart();
     updateCartCount();
 
-    showToast(`${dish.name} added to cart!`);
+    showToast(`${dish.name} added to cart!`, {
+        actionLabel: "View Cart",
+        onAction: openCart
+    });
 }
 
 function updateCartCount() {
@@ -2136,6 +2139,7 @@ function openCart() {
 
     const modal = document.getElementById("cart-modal");
     modal.classList.remove("checkout-open");
+    modal.classList.remove("order-confirmation-open");
     modal.classList.add("open");
     document.body.classList.add("modal-open");
 
@@ -2149,6 +2153,7 @@ function closeCart() {
 
     modal.classList.remove("open");
     modal.classList.remove("checkout-open");
+    modal.classList.remove("order-confirmation-open");
     document.body.classList.remove("modal-open");
 }
 
@@ -2656,24 +2661,18 @@ function renderOrderConfirmation(order) {
     const content = document.getElementById("cart-modal-content");
     if (!content) return;
 
+    const modal = document.getElementById("cart-modal");
+    if (modal) {
+        modal.classList.remove("checkout-open");
+        modal.classList.add("order-confirmation-open");
+    }
+
     content.innerHTML = `
         <div class="order-confirmation" id="order-confirmation">
             <button class="cart-close-button confirmation-close" type="button" data-close-cart aria-label="Close confirmation">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="confirmation-confetti" aria-hidden="true">
-                <span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="confirmation-success-icon"><i class="fa-solid fa-check"></i></div>
-            <div class="confirmation-chef-icon"><i class="fa-solid fa-kitchen-set"></i><span>✦</span></div>
-            <span class="checkout-eyebrow">ORDER CONFIRMED</span>
             <h2>Order Received!</h2>
-            <p class="confirmation-message">Thank you for choosing Hotel Harshvardhan. Our kitchen is getting ready for your delicious meal!</p>
-            <p class="confirmation-demo-note"><i class="fa-solid fa-circle-info"></i> This order has not been sent to the restaurant and no payment was taken.</p>
-            <div class="confirmation-order-reference">
-                <span>Order reference</span>
-                <strong>${escapeHtml(order.reference)}</strong>
-            </div>
             <div class="confirmation-items">
                 ${order.items.map(item => `
                     <div><span>${escapeHtml(item.name)}${item.portionLabel ? ` · ${escapeHtml(item.portionLabel)}` : ""} × ${item.quantity}</span><strong>₹${item.lineTotal}</strong></div>
@@ -3025,17 +3024,35 @@ function initializeWaiterButtons() {
    12. TOAST NOTIFICATION
    ========================================================= */
 
-function showToast(message) {
+function showToast(message, options = {}) {
     let toast = document.getElementById("app-toast");
 
     if (!toast) {
         toast = document.createElement("div");
         toast.id = "app-toast";
         toast.className = "app-toast";
+        toast.innerHTML = `
+            <i class="fa-solid fa-circle-check app-toast-icon" aria-hidden="true"></i>
+            <span class="app-toast-message"></span>
+            <button type="button" class="app-toast-action" hidden></button>
+        `;
         document.body.appendChild(toast);
     }
 
-    toast.textContent = message;
+    const messageElement = toast.querySelector(".app-toast-message");
+    const actionElement = toast.querySelector(".app-toast-action");
+
+    messageElement.textContent = message;
+
+    if (options.actionLabel && typeof options.onAction === "function") {
+        actionElement.textContent = options.actionLabel;
+        actionElement.hidden = false;
+        actionElement.onclick = options.onAction;
+    } else {
+        actionElement.hidden = true;
+        actionElement.onclick = null;
+    }
+
     toast.classList.add("show");
 
     clearTimeout(toast.timeout);

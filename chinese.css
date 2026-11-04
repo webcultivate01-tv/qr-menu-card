@@ -176,8 +176,11 @@
     overflow-x: auto;
     margin: 28px 0 30px;
     padding: 2px 2px 8px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--champagne) transparent;
+    scrollbar-width: none;
+}
+
+.chinese-category-filters::-webkit-scrollbar {
+    display: none;
 }
 
 .chinese-filter {
@@ -289,11 +292,17 @@
 }
 
 .chinese-card-body h4 {
+    display: -webkit-box;
+    height: calc(1.35em * 2);
+    overflow: hidden;
     color: var(--heading);
     font-family: var(--font-heading);
     font-size: 15px;
     font-weight: 700;
     line-height: 1.35;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .chinese-card-body > p {
@@ -309,7 +318,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 8px;
-    margin-top: 13px;
+    margin-top: auto;
 }
 
 .chinese-card-price {
